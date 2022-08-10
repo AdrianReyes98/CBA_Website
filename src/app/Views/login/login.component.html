@@ -1,0 +1,19 @@
+<body>
+  <div class="container">
+     <main #main>
+        <div class="form signUp-form">
+          <h2>Iniciar Sesión</h2>
+          <form>
+            <label for="user_email">Usuario</label>
+            <input type="email" id="user_email" />
+
+            <label for="user_password">Contraseña</label>
+            <input type="password" for="user_password" />
+
+            <button [routerLink]="['/home']">Ingresar</button>
+          </form>
+        </div>
+
+     </main>
+   </div>
+</body>

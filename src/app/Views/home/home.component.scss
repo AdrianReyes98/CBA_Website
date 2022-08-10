@@ -1,0 +1,48 @@
+.titleMenu{
+  margin-top: 10px;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #fff;
+}
+
+mat-drawer-container{
+  height: 100vh;
+}
+
+.barraLateral{
+  position: fixed;
+  width: 225px;
+  background: #06283D;
+  padding: 2px 14px;
+}
+
+.barraLateral a{
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 15px;
+  width: 190px;
+  color: #fff;
+  display: flex;
+  text-decoration: none;
+  transition: all 0.25s ease-in;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.barraLateral a:hover{
+   color: #11101d;
+   background: #fff;
+}
+
+.barraLateral a i{
+   height: 50px;
+   min-width: 50px;
+   border-radius: 12px;
+   line-height: 50px;
+   text-align: center;
+}
+
+
