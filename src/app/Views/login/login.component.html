@@ -2,18 +2,16 @@
   <div class="container">
      <main #main>
         <div class="form signUp-form">
-          <h2>Iniciar Sesión</h2>
-          <form>
+          <div class="userForm">
             <label for="user_email">Usuario</label>
-            <input type="email" id="user_email" />
+            <input type="email" [(ngModel)]="username" id="user_email" placeholder="Usuario"/>
 
             <label for="user_password">Contraseña</label>
-            <input type="password" for="user_password" />
+            <input type="password" [(ngModel)]="password" placeholder="Contraseña"/>
 
-            <button [routerLink]="['/home']">Ingresar</button>
-          </form>
+            <button (click)="login()">Ingresar</button>
+          </div>
         </div>
-
      </main>
    </div>
 </body>
