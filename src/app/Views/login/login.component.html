@@ -1,17 +1,35 @@
-<body>
-  <div class="container">
-     <main #main>
-        <div class="form signUp-form">
-          <div class="userForm">
-            <label for="user_email">Usuario</label>
-            <input type="email" [(ngModel)]="username" id="user_email" placeholder="Usuario"/>
+<div class="container">
+  <div class="form">
+    <div class="logo">
+      <img 
+      src="https://image.freepik.com/vector-gratis/mujer-laptop-estudiando-o-trabajando-concepto_113065-166.jpg" 
+      width="340px">
+    </div>
 
-            <label for="user_password">Contraseña</label>
-            <input type="password" [(ngModel)]="password" placeholder="Contraseña"/>
-
-            <button (click)="login()">Ingresar</button>
-          </div>
-        </div>
-     </main>
-   </div>
-</body>
+    <div class="data">
+      <div class="titulo">
+        <label>Ingreso</label>
+      </div>
+      <div class="subtitulo">
+        <label>Ingreso Prevencion Incendios</label>
+      </div>
+      <div class="input">
+        <input type="text" placeholder="Usuario">
+        <i class='bx bx-user' ></i>
+      </div>
+      <div class="input">
+        <input type="password" placeholder="Contraseña">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="txt-recuperar">
+        <label>Recuperar Contraseña</label>
+      </div>
+      <div class="footer">
+        <button>Iniciar
+          <i class='bx bxs-chevrons-right'></i>
+        </button> <br>
+        <label>Aun no tienes cuenta ? Registrate</label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiLoginService } from 'src/app/Services/api-login.service';
 
 @Component({
@@ -13,7 +14,10 @@ export class LoginComponent implements OnInit {
     public password: string = "";
     public isLoading: boolean = true;
     
-    constructor(public apiLogin: ApiLoginService){
+    constructor(
+      public apiLogin: ApiLoginService,
+      private router: Router
+    ){
 
     }
 
@@ -22,10 +26,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void{
-    console.log(this.username);
-    console.log(this.password);
     this.apiLogin.login(this.username, this.password).subscribe(response => {
-      console.log(response);
+      if(response.status === 1){
+        this.router.navigate(['/home'])
+      }
     });
   }
 
