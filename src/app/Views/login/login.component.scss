@@ -1,5 +1,6 @@
 $main-bg-color: rgb(255, 67, 67);
 $font-color: #fff;
+$border-rad: 20px;
 
 .container{
   height: 100vh;
@@ -15,6 +16,7 @@ $font-color: #fff;
   height: 400px;
   box-shadow: 0 0 1em #2e2e2e;
   font-family: sans-serif;
+  border-radius: $border-rad;
 }
 
 .logo{
@@ -23,6 +25,11 @@ $font-color: #fff;
   align-items: center;
   justify-content: center;
   padding-top: 10%;
+  border-radius: $border-rad 0 0 $border-rad;
+}
+
+.logo .spinner{
+  padding-left: 45%;
 }
 
 .data{
@@ -32,6 +39,7 @@ $font-color: #fff;
   padding-left: 80px;
   display: flex;
   flex-direction: column;
+  border-radius: 0 $border-rad $border-rad 0;
 }
 
 .titulo{
@@ -41,7 +49,7 @@ $font-color: #fff;
 }
 
 .subtitulo{
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: 30px;
 }
 
@@ -72,7 +80,14 @@ $font-color: #fff;
 .txt-recuperar{
   justify-content: right;
   font-size: 10px;
+  padding-left: 50%;
 }
+
+.txt-recuperar:hover{
+  font-style:italic;
+  text-decoration: underline;
+}
+
 
 .footer{
   margin-top: 30px;
@@ -90,11 +105,19 @@ $font-color: #fff;
   margin-bottom: 5px;
 }
 
+
+.footer button mat-sppinner{
+  font-size: 10px;
+}
+
 .footer button:hover{
   background-color: rgb(179, 0, 0);
 }
 
+.footer button:active{
+  background-color: rgb(75, 75, 75);
+}
+
 .footer button i{
-  padding-top: 2px;
   font-size: 18px;
 }

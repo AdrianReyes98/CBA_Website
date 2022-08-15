@@ -17,10 +17,21 @@ export class LoginGuardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const user = this.apiUserService.userData;
       if(user){
-        return true;
+        return this.checkUserRole(route);
       }
       this.router.navigate(['/login']);
       return false;
+  }
+
+  checkUserRole(route: ActivatedRouteSnapshot): boolean{
+    const user = this.apiUserService.userData;
+    
+    if(user.role.match(route.data['role'])){
+      return true;
+    }else{
+      this.router.navigate(['/noaccess'])
+      return false;
+    }
   }
   
 }

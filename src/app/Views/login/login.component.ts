@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
     public username: string = "";
     public password: string = "";
-    public isLoading: boolean = true;
+    public isLoading: boolean = false;
     
     constructor(
       public apiLogin: ApiLoginService,
@@ -26,10 +26,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void{
+    this.isLoading = true;
     this.apiLogin.login(this.username, this.password).subscribe(response => {
       if(response.status === 1){
-        this.router.navigate(['/home'])
+        this.router.navigate(['/'+response.data.role])
       }
+      this.isLoading = false;
     });
   }
 
