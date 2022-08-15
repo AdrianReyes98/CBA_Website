@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit {
       public apiLogin: ApiLoginService,
       private router: Router
     ){
-
+      if(this.apiLogin.userData){
+        this.router.navigate(['/'+this.apiLogin.userData.role])
+      }
     }
 
   ngOnInit(): void {
