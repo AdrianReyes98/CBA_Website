@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Componentes Material Agregados
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatTabsModule} from '@angular/material/tabs';
 
 //Componentes Funcionalidad
 import { FormsModule } from '@angular/forms';
@@ -27,7 +28,7 @@ import { AccessDeniedComponent } from './Views/access-denied/access-denied.compo
     HomeComponent,
     AdminComponent,
     ClientComponent,
-    AccessDeniedComponent
+    AccessDeniedComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { AccessDeniedComponent } from './Views/access-denied/access-denied.compo
     MatSidenavModule,
     FormsModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTabsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}

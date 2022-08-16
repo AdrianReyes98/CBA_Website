@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginGuardGuard } from './Security/login-guard.guard';
 import { HomeComponent } from './Views/home/home.component';
@@ -6,6 +6,8 @@ import { LoginComponent } from './Views/login/login.component';
 import { AdminComponent } from './Views/admin/admin.component';
 import { ClientComponent } from './Views/client/client.component';
 import { AccessDeniedComponent } from './Views/access-denied/access-denied.component';
+import { ClientModuleComponent } from './Views/admin/Modules/client-module/client-module.component';
+import { SupervisorModuleComponent } from './Views/admin/Modules/supervisor-module/supervisor-module.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,20 @@ const routes: Routes = [
     data: {
       role: 'Administrador'
     },
+    children: [
+      {
+        path: '',
+        component: ClientModuleComponent
+      },
+      {
+        path: 'Clientes', 
+        component: ClientModuleComponent
+      },
+      {
+        path: 'Supervisores', 
+        component: SupervisorModuleComponent
+      }
+    ],
     canActivate: [LoginGuardGuard]
   },
   {
