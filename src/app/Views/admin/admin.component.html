@@ -11,21 +11,30 @@
             <i class='bx bxs-binoculars'></i>
             <button>Supervisores</button>
         </div>
-        <div class="menu-item">
+        <div routerLink= "Inspectores" class="menu-item">
             <i class='bx bxs-book-open'></i>
             <button>Inspectores</button>
         </div>
-        <div class="menu-item">
+        <div routerLink= "Locales" class="menu-item">
             <i class='bx bxs-business'></i>
             <button>Locales</button>
         </div>
-        <div class="menu-item">
+        <div  routerLink= "Recaudadores" class="menu-item">
             <i class='bx bxs-coin-stack'></i>
             <button>Recaudadores</button>
         </div>
+        <div  routerLink= "Usuarios" class="menu-item">
+            <i class='bx bxs-user-circle'></i>
+            <button>Usuarios</button>
+        </div>
     </div>
     <div class="user">
-        <button (click)="logOut()">Us</button>
+        <button [matMenuTriggerFor]="beforeMenu">Us</button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <label for="" style="margin-left: 5px;">Adrian Reyes</label>
+            <button routerLink="Perfiles" mat-menu-item>Perfil</button>
+            <button mat-menu-item (click)="logOut()">Cerrar Sesión</button>
+        </mat-menu>
     </div>
 </div>
 

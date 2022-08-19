@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import {MatMenuModule} from '@angular/material/menu';
 //Componentes Funcionalidad
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -20,6 +20,11 @@ import { HomeComponent } from './Views/home/home.component';
 import { AdminComponent } from './Views/admin/admin.component';
 import { ClientComponent } from './Views/client/client.component';
 import { AccessDeniedComponent } from './Views/access-denied/access-denied.component';
+import { InspectorModuleComponent } from './Views/admin/Modules/inspector-module/inspector-module.component';
+import { PerfilModuleComponent } from './Views/admin/Modules/perfil-module/perfil-module.component';
+import { LocalesModuleComponent } from './Views/admin/Modules/locales-module/locales-module.component';
+import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
+import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,12 @@ import { AccessDeniedComponent } from './Views/access-denied/access-denied.compo
     AdminComponent,
     ClientComponent,
     AccessDeniedComponent,
+    InspectorModuleComponent,
+    PerfilModuleComponent,
+    LocalesModuleComponent,
+    RecaudadoresModuleComponent,
+    UserModuleComponent
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,8 @@ import { AccessDeniedComponent } from './Views/access-denied/access-denied.compo
     FormsModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}

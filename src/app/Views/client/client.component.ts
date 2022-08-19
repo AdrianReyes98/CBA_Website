@@ -17,7 +17,6 @@ export class ClientComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
   logOut(): void{
     this.apiUserLogin.logOut();
     this.router.navigate(['/login'])
