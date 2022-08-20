@@ -1,5 +1,10 @@
 export interface User {
-    email: string;
-    token: string;
-    role: string;
+    usuario1: string
+    email: string
+    direccion: string
+    telefono: string
+    cedula: string
+    nombre: string
+    contraseña: string
+    idRol: number
 }

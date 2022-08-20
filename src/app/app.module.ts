@@ -9,8 +9,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
 //Componentes Funcionalidad
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './Security/jwt.interceptor';
 
@@ -25,6 +33,7 @@ import { PerfilModuleComponent } from './Views/admin/Modules/perfil-module/perfi
 import { LocalesModuleComponent } from './Views/admin/Modules/locales-module/locales-module.component';
 import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
+import { DialogRegisterUserComponent } from './Views/admin/Modules/user-module/dialog-register-user/dialog-register-user.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +47,8 @@ import { UserModuleComponent } from './Views/admin/Modules/user-module/user-modu
     PerfilModuleComponent,
     LocalesModuleComponent,
     RecaudadoresModuleComponent,
-    UserModuleComponent
+    UserModuleComponent,
+    DialogRegisterUserComponent
 
   ],
   imports: [
@@ -50,7 +60,14 @@ import { UserModuleComponent } from './Views/admin/Modules/user-module/user-modu
     HttpClientModule,
     MatProgressSpinnerModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressBarModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}

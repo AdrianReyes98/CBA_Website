@@ -1,12 +1,17 @@
-.container{
-  height: 100vh;
+body{
+  background-color: #fff;
+}
+.all{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+}
+.container{
+  width: 100%;
+  margin-top: 60px;
 }
 
 .text{
   margin-bottom: 30px;
   font-size: 35px;
 }
+
