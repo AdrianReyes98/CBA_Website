@@ -1,5 +1,15 @@
 $main-color: #ff4848;
 
-h1{
-    background-color: red;
+*{
+    margin: 0;
+    padding: 0;
+}
+.title{
+    background-color: $main-color;
+    padding: 10px;
+}
+
+.content{
+    background-color: #fff;
+    padding: 10px;
 }
