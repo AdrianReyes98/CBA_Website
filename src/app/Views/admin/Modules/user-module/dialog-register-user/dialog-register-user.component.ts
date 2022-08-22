@@ -35,13 +35,13 @@ export class DialogRegisterUserComponent{
 
   addUser(){
     const user: User = {
-      nombre: this.name,
       usuario1: this.user,
+      contraseña: this.password,
+      nombre: this.name,
       email: this.email,
       direccion: this.address,
       telefono: this.phone,
       cedula: this.identification,
-      contraseña: this.password, 
       idRol: 2
     };
     console.log(user);
@@ -52,7 +52,7 @@ export class DialogRegisterUserComponent{
           duration: 2000
         });
       }else{
-        this.snackBar.open(response.result+': Usuario no se inserto', '',{
+        this.snackBar.open(response.result+': El Usuario no se inserto', '',{
           duration: 2000
         });
       }

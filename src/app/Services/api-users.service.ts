@@ -31,6 +31,6 @@ export class ApiUsersService {
   }
 
   addUser(user: User): Observable<Response>{
-    return this._http.post<Response>(this.url, httpOption);
+    return this._http.post<Response>(this.url, user,httpOption);
   }
 }
