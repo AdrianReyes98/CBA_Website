@@ -10,6 +10,7 @@ import { ApiUsersService } from 'src/app/Services/api-users.service';
   styleUrls: ['./dialog-register-user.component.scss']
 })
 export class DialogRegisterUserComponent{
+  hide = true;
 
   user: string = "";
   name: string = "";
