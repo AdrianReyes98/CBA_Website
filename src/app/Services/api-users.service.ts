@@ -16,7 +16,7 @@ const httpOption = {
 export class ApiUsersService {
 
 
-  url: string = "https://localhost:7221/User";
+  url: string = "https://prevencioncbd.somee.com/User";
 
   constructor(
     private _http: HttpClient

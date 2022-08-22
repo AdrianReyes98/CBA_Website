@@ -16,7 +16,7 @@ const httpOption = {
 })
 export class ApiLoginService {
 
-  url: string = "https://localhost:7221/User/login";
+  url: string = "https://prevencioncbd.somee.com/User/login";
 
   private userSubject: BehaviorSubject<Login>;
 
