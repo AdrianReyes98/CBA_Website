@@ -64,7 +64,7 @@ export class UserModuleComponent implements OnInit {
   
   openDialogAddClients(){
     const dialogRef = this.dialog.open( DialogRegisterUserComponent, {
-      width: '400px'
+      width: '600px'
     });
     dialogRef.afterClosed().subscribe( result => {
       this.getUsers();
