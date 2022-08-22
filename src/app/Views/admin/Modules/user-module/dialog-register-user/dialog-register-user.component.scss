@@ -8,8 +8,7 @@ $main-color: #ff4848;
     background-color: $main-color;
     height: fit-content;
     justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
 }
 
 .title h1{
@@ -20,14 +19,14 @@ $main-color: #ff4848;
 .title .dialog-logo{
     background-color: transparent;
     color: #fff;
-    border-style: outset;
+    border-style:solid;
     border-width: 3px;
     border-color: #fff;
     border-radius: 50%;
     width: fit-content;
-    font-size: 35px;
-    margin-left: 45%;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-left: 43%;
+    margin-bottom: 15px;
 }
 
 .title .dialog-logo i{
