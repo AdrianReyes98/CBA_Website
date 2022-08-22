@@ -19,6 +19,7 @@ export class DialogRegisterUserComponent{
   email:string = "";
   phone: string = "";
   identification: string = "";
+  rol: number= 0;
 
   constructor(
     public dialogRef: MatDialogRef<DialogRegisterUserComponent>,
@@ -43,7 +44,7 @@ export class DialogRegisterUserComponent{
       direccion: this.address,
       telefono: this.phone,
       cedula: this.identification,
-      idRol: 2
+      idRol: this.rol
     };
     console.log(user);
     this.apiClient.addUser(user).subscribe(response => {
