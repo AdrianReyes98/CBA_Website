@@ -39,10 +39,25 @@ mat-form-field.mat-form-field {
 }
 .content{
     background-color: #fff;
-    padding-left: 100px;
     padding: 10px;
+ 
 }
 
+mat-option.mat-option{
+    padding-left:10px;
+}
 
+.actions{
+    background-color: #fff;
+    justify-content:center;
+    padding-block: 10px;
+  
+}
+
+.actions button{
+    margin-left: 25px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
 
 
