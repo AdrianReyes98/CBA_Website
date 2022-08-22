@@ -62,7 +62,16 @@ export class UserModuleComponent implements OnInit {
     });
   }
   
-  openDialogAddClients(){
+  openDialogAddUser(){
+    const dialogRef = this.dialog.open( DialogRegisterUserComponent, {
+      width: '600px'
+    });
+    dialogRef.afterClosed().subscribe( result => {
+      this.getUsers();
+    });
+  }
+
+  openDialogUpdateUser(){
     const dialogRef = this.dialog.open( DialogRegisterUserComponent, {
       width: '600px'
     });
