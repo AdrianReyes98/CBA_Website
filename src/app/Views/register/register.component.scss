@@ -1,0 +1,141 @@
+$main-bg-color: #252525;
+$font-color: #fff;
+$border-rad: 20px;
+
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 650px;
+  box-shadow: 0 0 1em #2e2e2e;
+  font-family: sans-serif;
+  border-radius: $border-rad;
+}
+
+.login-logo{
+  width: 40%;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0 0 30px;
+  border-radius: $border-rad 0 0 $border-rad;
+}
+
+.login-logo img{
+    margin-top: 90px;
+}
+
+.login-logo .spinner{
+  padding-left: 45%;
+}
+
+.data{
+  width: 60%;
+  background: $main-bg-color;
+  color: $font-color;
+  padding-left: 80px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 $border-rad $border-rad 0;
+}
+
+.titulo{
+  margin-top: 30px;
+  font-size: 35px;
+  font-style: bold;
+}
+
+
+
+.subtitulo{
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.input{
+  background-color: #fff;
+  width: 70%;
+  color: $main-bg-color;
+  border-radius: 50px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 5px 10px 0 10px;
+  border-color: $main-bg-color;
+  border-style: outset;
+  border-width: 2px;
+}
+
+.input input{
+  width: 90%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-style: none;
+  border-width: 0;
+  height: 35px;
+  color: $main-bg-color;
+  font-size: 15px;
+}
+.txt-recuperar{
+  justify-content: right;
+  font-size: 10px;
+  padding-left: 50%;
+}
+
+.txt-recuperar:hover{
+  font-style:italic;
+  text-decoration: underline;
+}
+.btn-registrarse{
+  justify-content: right;
+  font-size: 10px;
+  color: #fff;
+  border-style: none;
+  background-color : transparent;
+}
+
+.btn-registrarse:hover{
+  font-style:italic;
+  text-decoration: underline;
+}
+
+
+.footer{
+  margin-top: 30px;
+  font-size: 12px;
+}
+
+.footer .btnLogin{
+  background-color: #AF0404;
+  color: $font-color;
+  border-radius: 50px;
+  width: 80%;
+  height: 50px;
+  font-size: 28px;
+  border-width: 0;
+  margin-bottom: 5px;
+}
+
+
+.footer .btnLogin mat-sppinner{
+  font-size: 10px;
+}
+
+.footer .btnLogin:hover{
+  background-color: rgb(90, 90, 90);
+}
+
+.footer .btnLogin:active{
+  background-color: rgb(49, 49, 49);
+}
+
+.footer .btnLogin i{
+  font-size: 18px;
+}
