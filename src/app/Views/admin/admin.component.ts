@@ -9,12 +9,16 @@ import { ApiLoginService } from 'src/app/Services/api-login.service';
 })
 export class AdminComponent implements OnInit {
 
+  user: any;
+  public username: string = "";
   constructor(
     private apiUserLogin: ApiLoginService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    this.username = this.user.email.toUpperCase();
   }
 
   logOut(): void{
