@@ -9,10 +9,11 @@ import { AccessDeniedComponent } from './Views/access-denied/access-denied.compo
 import { ClientModuleComponent } from './Views/admin/Modules/client-module/client-module.component';
 import { SupervisorModuleComponent } from './Views/admin/Modules/supervisor-module/supervisor-module.component';
 import { InspectorModuleComponent } from './Views/admin/Modules/inspector-module/inspector-module.component';
-import { PerfilModuleComponent } from './Views/admin/Modules/perfil-module/perfil-module.component';
+import { PerfilModuleComponent } from './Views/perfil-module/perfil-module.component';
 import { LocalesModuleComponent } from './Views/admin/Modules/locales-module/locales-module.component';
 import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
+
 const routes: Routes = [
   {
     'path':'',
