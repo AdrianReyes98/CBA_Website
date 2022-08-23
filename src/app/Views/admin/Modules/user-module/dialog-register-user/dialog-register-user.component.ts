@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/Models/User';
@@ -10,43 +11,47 @@ import { ApiUsersService } from 'src/app/Services/api-users.service';
   styleUrls: ['./dialog-register-user.component.scss']
 })
 export class DialogRegisterUserComponent{
-  hide = true;
 
-  user: string = "";
-  name: string = "";
-  password: string = "";
-  address: string = "";
-  email:string = "";
-  phone: string = "";
-  identification: string = "";
-  rol: number= 0;
+  formUser: any;
+  hide = true;
 
   constructor(
     public dialogRef: MatDialogRef<DialogRegisterUserComponent>,
     public apiClient: ApiUsersService,
     public snackBar: MatSnackBar,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
+    this.formUser = this.formBuilder.group({
+      email: ['',[Validators.required,Validators.email]],
+      user: ['',[Validators.required]],
+      name: ['',[Validators.required]],
+      password: ['',[Validators.required]],
+      address: [''],
+      phone: ['',[Validators.maxLength(10),Validators.minLength(10), Validators.required]],
+      role: ['',Validators.required],
+      identification: ['',[Validators.maxLength(10),Validators.minLength(10)]]
+    })
   }
 
   closeDialog(){
     this.dialogRef.close();
   }
 
-  addUser(){
+  addOrEditUser(){
     const user: User = {
-      usuario1: this.user,
-      contraseña: this.password,
-      nombre: this.name,
-      email: this.email,
-      direccion: this.address,
-      telefono: this.phone,
-      cedula: this.identification,
-      idRol: this.rol
+      usuario1: this.formUser.value.user,
+      contraseña: this.formUser.value.password,
+      nombre: this.formUser.value.name,
+      email: this.formUser.value.email,
+      direccion: this.formUser.value.address,
+      telefono: this.formUser.value.phone,
+      cedula: this.formUser.value.identification,
+      idRol: this.formUser.value.role
     };
-
+    this.addUserService(user);
   }
 
   addUserService(user: User){

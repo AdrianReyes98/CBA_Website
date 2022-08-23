@@ -37,7 +37,6 @@ export class UserModuleComponent implements OnInit {
       this.listUsers = response.data;
       this.isLoading = false;
       this.setDataSource(this.listUsers);
-      console.log(this.listUsers);
     });
   }
 
