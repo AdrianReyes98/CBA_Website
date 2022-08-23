@@ -19,10 +19,13 @@ export class RegisterComponent implements OnInit {
   
   constructor(
     private router: Router,
+    public apiClient: ApiUsersService,
+    public snackBar: MatSnackBar,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
+    this.buildFormAdd();
     
   }
 
@@ -40,8 +43,33 @@ export class RegisterComponent implements OnInit {
       password: ['',[Validators.required]],
       address: [''],
       phone: ['',[Validators.maxLength(10),Validators.minLength(10), Validators.required]],
-      role: ['',Validators.required],
       identification: ['',[Validators.maxLength(10),Validators.minLength(10)]]
     });
+  }
+
+  addUserService(){
+    const user: User = {
+      id: this.id,
+      usuario1: this.formUser.value.user,
+      contraseña: this.formUser.value.password,
+      nombre: this.formUser.value.name,
+      email: this.formUser.value.email,
+      direccion: this.formUser.value.address,
+      telefono: this.formUser.value.phone,
+      cedula: this.formUser.value.identification,
+      idRol: 2
+    };
+    this.apiClient.addUser(user).subscribe(response => {
+      if( response.status === 1 ){
+        this.snackBar.open(response.result+': Usuario insertado con Exito', '',{
+          duration: 2000
+        });
+        this.returnLogin();
+      }else{
+        this.snackBar.open(response.result+': El Usuario no se inserto', '',{
+          duration: 2000
+        });
+      }
+    })
   }
 }

@@ -9,8 +9,9 @@
           
         </div>
       </div>
-  
       <div class="data">
+      <div [formGroup]="formUser"> 
+     
         <div class="titulo">
           <label>Nuevo Usuario</label>
         </div>
@@ -18,39 +19,43 @@
           <label>Ingrese Nuevo Cliente</label>
         </div>
         <div class="input">
-          <input type="text" placeholder="Nombre" >
+          <input type="text" placeholder="Nombre" formControlName="name">
           <i class='bx bx-face' ></i>
         </div>
         <div class="input">
-          <input type="password" placeholder="Cedula" >
+          <input type="text" placeholder="Cedula" formControlName="identification">
           <i class='bx bx-id-card'></i>
         </div>
         <div class="input">
-            <input type="password" placeholder="Email" >
+            <input type="text" placeholder="Email" formControlName="email" >
             <i class='bx bx-envelope'></i>
           </div>
           <div class="input">
-            <input type="password" placeholder="Teléfono" >
+            <input type="text" placeholder="Teléfono" formControlName="phone">
             <i class='bx bx-phone'></i>
           </div>
           <div class="input">
-            <input type="password" placeholder="Direccion" >
+            <input type="text" placeholder="Direccion" formControlName="address">
             <i class='bx bx-map'></i>
           </div>
           <div class="input">
-            <input type="password" placeholder="Usuario" >
+            <input type="text" placeholder="Usuario" formControlName="user">
             <i class='bx bx-user'></i>
           </div>
           <div class="input">
-            <input type="password" placeholder="Contraseña" >
+            <input type="password" placeholder="Contraseña" formControlName="password">
+            
             <i class='bx bx-lock-alt'></i>
           </div>
           <div class="footer">
-          <button class="btnLogin">Registrarse</button>
+          <button class="btnLogin" [disabled]="formUser.invalid"  (click)="addUserService()">Registrarse</button>
             <div>
           <label>Ya tienes cuenta?<button class="btn-registrarse"  (click)="returnLogin()">Iniciar Sesión</button> </label>
         </div>
         </div>
+        
         </div>
       </div>
+      </div>
+   
     </div>
