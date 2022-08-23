@@ -18,6 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import {MatDividerModule} from '@angular/material/divider';
 
 //Componentes Funcionalidad
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
@@ -31,7 +32,7 @@ import { AdminComponent } from './Views/admin/admin.component';
 import { ClientComponent } from './Views/client/client.component';
 import { AccessDeniedComponent } from './Views/access-denied/access-denied.component';
 import { InspectorModuleComponent } from './Views/admin/Modules/inspector-module/inspector-module.component';
-import { PerfilModuleComponent } from './Views/admin/Modules/perfil-module/perfil-module.component';
+import { PerfilModuleComponent } from './Views/perfil-module/perfil-module.component';
 import { LocalesModuleComponent } from './Views/admin/Modules/locales-module/locales-module.component';
 import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
@@ -75,7 +76,8 @@ import { RegisterComponent } from './Views/register/register.component';
     MatIconModule,
     MatButtonModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
