@@ -62,9 +62,14 @@
 
 .user button{
   border: none;
+  margin-top: 7px;
   padding: 10px;
-  background-color: #fff;
   border-radius: 50%;
+  background-image: url("https://cdn2.iconfinder.com/data/icons/social-media-flat-line/70/user-512.png");
+  background-size:contain;
+  background-position: center;
+  height: 40px;
+  width: 40px;
 }
 
 .user button:hover{
@@ -72,7 +77,8 @@
 }
 
 .user{
-  width: 5%;
+  height: 90%;
+  width: 50px;
 }
 
 @media screen and (max-width: 900px) {
