@@ -100,3 +100,19 @@ input{
 #delete-detail:hover{
     color: rgb(202, 96, 96);
 }
+
+.element{
+    font-size: 14px;
+}
+
+@media screen and (max-width: 950px) {
+    .element{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .element{
+        font-size: 10px;
+    }
+}

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/Models/User';
 import { ApiUsersService } from 'src/app/Services/api-users.service';
@@ -24,7 +24,8 @@ export class DialogRegisterUserComponent{
   constructor(
     public dialogRef: MatDialogRef<DialogRegisterUserComponent>,
     public apiClient: ApiUsersService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +34,6 @@ export class DialogRegisterUserComponent{
   closeDialog(){
     this.dialogRef.close();
   }
-
 
   addUser(){
     const user: User = {
@@ -46,8 +46,26 @@ export class DialogRegisterUserComponent{
       cedula: this.identification,
       idRol: this.rol
     };
-    console.log(user);
+
+  }
+
+  addUserService(user: User){
     this.apiClient.addUser(user).subscribe(response => {
+      if( response.status === 1 ){
+        this.dialogRef.close();
+        this.snackBar.open(response.result+': Usuario insertado con Exito', '',{
+          duration: 2000
+        });
+      }else{
+        this.snackBar.open(response.result+': El Usuario no se inserto', '',{
+          duration: 2000
+        });
+      }
+    })
+  }
+
+  updateUserService(user: User){
+    this.apiClient.updateUser(user).subscribe(response => {
       if( response.status === 1 ){
         this.dialogRef.close();
         this.snackBar.open(response.result+': Usuario insertado con Exito', '',{

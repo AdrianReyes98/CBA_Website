@@ -7,4 +7,5 @@ export interface User {
     nombre: string
     contraseña: string
     idRol: number
+    idRolNavigation?: object
 }

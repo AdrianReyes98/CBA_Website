@@ -17,7 +17,7 @@ export class UserModuleComponent implements OnInit {
   public search: string = "";
   public searchList: any[] = [];
   public listUsers: any[] = [];  
-  public columns: string[] = ['Id','Nombre','Cedula','Usuario', 'Email', 'Direccion', 'Telefono','Acciones'];
+  public columns: string[] = ['Id','Nombre','Cedula','Usuario','Role', 'Email', 'Direccion', 'Telefono','Acciones'];
   dataSource: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -37,6 +37,7 @@ export class UserModuleComponent implements OnInit {
       this.listUsers = response.data;
       this.isLoading = false;
       this.setDataSource(this.listUsers);
+      console.log(this.listUsers);
     });
   }
 
