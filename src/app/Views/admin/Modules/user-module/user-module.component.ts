@@ -33,6 +33,7 @@ export class UserModuleComponent implements OnInit {
   }
 
   getUsers(){
+    this.isLoading = true;
     this.apiUser.getUsers().subscribe(response => {
       this.listUsers = response.data;
       this.isLoading = false;
@@ -71,9 +72,10 @@ export class UserModuleComponent implements OnInit {
     });
   }
 
-  openDialogUpdateUser(){
+  openDialogUpdateUser(user: any){
     const dialogRef = this.dialog.open( DialogRegisterUserComponent, {
-      width: '600px'
+      width: '600px',
+      data: user
     });
     dialogRef.afterClosed().subscribe( result => {
       this.getUsers();
