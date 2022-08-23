@@ -36,6 +36,7 @@ import { LocalesModuleComponent } from './Views/admin/Modules/locales-module/loc
 import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
 import { DialogRegisterUserComponent } from './Views/admin/Modules/user-module/dialog-register-user/dialog-register-user.component';
+import { RegisterComponent } from './Views/register/register.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { DialogRegisterUserComponent } from './Views/admin/Modules/user-module/d
     LocalesModuleComponent,
     RecaudadoresModuleComponent,
     UserModuleComponent,
-    DialogRegisterUserComponent
+    DialogRegisterUserComponent,
+    RegisterComponent
 
   ],
   imports: [
