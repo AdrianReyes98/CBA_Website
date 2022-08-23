@@ -13,7 +13,7 @@ import { PerfilModuleComponent } from './Views/perfil-module/perfil-module.compo
 import { LocalesModuleComponent } from './Views/admin/Modules/locales-module/locales-module.component';
 import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
-
+import { RegisterComponent } from './Views/register/register.component';
 const routes: Routes = [
   {
     'path':'',
@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     'path': 'login',
     component: LoginComponent
+  },
+  {
+    'path': 'register',
+     component: RegisterComponent
   },
   {
     'path': 'Administrador',
