@@ -7,8 +7,9 @@ body{
 }
 .container{
   width: 100%;
+  height: fit-content;
   margin-top: 60px;
-  position: relative;
+  position: unset;
 }
 
 .text{
