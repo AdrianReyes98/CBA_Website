@@ -38,6 +38,8 @@ import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
 import { DialogRegisterUserComponent } from './Views/admin/Modules/user-module/dialog-register-user/dialog-register-user.component';
 import { RegisterComponent } from './Views/register/register.component';
+import { InputDialogComponent } from './Views/Common/input-dialog/input-dialog.component';
+import { ConfirmDialogComponent } from './Views/Common/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { RegisterComponent } from './Views/register/register.component';
     RecaudadoresModuleComponent,
     UserModuleComponent,
     DialogRegisterUserComponent,
-    RegisterComponent
+    RegisterComponent,
+    InputDialogComponent,
+    ConfirmDialogComponent
 
   ],
   imports: [

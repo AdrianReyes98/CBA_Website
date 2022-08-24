@@ -70,8 +70,25 @@ $shadow-color: 0 0 10px #949494;
     flex-direction: column;
     height: 100%;
     margin-left: 10px;
+    font-size: 18px;
 }
 
 .row{
     margin-bottom: 30px;
 }
+
+.row i{
+    margin-left: 20px;
+    color: #256D85;
+    justify-content: right;
+    font-size: 25px;
+}
+
+.row i:hover{
+    color: #8FE3CF;
+}
+
+.row i:active{
+    color: #b4b4b4;
+}
+
