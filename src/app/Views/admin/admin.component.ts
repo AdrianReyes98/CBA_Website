@@ -19,8 +19,8 @@ export class AdminComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(JSON.parse(localStorage.getItem('user')!));
     this.user = JSON.parse(localStorage.getItem('user')!);
-    this.role = JSON.parse(localStorage.getItem('role')!)
     this.username = this.user.email.toUpperCase();
     this.rol = this.user.role;
   }
