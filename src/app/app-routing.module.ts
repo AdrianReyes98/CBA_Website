@@ -86,6 +86,10 @@ const routes: Routes = [
           path: 'Perfiles', 
           component: PerfilModuleComponent
         },
+        {
+          path: 'Locales', 
+          component: LocalesModuleComponent
+        }
   
     ],
     canActivate: [LoginGuardGuard]

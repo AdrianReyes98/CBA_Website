@@ -1,3 +1,10 @@
+body{
+  background-color: #fff;
+}
+.all{
+  display: flex;
+  flex-direction: row;
+}
 .container{
   height: 100vh;
   display: flex;
@@ -9,4 +16,8 @@
 .text{
   margin-bottom: 30px;
   font-size: 35px;
+}
+
+.adm{
+  padding-left: 27px;
 }

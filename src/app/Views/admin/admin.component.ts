@@ -11,6 +11,8 @@ export class AdminComponent implements OnInit {
 
   user: any;
   public username: string = "";
+  rol: any
+  public role: string = "";
   constructor(
     private apiUserLogin: ApiLoginService,
     private router: Router
@@ -18,7 +20,9 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user')!);
+    this.role = JSON.parse(localStorage.getItem('role')!)
     this.username = this.user.email.toUpperCase();
+    this.rol = this.user.role;
   }
 
   logOut(): void{

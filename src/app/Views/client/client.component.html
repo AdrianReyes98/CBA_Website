@@ -1,21 +1,27 @@
-<div class="toolbar">
-    <div class="logo">
+<body>
+    <div class="all">
+
+        <div class="toolbar">
+            <div class="logo">
+            </div>
+            <div class="options">
+                <div><button>Inicio</button></div>
+                <div><button routerLink="Locales">Locales</button></div>
+                <div><button>Inspecciones</button></div>
+            </div>
+            <div class="user">
+                <button [matMenuTriggerFor]="beforeMenu"></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                    <label  style="margin-left: 5px;">{{username}}</label> <br>
+                    <label class="adm" style="margin-left: 5px;">{{rol}}</label>
+                    <button routerLink="Perfiles" mat-menu-item >Perfil</button>
+                    <button mat-menu-item (click)="logOut()">Cerrar Sesión</button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="container">
+            
+            <router-outlet></router-outlet>
+        </div>
+        
     </div>
-    <div class="options">
-        <div><button>Inicio</button></div>
-        <div><button routerLink="Perfiles">Locales</button></div>
-        <div><button>Inspecciones</button></div>
-    </div>
-    <div class="user">
-        <button [matMenuTriggerFor]="beforeMenu"></button>
-        <mat-menu #beforeMenu="matMenu" xPosition="before">
-            <label for="" style="margin-left: 5px;">Paola Velastegui</label>
-            <button routerLink="Perfiles" mat-menu-item >Perfil</button>
-            <button mat-menu-item (click)="logOut()">Cerrar Sesión</button>
-        </mat-menu>
-    </div>
-</div>
-<div class="container">
-    
-    <router-outlet></router-outlet>
-</div>
