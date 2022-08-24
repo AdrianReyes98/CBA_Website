@@ -40,6 +40,7 @@
           <input type="text" placeholder="Teléfono" formControlName="phone">
           <i class='bx bx-phone'></i>
         </div>
+        
         <div class="input">
           <input type="text" placeholder="Direccion" formControlName="address">
           <i class='bx bx-map'></i>
@@ -57,16 +58,12 @@
 
         <div class="footer">
           <button class="btnLogin" [disabled]="formUser.invalid"  (click)="addUserService()">Registrarse</button>
+
           <div>
             <label>Ya tienes cuenta?<button class="btn-registrarse"  (click)="returnLogin()">Iniciar Sesión</button> </label>
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </div>
