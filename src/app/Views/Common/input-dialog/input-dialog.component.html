@@ -1,10 +1,12 @@
-<div class="title">
-    <div class="dialog-logo">
-        <i class='bx bx-edit' ></i>
-    </div>
-    <h1> Nuevo Usuario</h1>
-</div>
-
+<h1 mat-dialog-title>Ingrese el </h1>
 <div mat-dialog-content>
-
+    <p>Ingrese su nueva </p>
+    <mat-form-field appearance="fill">
+        <mat-label>Cambio:</mat-label>
+        <input matInput>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button>Cancelar</button>
+    <button mat-button cdkFocusInitial>Aceptar</button>
 </div>

@@ -52,7 +52,13 @@ mat-option.mat-option{
     background-color: #fff;
     justify-content:center;
     padding-block: 10px;
-  
+}
+
+::ng-deep .mat-dialog-container{
+    padding: 0px;
+    margin: 0px;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 .actions button{
