@@ -23,7 +23,7 @@
   flex-direction: row;
   z-index: 10px;
   height: 60px;
-  background-color: #252525;
+  background-color: #252525eb;
   width: 100%;
   box-shadow: 0 0 1px #ffffff;
 }
@@ -40,8 +40,7 @@
 
 .options i{
   display: none;
-  color: #7B7B7B;
-
+  color: #929292;
 }
 
 .options i:hover{
@@ -50,7 +49,7 @@
 
 .options button{
   border: none;
-  color: rgb(173, 173, 173);
+  color: rgb(202, 202, 202);
   background-color: transparent;
   padding: 20px;
   font-size: 18px;
@@ -82,6 +81,21 @@
   width: 50px;
 }
 
+body::-webkit-scrollbar-thumb{
+  background-color: #252525;
+}
+
+body::-webkit-scrollbar{
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track-piece{
+  background-color: #fff;
+}
+
+body::-webkit-scrollbar-button{
+  background-color: #252525;
+}
 @media screen and (max-width: 900px) {
   .options button{
     display: none;

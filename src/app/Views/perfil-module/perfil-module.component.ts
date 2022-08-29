@@ -17,9 +17,15 @@ export class PerfilModuleComponent implements OnInit {
 
   }
 
-  openInputDialog(){
+  openInputDialog(messageHTML: String, changeHTML: String){
     const dialogRef = this.matInputDialog.open(InputDialogComponent,{
-      width: '600px'
+      width: '600px',
+      data: {
+        change: changeHTML,
+        message: messageHTML
+      }
     });
+
+    dialogRef.afterClosed
   }
 }
