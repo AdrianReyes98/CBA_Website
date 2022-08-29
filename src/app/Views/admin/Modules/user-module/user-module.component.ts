@@ -5,9 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiUsersService } from 'src/app/Services/api-users.service';
 import { DialogRegisterUserComponent } from './dialog-register-user/dialog-register-user.component';
-import { MatDialogRef} from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
-import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-user-module',
@@ -68,8 +66,10 @@ export class UserModuleComponent implements OnInit {
   
   openDialogAddUser(){
     const dialogRef = this.dialog.open( DialogRegisterUserComponent, {
-      width: '600px'
+      width: '600px',
+      panelClass: 'myapp-no-padding-dialog'
     });
+
     dialogRef.afterClosed().subscribe( result => {
       this.getUsers();
     });
@@ -86,7 +86,7 @@ export class UserModuleComponent implements OnInit {
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string,id:number): void {
-   
+    
     const dialogRef=this.dialog.open(ConfirmDialogComponent, {
       width: '250px',
       enterAnimationDuration,

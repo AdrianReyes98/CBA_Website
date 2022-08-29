@@ -42,7 +42,7 @@
       <input matInput type="text" formControlName="user">
       <mat-icon matSuffix><i class="bx bx-user"></i></mat-icon>
     </mat-form-field>
-   
+    
     <mat-form-field >
       <mat-label>Rol</mat-label>
       <mat-select formControlName="role">
@@ -60,8 +60,10 @@
       </button>
     </mat-form-field>
     
-    <button mat-raised-button  color="warn" type="button" (click)="closeDialog()">Cancelar</button>
-    <button mat-raised-button color="primary" type="submit" [disabled]="formUser.invalid">Guardar</button>
+    <div class="actions">
+      <button mat-raised-button  color="warn" type="button" (click)="closeDialog()">Cancelar</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="formUser.invalid">Guardar</button>
+    </div>
 
   </form> 
 </div>

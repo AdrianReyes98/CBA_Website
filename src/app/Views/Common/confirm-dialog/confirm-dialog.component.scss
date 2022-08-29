@@ -1,3 +1,9 @@
 button {
     margin-right: 8px;
-  }
+}
+
+::ng-deep .mat-dialog-container{
+  margin: 10px;
+  padding: 30px;
+  background-color: #fff;
+}
