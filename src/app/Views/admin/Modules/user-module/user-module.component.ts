@@ -7,6 +7,7 @@ import { ApiUsersService } from 'src/app/Services/api-users.service';
 import { DialogRegisterUserComponent } from './dialog-register-user/dialog-register-user.component';
 import { MatDialogRef} from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-user-module',
@@ -84,11 +85,20 @@ export class UserModuleComponent implements OnInit {
     });
   }
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(ConfirmDialogComponent, {
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string,id:number): void {
+   
+    const dialogRef=this.dialog.open(ConfirmDialogComponent, {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
     });
+    dialogRef.afterClosed().subscribe(result=>{
+      if (result){
+        console.log(id);
+        this.deleteUser(id);
+        
+      }
+      })
   }
+
 }
