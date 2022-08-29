@@ -68,7 +68,7 @@
             <th mat-header-cell *matHeaderCellDef style="text-align: center;">Acciones</th>
             <td mat-cell *matCellDef="let element" style="text-align: center;" class="element">
                 <i class='bx bx-edit' id="edit-detail" (click)="openDialogUpdateUser(element)"></i>
-                <i class='bx bx-x-circle' id="delete-detail" (click)="deleteUser(element.id)"></i>
+                <i class='bx bx-x-circle' id="delete-detail"(click)="openDialog('1000ms', '500ms',element.id)"></i>
             </td>
         </ng-container>
 
