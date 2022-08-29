@@ -78,6 +78,7 @@ export class UserModuleComponent implements OnInit {
   openDialogUpdateUser(user: any){
     const dialogRef = this.dialog.open( DialogRegisterUserComponent, {
       width: '600px',
+      panelClass: 'no-padding-dialog',
       data: user
     });
     dialogRef.afterClosed().subscribe( result => {
