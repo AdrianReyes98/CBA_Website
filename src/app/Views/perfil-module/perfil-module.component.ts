@@ -26,6 +26,10 @@ export class PerfilModuleComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed
+    dialogRef.afterClosed().subscribe(result => {
+      if (result){
+        
+      }
+    });
   }
 }
