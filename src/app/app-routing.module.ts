@@ -71,13 +71,18 @@ const routes: Routes = [
     ],
     canActivate: [LoginGuardGuard]
   },
+
   {
     'path': 'Cliente',
     component: ClientComponent,
     data: {
       role: 'Cliente'
     },
-    children: [   
+    children: [ 
+      {
+        path: '',
+        component: HomeModuleComponent
+      },  
       {
         path: 'Perfiles', 
         component: PerfilModuleComponent
@@ -89,6 +94,7 @@ const routes: Routes = [
     ],
     canActivate: [LoginGuardGuard]
   },
+
   {
     'path': 'noaccess',
     component: AccessDeniedComponent
