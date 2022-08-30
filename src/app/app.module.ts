@@ -40,6 +40,9 @@ import { RegisterComponent } from './Views/register/register.component';
 import { InputDialogComponent } from './Views/Common/input-dialog/input-dialog.component';
 import { ConfirmDialogComponent } from './Views/Common/confirm-dialog/confirm-dialog.component';
 import { HomeModuleComponent } from './Views/client/Modules/home-module/home-module.component';
+import { DigitadorModuleComponent } from './Views/admin/Modules/digitador-module/digitador-module.component';
+import { DigitadorComponent } from './Views/digitador/digitador.component';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +60,9 @@ import { HomeModuleComponent } from './Views/client/Modules/home-module/home-mod
     RegisterComponent,
     InputDialogComponent,
     ConfirmDialogComponent,
-    HomeModuleComponent
+    HomeModuleComponent,
+    DigitadorModuleComponent,
+    DigitadorComponent,
 
   ],
   imports: [

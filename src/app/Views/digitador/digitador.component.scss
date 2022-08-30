@@ -1,0 +1,22 @@
+body{
+    background-color: #fff;
+  }
+  .all{
+    display: flex;
+    flex-direction: row;
+  }
+  .container{
+    width: 100%;
+    height: fit-content;
+    margin-top: 60px;
+    position: unset;
+  }
+  
+  .text{
+    margin-bottom: 30px;
+    font-size: 35px;
+  }
+  
+  .adm{
+    padding-left: 27px;
+  }
