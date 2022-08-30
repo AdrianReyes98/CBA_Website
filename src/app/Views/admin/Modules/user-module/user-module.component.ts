@@ -74,7 +74,7 @@ export class UserModuleComponent implements OnInit {
       this.getUsers();
     });
   }
-
+  
   openDialogUpdateUser(user: any){
     const dialogRef = this.dialog.open( DialogRegisterUserComponent, {
       width: '600px',
