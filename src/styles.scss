@@ -38,26 +38,28 @@
   width: 90%;
 }
 
-.options i{
-  display: none;
-  color: #929292;
-}
+.options{
+  i{
+    display: none;
+    color: #929292;
+  }
 
-.options i:hover{
-  color: #fff;
-}
+  i:hover{
+    color: #fff;
+  }
 
-.options button{
-  border: none;
-  color: rgb(202, 202, 202);
-  background-color: transparent;
-  padding: 20px;
-  font-size: 18px;
-  font-weight: bold;
-}
+  button{
+    border: none;
+    color: rgb(202, 202, 202);
+    background-color: transparent;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-.options button:hover{
-  color: rgb(255, 255, 255);
+  button:hover{
+    color: rgb(255, 255, 255);
+  }
 }
 
 .user button{
