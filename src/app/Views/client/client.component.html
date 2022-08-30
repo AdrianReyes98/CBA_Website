@@ -5,15 +5,18 @@
             <div class="logo">
             </div>
             <div class="options">
-                <div><button>Inicio</button></div>
+                <div><button routerLink="Home">Inicio</button></div>
                 <div><button>Permisos</button></div>
                 <div><button>Inspecciones</button></div>
             </div>
             <div class="user">
                 <button [matMenuTriggerFor]="beforeMenu"></button>
                 <mat-menu #beforeMenu="matMenu" xPosition="before">
-                    <label  style="margin-left: 5px;">{{username}}</label> <br>
-                    <label class="adm" style="margin-left: 5px;">{{rol}}</label>
+                    <div class="user-information">
+                        <label>{{username}}</label> <br>
+                        <label>{{rol}}</label>
+                    </div>
+                    <mat-divider></mat-divider>
                     <button routerLink="Perfiles" mat-menu-item >Perfil</button>
                     <button mat-menu-item (click)="logOut()">Cerrar Sesión</button>
                 </mat-menu>

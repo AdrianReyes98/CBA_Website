@@ -39,6 +39,7 @@ import { DialogRegisterUserComponent } from './Views/admin/Modules/user-module/d
 import { RegisterComponent } from './Views/register/register.component';
 import { InputDialogComponent } from './Views/Common/input-dialog/input-dialog.component';
 import { ConfirmDialogComponent } from './Views/Common/confirm-dialog/confirm-dialog.component';
+import { HomeModuleComponent } from './Views/client/Modules/home-module/home-module.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ConfirmDialogComponent } from './Views/Common/confirm-dialog/confirm-di
     DialogRegisterUserComponent,
     RegisterComponent,
     InputDialogComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    HomeModuleComponent
 
   ],
   imports: [

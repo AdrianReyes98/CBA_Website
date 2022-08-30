@@ -13,6 +13,7 @@ import { PerfilModuleComponent } from './Views/perfil-module/perfil-module.compo
 import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
 import { RegisterComponent } from './Views/register/register.component';
+import { HomeModuleComponent } from './Views/client/Modules/home-module/home-module.component';
 const routes: Routes = [
   {
     'path':'',
@@ -78,9 +79,13 @@ const routes: Routes = [
     },
     children: [   
       {
-          path: 'Perfiles', 
-          component: PerfilModuleComponent
-        },
+        path: 'Perfiles', 
+        component: PerfilModuleComponent
+      },
+      {
+        path: 'Home',
+        component: HomeModuleComponent
+      }
     ],
     canActivate: [LoginGuardGuard]
   },
