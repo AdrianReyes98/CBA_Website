@@ -29,6 +29,7 @@
 }
 
 .options{
+
   display: flex;
   flex-direction: row;
   background-color: transparent;
@@ -36,9 +37,7 @@
   justify-content: left;
   align-items: center;
   width: 90%;
-}
 
-.options{
   i{
     display: none;
     color: #929292;
@@ -62,25 +61,30 @@
   }
 }
 
-.user button{
-  border: none;
-  margin-top: 7px;
-  padding: 10px;
-  border-radius: 50%;
-  background-image: url("https://cdn2.iconfinder.com/data/icons/social-media-flat-line/70/user-512.png");
-  background-size:contain;
-  background-position: center;
-  height: 40px;
-  width: 40px;
-}
+.user {
 
-.user button:hover{
-  background-color: rgb(161, 161, 161);
-}
-
-.user{
   height: 90%;
   width: 50px;
+
+  button{
+    border: none;
+    margin-top: 7px;
+    padding: 10px;
+    border-radius: 50%;
+    background-image: url("https://cdn2.iconfinder.com/data/icons/social-media-flat-line/70/user-512.png");
+    background-size:contain;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+  }
+
+  button:hover{
+    background-color: rgb(161, 161, 161);
+  }
+}
+
+.user-information{
+  padding: 10px;
 }
 
 body::-webkit-scrollbar-thumb{
@@ -105,12 +109,6 @@ body::-webkit-scrollbar-button{
   box-shadow: none;
   background-color: transparent;
 }
-
-.user-information{
-  padding: 10px;
-}
-
-
 
 @media screen and (max-width: 900px) {
   .options button{
