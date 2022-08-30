@@ -14,6 +14,8 @@ import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
 import { RegisterComponent } from './Views/register/register.component';
 import { HomeModuleComponent } from './Views/client/Modules/home-module/home-module.component';
+import { DigitadorModuleComponent } from './Views/admin/Modules/digitador-module/digitador-module.component';
+import { DigitadorComponent } from './Views/digitador/digitador.component';
 const routes: Routes = [
   {
     'path':'',
@@ -47,6 +49,10 @@ const routes: Routes = [
       {
         path: 'Clientes', 
         component: ClientModuleComponent
+      },
+      {
+        path: 'Digitadores', 
+        component: DigitadorModuleComponent
       },
       {
         path: 'Supervisores', 
@@ -87,6 +93,14 @@ const routes: Routes = [
         component: HomeModuleComponent
       }
     ],
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    'path': 'Digitador',
+    component: DigitadorComponent,
+    data: {
+      role: 'Digitador'
+    },
     canActivate: [LoginGuardGuard]
   },
   {
