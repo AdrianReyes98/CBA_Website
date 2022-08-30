@@ -42,6 +42,8 @@ import { ConfirmDialogComponent } from './Views/Common/confirm-dialog/confirm-di
 import { HomeModuleComponent } from './Views/client/Modules/home-module/home-module.component';
 import { DigitadorModuleComponent } from './Views/admin/Modules/digitador-module/digitador-module.component';
 import { DigitadorComponent } from './Views/digitador/digitador.component';
+import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
+import { SupervisorComponent } from './Views/supervisor/supervisor.component';
 
 
 @NgModule({
@@ -63,6 +65,8 @@ import { DigitadorComponent } from './Views/digitador/digitador.component';
     HomeModuleComponent,
     DigitadorModuleComponent,
     DigitadorComponent,
+    HomeDigitadorModuleComponent,
+    SupervisorComponent,
 
   ],
   imports: [

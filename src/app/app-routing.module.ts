@@ -16,6 +16,8 @@ import { RegisterComponent } from './Views/register/register.component';
 import { HomeModuleComponent } from './Views/client/Modules/home-module/home-module.component';
 import { DigitadorModuleComponent } from './Views/admin/Modules/digitador-module/digitador-module.component';
 import { DigitadorComponent } from './Views/digitador/digitador.component';
+import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
+
 const routes: Routes = [
   {
     'path':'',
@@ -107,6 +109,16 @@ const routes: Routes = [
     data: {
       role: 'Digitador'
     },
+    children: [ 
+      {
+        path: '',
+        component: HomeDigitadorModuleComponent
+      },  
+      {
+        path: 'Home',
+        component: HomeDigitadorModuleComponent
+      }
+    ],
     canActivate: [LoginGuardGuard]
   },
   {
