@@ -17,6 +17,8 @@ import { HomeModuleComponent } from './Views/client/Modules/home-module/home-mod
 import { DigitadorModuleComponent } from './Views/admin/Modules/digitador-module/digitador-module.component';
 import { DigitadorComponent } from './Views/digitador/digitador.component';
 import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
+import { SupervisorComponent } from './Views/supervisor/supervisor.component';
+import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-supervisor-module/home-supervisor-module.component';
 
 const routes: Routes = [
   {
@@ -117,6 +119,24 @@ const routes: Routes = [
       {
         path: 'Home',
         component: HomeDigitadorModuleComponent
+      }
+    ],
+    canActivate: [LoginGuardGuard]
+  },
+  {
+    'path': 'Supervisor',
+    component: SupervisorComponent,
+    data: {
+      role: 'Supervisor'
+    },
+    children: [ 
+      {
+        path: '',
+        component: HomeSupervisorModuleComponent
+      },  
+      {
+        path: 'Home',
+        component: HomeSupervisorModuleComponent
       }
     ],
     canActivate: [LoginGuardGuard]
