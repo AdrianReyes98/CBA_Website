@@ -33,7 +33,6 @@ import { ClientComponent } from './Views/client/client.component';
 import { AccessDeniedComponent } from './Views/access-denied/access-denied.component';
 import { InspectorModuleComponent } from './Views/admin/Modules/inspector-module/inspector-module.component';
 import { PerfilModuleComponent } from './Views/perfil-module/perfil-module.component';
-import { LocalesModuleComponent } from './Views/admin/Modules/locales-module/locales-module.component';
 import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
 import { DialogRegisterUserComponent } from './Views/admin/Modules/user-module/dialog-register-user/dialog-register-user.component';
@@ -51,7 +50,6 @@ import { ConfirmDialogComponent } from './Views/Common/confirm-dialog/confirm-di
     AccessDeniedComponent,
     InspectorModuleComponent,
     PerfilModuleComponent,
-    LocalesModuleComponent,
     RecaudadoresModuleComponent,
     UserModuleComponent,
     DialogRegisterUserComponent,

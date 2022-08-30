@@ -29,5 +29,4 @@ export class ClientComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
-
 }

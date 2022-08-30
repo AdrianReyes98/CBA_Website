@@ -10,7 +10,6 @@ import { ClientModuleComponent } from './Views/admin/Modules/client-module/clien
 import { SupervisorModuleComponent } from './Views/admin/Modules/supervisor-module/supervisor-module.component';
 import { InspectorModuleComponent } from './Views/admin/Modules/inspector-module/inspector-module.component';
 import { PerfilModuleComponent } from './Views/perfil-module/perfil-module.component';
-import { LocalesModuleComponent } from './Views/admin/Modules/locales-module/locales-module.component';
 import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-module/recaudadores-module.component';
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
 import { RegisterComponent } from './Views/register/register.component';
@@ -31,7 +30,7 @@ const routes: Routes = [
   },
   {
     'path': 'register',
-     component: RegisterComponent
+    component: RegisterComponent
   },
   {
     'path': 'Administrador',
@@ -61,10 +60,6 @@ const routes: Routes = [
         component: PerfilModuleComponent
       },
       {
-        path: 'Locales', 
-        component: LocalesModuleComponent
-      },
-      {
         path: 'Recaudadores', 
         component: RecaudadoresModuleComponent
       },
@@ -86,11 +81,6 @@ const routes: Routes = [
           path: 'Perfiles', 
           component: PerfilModuleComponent
         },
-        {
-          path: 'Locales', 
-          component: LocalesModuleComponent
-        }
-  
     ],
     canActivate: [LoginGuardGuard]
   },
