@@ -9,12 +9,16 @@ import { InputDialogComponent } from '../Common/input-dialog/input-dialog.compon
 })
 export class PerfilModuleComponent implements OnInit {
 
+  private user: any;
+
+
   constructor(
     public matInputDialog: MatDialog
   ){}
 
   ngOnInit(): void {
-
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    //console.log(this.user);
   }
 
   openInputDialog(messageHTML: String, changeHTML: String){
