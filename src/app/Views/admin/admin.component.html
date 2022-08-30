@@ -17,10 +17,6 @@
                     <i class='bx bxs-book-open'></i>
                     <button>Inspectores</button>
                 </div>
-                <div class="menu-item">
-                    <i class='bx bxs-business'></i>
-                    <button>Locales</button>
-                </div>
                 <div  routerLink= "Recaudadores" class="menu-item">
                     <i class='bx bxs-coin-stack'></i>
                     <button>Recaudadores</button>
@@ -33,8 +29,11 @@
             <div class="user">
                 <button [matMenuTriggerFor]="beforeMenu"></button>
                 <mat-menu #beforeMenu="matMenu" xPosition="before">
-                    <label style="margin-left: 5px;">{{username}}</label> <br>
-                    <label class="adm" style="margin-left: 5px;">{{rol}}</label>
+                    <div class="user-information">
+                        <label>{{username}}</label> <br>
+                        <label>{{rol}}</label>
+                    </div>
+                    <mat-divider></mat-divider>
                     <button routerLink="Perfiles" mat-menu-item >Perfil</button>
                     <button mat-menu-item (click)="logOut()">Cerrar Sesión</button>
                 </mat-menu>
