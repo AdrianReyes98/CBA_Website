@@ -1,6 +1,8 @@
-$main-bg-color: #ffffffeb;
-$shadow-color: 0 0 8px #252525eb;
-$font-color: #000000;
+$main-bg-color: #F7F5F2;
+$secondary-bg-color: #F7F5F2;
+$shadow-color: 0 0 8px #939393eb;
+$font-color: #252525eb;
+$secondary-font-color: #252525eb;
 
 .container{
     margin: 70px;
@@ -25,13 +27,13 @@ $font-color: #000000;
     flex-direction: row;
 }
 .info{
-    background: $main-bg-color;
+    background: $secondary-bg-color;
     width: 30%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: $font-color;
+    color: $secondary-font-color;
     box-shadow: $shadow-color;
 
     .info-data{
@@ -41,22 +43,23 @@ $font-color: #000000;
 }
 
 .profile-data{
-    background: $main-bg-color;
+    background: $secondary-bg-color;
     width: 70%;
     margin-left: 20px;
     padding: 15px;
-    color: $font-color;
+    color: $secondary-font-color;
     box-shadow: $shadow-color;
 }
 
 .profile{
-    background-image: url("https://cdn2.iconfinder.com/data/icons/social-media-flat-line/70/user-512.png");
+    background-image: url("https://cdn-icons-png.flaticon.com/512/122/122492.png");
     background-size:contain; 
     background-position: center;
     background-repeat: no-repeat;
     height: 60%;
     width: 50%;
     margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .table{
