@@ -47,7 +47,9 @@ export class ApiLoginService {
 
   logOut(){
     localStorage.removeItem('user');
-    this.userSubject.complete();
+    localStorage.clear();
+    this.userSubject.closed = true;
+    window.location.reload();
   }
 
 }
