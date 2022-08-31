@@ -16,6 +16,7 @@ export class LoginGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const user = this.apiUserService.userData;
+      console.log(user);
       if(user){
         return this.checkUserRole(route);
       }
