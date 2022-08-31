@@ -16,7 +16,7 @@ const httpOption = {
 })
 export class ApiLoginService {
 
-  url: string = "https://prevencioncbd.somee.com/User/login";
+  url: string = "https://prevencioncbd.somee.com/Login";
 
   private userSubject: BehaviorSubject<Login>;
 
@@ -47,7 +47,7 @@ export class ApiLoginService {
 
   logOut(){
     localStorage.removeItem('user');
-    this.userSubject.complete;
+    this.userSubject.complete();
   }
 
 }
