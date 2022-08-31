@@ -10,39 +10,31 @@ import { InputDialogComponent } from '../Common/input-dialog/input-dialog.compon
   styleUrls: ['./perfil-module.component.scss']
 })
 export class PerfilModuleComponent implements OnInit {
-  user: any;
-  public emails: string = "";
-  rol: any
+  public user: any;
+  public email: string = "";
   public role: string = "";
-  userna:any;
-  public username: string="";
-  phonenumber:any;
-  public phone: string="";
-  nameuser: any;
-  public name:string="";
-  ident: any;
-  public identification:string="" ;
-  addr: any;
-  public address:string="";
+  public username: string = "";
+  public phone: string = "";
+  public name: string = "";
+  public identification: string = "";
+  public address: string = "";
   
   
 
   
   constructor(
-    private apiUserLogin: ApiLoginService,
-    private router: Router,
     public matInputDialog: MatDialog
   ){}
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user')!);
-    this.emails = this.user.email;
-    this.rol = this.user.role;
-    this.userna = this.user.username;
-    this.phonenumber= this.user.phone;
-    this.nameuser=this.user.name;
-    this.ident=this.user.identification;
-    this.addr= this.user.address;
+    this.email = this.user.email;
+    this.role = this.user.role;
+    this.username = this.user.username;
+    this.phone = this.user.phone;
+    this.name=this.user.name;
+    this.identification=this.user.identification;
+    this.address= this.user.address;
   }
 
   openInputDialog(messageHTML: String, changeHTML: String){
