@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ApiLoginService } from 'src/app/Services/api-login.service';
 import { InputDialogComponent } from '../Common/input-dialog/input-dialog.component';
 
 @Component({
@@ -8,17 +10,21 @@ import { InputDialogComponent } from '../Common/input-dialog/input-dialog.compon
   styleUrls: ['./perfil-module.component.scss']
 })
 export class PerfilModuleComponent implements OnInit {
-
-  private user: any;
-
-
+  user: any;
+  public emails: string = "";
+  rol: any
+  public role: string = "";
+  
   constructor(
+    private apiUserLogin: ApiLoginService,
+    private router: Router,
     public matInputDialog: MatDialog
   ){}
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user')!);
-    //console.log(this.user);
+    this.emails = this.user.email;
+    this.rol = this.user.role;
   }
 
   openInputDialog(messageHTML: String, changeHTML: String){
