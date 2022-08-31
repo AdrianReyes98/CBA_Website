@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ApiLoginService } from 'src/app/Services/api-login.service';
+import { ApiUsersService } from 'src/app/Services/api-users.service';
 import { InputDialogComponent } from '../Common/input-dialog/input-dialog.component';
 
 @Component({
@@ -10,6 +11,7 @@ import { InputDialogComponent } from '../Common/input-dialog/input-dialog.compon
   styleUrls: ['./perfil-module.component.scss']
 })
 export class PerfilModuleComponent implements OnInit {
+
   public user: any;
   public email: string = "";
   public role: string = "";
@@ -20,9 +22,8 @@ export class PerfilModuleComponent implements OnInit {
   public address: string = "";
   
   
-
-  
   constructor(
+    public apiUser: ApiUsersService,
     public matInputDialog: MatDialog
   ){}
 
@@ -48,7 +49,7 @@ export class PerfilModuleComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result){
-        
+        this.apiUser.updateUser(this.user);
       }
     });
   }
