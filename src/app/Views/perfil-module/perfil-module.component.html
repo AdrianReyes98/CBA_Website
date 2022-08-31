@@ -9,7 +9,7 @@
                 
             </div>
             <div class="info-data"> 
-                <label> USERNAME </label>
+                <label> {{nameuser}} </label>
             </div>
             <div class="info-data">
                 <label> TIPO </label>
@@ -26,23 +26,23 @@
                 <div class="colum">
                     <div class="row">
                         <b><label>Cedula: </label></b>
-                        <label> 1234567890</label>
+                        <label> {{ident}}</label>
                         <i class='bx bxs-edit-alt' 
                         (click)="openInputDialog('Ingrese la nueva cedula','Cedula')"></i>
                     </div>
                     <div class="row">
                         <b><label>Nombre: </label></b>
-                        <label> Adrian Reyes</label>
+                        <label>{{nameuser}} </label>
                         <i class='bx bxs-edit-alt'></i>
                     </div>
                     <div class="row">
                         <b><label>Dirección: </label></b>
-                        <label> Atocha</label>
+                        <label> {{addr}}</label>
                         <i class='bx bxs-edit-alt'></i>
                     </div>
                     <div class="row">
                         <b><label>Teléfono: </label></b>
-                        <label> 098765432</label>
+                        <label> {{phonenumber}}</label>
                         <i class='bx bxs-edit-alt'></i>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="row">
                         <b><label>Usuario: </label></b>
-                        <label> </label>
+                        <label> {{userna}}</label>
                         <i class='bx bxs-edit-alt'></i>
                     </div>
                     <div class="row">

@@ -14,6 +14,19 @@ export class PerfilModuleComponent implements OnInit {
   public emails: string = "";
   rol: any
   public role: string = "";
+  userna:any;
+  public username: string="";
+  phonenumber:any;
+  public phone: string="";
+  nameuser: any;
+  public name:string="";
+  ident: any;
+  public identification:string="" ;
+  addr: any;
+  public address:string="";
+  
+  
+
   
   constructor(
     private apiUserLogin: ApiLoginService,
@@ -25,6 +38,11 @@ export class PerfilModuleComponent implements OnInit {
     this.user = JSON.parse(localStorage.getItem('user')!);
     this.emails = this.user.email;
     this.rol = this.user.role;
+    this.userna = this.user.username;
+    this.phonenumber= this.user.phone;
+    this.nameuser=this.user.name;
+    this.ident=this.user.identification;
+    this.addr= this.user.address;
   }
 
   openInputDialog(messageHTML: String, changeHTML: String){
