@@ -119,7 +119,11 @@ const routes: Routes = [
       {
         path: 'Home',
         component: HomeDigitadorModuleComponent
-      }
+      },
+      {
+        path: 'Perfiles', 
+        component: PerfilModuleComponent
+      },
     ],
     canActivate: [LoginGuardGuard]
   },
@@ -137,7 +141,11 @@ const routes: Routes = [
       {
         path: 'Home',
         component: HomeSupervisorModuleComponent
-      }
+      },
+      {
+        path: 'Perfiles', 
+        component: PerfilModuleComponent
+      },
     ],
     canActivate: [LoginGuardGuard]
   },
