@@ -1,8 +1,6 @@
 $main-bg-color: #F7F5F2;
-$secondary-bg-color: #F7F5F2;
 $shadow-color: 0 0 8px #939393eb;
 $font-color: #252525eb;
-$secondary-font-color: #252525eb;
 
 .container{
     margin: 70px;
@@ -27,13 +25,13 @@ $secondary-font-color: #252525eb;
     flex-direction: row;
 }
 .info{
-    background: $secondary-bg-color;
+    background: $main-bg-color;
     width: 30%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: $secondary-font-color;
+    color: $font-color;
     box-shadow: $shadow-color;
 
     .info-data{
@@ -43,11 +41,11 @@ $secondary-font-color: #252525eb;
 }
 
 .profile-data{
-    background: $secondary-bg-color;
+    background: $main-bg-color;
     width: 70%;
     margin-left: 20px;
     padding: 15px;
-    color: $secondary-font-color;
+    color: $font-color;
     box-shadow: $shadow-color;
 }
 
