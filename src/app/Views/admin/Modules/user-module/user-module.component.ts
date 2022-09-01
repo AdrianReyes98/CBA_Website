@@ -21,8 +21,8 @@ export class UserModuleComponent implements OnInit {
   public columns: string[] = ['Id','Nombre','Cedula','Usuario','Role', 'Email', 'Direccion', 'Telefono','Acciones'];
   dataSource: any;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
+  @ViewChild(MatPaginator, { static: true })
+  paginator!: MatPaginator;
   constructor(
     private apiUser: ApiUsersService,
     public dialog: MatDialog,
@@ -30,6 +30,7 @@ export class UserModuleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.paginator._intl.itemsPerPageLabel="Items por página";
     this.getUsers();
   }
 
