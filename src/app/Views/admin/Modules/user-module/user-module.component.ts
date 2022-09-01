@@ -31,6 +31,11 @@ export class UserModuleComponent implements OnInit {
 
   ngOnInit(): void {
     this.paginator._intl.itemsPerPageLabel="Items por página";
+    this.paginator._intl.firstPageLabel = 'Primera página';
+    this.paginator._intl.lastPageLabel = 'Última página';
+    this.paginator._intl.nextPageLabel = 'Siguiente página';
+    this.paginator._intl.previousPageLabel = 'Página anterior'; 
+ 
     this.getUsers();
   }
 
