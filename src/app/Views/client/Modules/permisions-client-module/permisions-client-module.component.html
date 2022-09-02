@@ -1,3 +1,16 @@
 <div class="loader-container">
-    <mat-progress-bar></mat-progress-bar>
+    <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<div id="title">
+    <h1>Permisos</h1>
+</div>
+
+<div id="form-container">
+    <div class="container">
+        <input type="text" [(ngModel)]="search" name="example" placeholder="Buscar" (keyup)="startSearch()">
+        <button class="btn" (click)="startSearch()">
+            <i class='bx bx-search-alt-2' ></i>
+        </button>
+    </div>
 </div>
