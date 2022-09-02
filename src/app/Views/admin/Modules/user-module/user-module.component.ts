@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ApiUsersService } from 'src/app/Services/api-users.service';
 import { DialogRegisterUserComponent } from './dialog-register-user/dialog-register-user.component';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
+import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-user-module',
@@ -30,13 +31,16 @@ export class UserModuleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.setPaginatorSpanish();
+    this.getUsers();
+  }
+
+  setPaginatorSpanish(){
     this.paginator._intl.itemsPerPageLabel="Items por página";
     this.paginator._intl.firstPageLabel = 'Primera página';
     this.paginator._intl.lastPageLabel = 'Última página';
     this.paginator._intl.nextPageLabel = 'Siguiente página';
     this.paginator._intl.previousPageLabel = 'Página anterior'; 
- 
-    this.getUsers();
   }
 
   getUsers(){
@@ -48,14 +52,52 @@ export class UserModuleComponent implements OnInit {
     });
   }
 
-  searchUser(){
+  startSearch(){
     this.searchList = [];
+    this.serchUserByName();
+    if(this.searchList.length == 0){
+      this.searchUserByUsername();
+    }
+    if(this.searchList.length == 0){
+      this.searchUserByIdentification();
+    }
+    if(this.searchList.length == 0){
+      this.searchUserByEmail();
+    }
+    this.setDataSource(this.searchList);
+  }
+
+  serchUserByName(){
     this.listUsers.forEach(element => {
       if(element.nombre.toUpperCase().startsWith(this.search.toUpperCase())){
         this.searchList.push(element);
       }
     });
-    this.setDataSource(this.searchList);
+    return this.searchList;
+  }
+
+  searchUserByUsername(){
+    this.listUsers.forEach(element => {
+      if(element.usuario1.toUpperCase().startsWith(this.search.toUpperCase())){
+        this.searchList.push(element);
+      }
+    });
+  }
+
+  searchUserByEmail(){
+    this.listUsers.forEach(element => {
+      if(element.email.toUpperCase().startsWith(this.search.toUpperCase())){
+        this.searchList.push(element);
+      }
+    });
+  }
+
+  searchUserByIdentification(){
+    this.listUsers.forEach(element => {
+      if(element.cedula.toUpperCase().startsWith(this.search.toUpperCase())){
+        this.searchList.push(element);
+      }
+    });
   }
 
   setDataSource(list: any[]){
@@ -103,7 +145,6 @@ export class UserModuleComponent implements OnInit {
       if (result){
         console.log(id);
         this.deleteUser(id);
-        
       }
       })
   }
