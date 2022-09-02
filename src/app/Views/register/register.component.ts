@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
       password: ['',[Validators.required]],
       address: [''],
       phone: ['',[Validators.maxLength(10),Validators.minLength(10), Validators.required]],
-      identification: ['',[Validators.maxLength(10),Validators.minLength(10)]]
+      identification: ['',[Validators.maxLength(10),Validators.minLength(10),Validators.required]]
     });
   }
 
