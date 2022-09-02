@@ -6,7 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ApiUsersService } from 'src/app/Services/api-users.service';
 import { DialogRegisterUserComponent } from './dialog-register-user/dialog-register-user.component';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
-import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-user-module',
