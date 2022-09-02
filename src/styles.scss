@@ -29,7 +29,6 @@
 }
 
 .options{
-
   display: flex;
   flex-direction: row;
   background-color: transparent;
@@ -59,6 +58,7 @@
   button:hover{
     color: #252525eb;
     background-color: #fff;
+    border-radius: 10px 10px 0 0;
   }
 
   button:visited{
