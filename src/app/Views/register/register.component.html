@@ -57,10 +57,9 @@
         </div>
 
         <div class="footer">
-
           
-          <button class="btnLogin" [disabled]="formUser.invalid"  (click)="addUserService()">Registrarse</button>
-
+          <button type ="button" class="btnLogin" [disabled]="formUser.invalid"  (click)="addUserService()">Registrarse</button>
+          
           <div>
             <label>Ya tienes cuenta?<button class="btn-registrarse"  (click)="returnLogin()">Iniciar Sesión</button> </label>
           </div>
