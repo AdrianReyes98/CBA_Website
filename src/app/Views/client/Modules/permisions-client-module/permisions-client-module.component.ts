@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-permisions-client-module',
@@ -9,14 +11,32 @@ export class PermisionsClientModuleComponent implements OnInit {
 
   public isLoading: boolean = true;
   public search: string = "";
+  public dataSource: any;
+  public columns: string[]=['ID'];
 
+
+  @ViewChild(MatPaginator, { static: true })
+  paginator!: MatPaginator;
   constructor() { }
 
   ngOnInit(): void {
+    this.setPaginatorSpanish();
+  }
+
+  setPaginatorSpanish(){
+    this.paginator._intl.itemsPerPageLabel="Items por página";
+    this.paginator._intl.firstPageLabel = 'Primera página';
+    this.paginator._intl.lastPageLabel = 'Última página';
+    this.paginator._intl.nextPageLabel = 'Siguiente página';
+    this.paginator._intl.previousPageLabel = 'Página anterior'; 
   }
 
   startSearch(){
-    
   }
 
+  setDataSource(list: any[]){
+    this.dataSource = new MatTableDataSource<any>(list);
+    this.dataSource.paginator = this.paginator;
+  }
+  
 }
