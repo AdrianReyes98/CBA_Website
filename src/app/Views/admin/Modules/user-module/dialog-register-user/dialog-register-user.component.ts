@@ -42,7 +42,7 @@ export class DialogRegisterUserComponent{
       address: [this.data.direccion],
       phone: [this.data.telefono,[Validators.maxLength(10),Validators.minLength(10), Validators.required]],
       role: [this.data.idRol,Validators.required],
-      identification: [this.data.cedula,[Validators.maxLength(10),Validators.minLength(10)]]
+      identification: [this.data.cedula,[Validators.maxLength(10),Validators.minLength(10), Validators.required]]
     });
   }
 
@@ -55,7 +55,7 @@ export class DialogRegisterUserComponent{
       address: [''],
       phone: ['',[Validators.maxLength(10),Validators.minLength(10), Validators.required]],
       role: ['',Validators.required],
-      identification: ['',[Validators.maxLength(10),Validators.minLength(10)]]
+      identification: ['',[Validators.maxLength(10),Validators.minLength(10),Validators.required]]
     });
   }
 
