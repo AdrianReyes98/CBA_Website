@@ -45,6 +45,7 @@ import { DigitadorComponent } from './Views/digitador/digitador.component';
 import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
 import { SupervisorComponent } from './Views/supervisor/supervisor.component';
 import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-supervisor-module/home-supervisor-module.component';
+import { PermisionsClientModuleComponent } from './Views/Client/Modules/permisions-client-module/permisions-client-module.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-s
     HomeDigitadorModuleComponent,
     SupervisorComponent,
     HomeSupervisorModuleComponent,
+    PermisionsClientModuleComponent,
 
   ],
   imports: [
