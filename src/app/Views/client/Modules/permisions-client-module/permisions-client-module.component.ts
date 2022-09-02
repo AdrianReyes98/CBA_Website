@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PermisionsClientModuleComponent implements OnInit {
 
+  public isLoading: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
