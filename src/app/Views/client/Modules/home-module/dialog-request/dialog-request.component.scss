@@ -1,11 +1,13 @@
 $main-bg-color: #D67D3E;
 
 .content{
-    background-color: white;
+    background-color: rgb(66, 66, 66);
+    color: #fff;
     display: flex;
     flex-direction: column;
     padding: 20px;
     border-radius: 15px;
+    
 }
 
 .button{
@@ -17,8 +19,8 @@ $main-bg-color: #D67D3E;
     margin: 6px;
     padding: 7px;
     width: 95%;
-    box-shadow: 0 0 5px #ffc59b;
     border-radius: 5px;
+    border-style: groove;
 
     .image-cont{
         padding: 10px;
@@ -72,7 +74,7 @@ $main-bg-color: #D67D3E;
 .button:hover{
     background-color: $main-bg-color;
     color: #fff;
-    box-shadow: 0 0 20px #272727eb;
+    box-shadow: 0 0 8px #ffffffeb;
     
     .image-cont{
         border-radius: 0;
