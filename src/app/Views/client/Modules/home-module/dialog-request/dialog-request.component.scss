@@ -1,0 +1,41 @@
+.content{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.button{
+ 
+    margin: 30px;
+    text-align: center;
+
+    .image{
+        width: 100px;
+        height: 100px;
+        background-size:cover;
+        background-repeat: no-repeat;
+    }
+
+    #img1{
+        background-image: 
+        url(/assets/1.png);
+    }
+    #img2{
+        background-image: 
+        url(/assets/2.png);
+    }
+    
+    #img3{
+        background-image: 
+        url(/assets/3.png);
+    }
+    
+    #img4{
+        background-image: 
+        url(/assets/4.png);
+    }
+    
+
+}

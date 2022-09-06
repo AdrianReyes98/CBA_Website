@@ -14,7 +14,6 @@ import { RecaudadoresModuleComponent } from './Views/admin/Modules/recaudadores-
 import { UserModuleComponent } from './Views/admin/Modules/user-module/user-module.component';
 import { RegisterComponent } from './Views/register/register.component';
 import { HomeModuleComponent } from './Views/client/Modules/home-module/home-module.component';
-import { DigitadorModuleComponent } from './Views/admin/Modules/digitador-module/digitador-module.component';
 import { DigitadorComponent } from './Views/digitador/digitador.component';
 import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
 import { SupervisorComponent } from './Views/supervisor/supervisor.component';
@@ -55,10 +54,7 @@ const routes: Routes = [
         path: 'Clientes', 
         component: ClientModuleComponent
       },
-      {
-        path: 'Digitadores', 
-        component: DigitadorModuleComponent
-      },
+     
       {
         path: 'Supervisores', 
         component: SupervisorModuleComponent
@@ -110,28 +106,6 @@ const routes: Routes = [
     canActivate: [LoginGuardGuard]
   },
 
-  {
-    'path': 'Digitador',
-    component: DigitadorComponent,
-    data: {
-      role: 'Digitador'
-    },
-    children: [ 
-      {
-        path: '',
-        component: HomeDigitadorModuleComponent
-      },  
-      {
-        path: 'Home',
-        component: HomeDigitadorModuleComponent
-      },
-      {
-        path: 'Perfiles', 
-        component: PerfilModuleComponent
-      },
-    ],
-    canActivate: [LoginGuardGuard]
-  },
   {
     'path': 'Supervisor',
     component: SupervisorComponent,
