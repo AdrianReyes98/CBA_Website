@@ -13,7 +13,7 @@ $border-rad: 20px;
   display: flex;
   flex-direction: row;
   width: 800px;
-  height: 650px;
+  height: 500px;
   box-shadow: 0 0 1em #2e2e2e;
   font-family: sans-serif;
   border-radius: $border-rad;
@@ -29,7 +29,7 @@ $border-rad: 20px;
 }
 
 .login-logo img{
-    margin-top: 90px;
+    margin-top: 20px;
 }
 
 .login-logo .spinner{

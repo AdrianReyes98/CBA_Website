@@ -22,11 +22,6 @@
         </div>
 
         <div class="input">
-          <input type="text" placeholder="Nombre" formControlName="name">
-          <i class='bx bx-face' ></i>
-        </div>
-
-        <div class="input">
           <input type="text" placeholder="Cedula" formControlName="identification">
           <i class='bx bx-id-card'></i>
         </div>
@@ -41,6 +36,10 @@
           <i class='bx bx-lock-alt'></i>
         </div>
 
+        <div>
+          <input type="checkbox" placeholder="Cuenta con RUC">
+        </div>
+
         <div class="footer">
           
           <button type ="button" class="btnLogin" [disabled]="formUser.invalid"  (click)="addUserService()">Registrarse</button>
@@ -48,7 +47,9 @@
           <div>
             <label>Ya tienes cuenta?<button class="btn-registrarse"  (click)="returnLogin()">Iniciar Sesión</button> </label>
           </div>
+
         </div>
+        
       </div>
     </div>
   </div>

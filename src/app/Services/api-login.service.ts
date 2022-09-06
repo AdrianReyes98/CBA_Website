@@ -32,8 +32,8 @@ export class ApiLoginService {
     new BehaviorSubject<Login>(JSON.parse(localStorage.getItem('user')!))
   }
 
-  login(username: string, password: string):Observable<Response>{
-    return this._http.post<Response>(this.url,{username,password},httpOption).pipe(
+  login(email: string, password: string):Observable<Response>{
+    return this._http.post<Response>(this.url,{email,password},httpOption).pipe(
       map( res => {
         if(res.status === 1){
           const user: Login = res.data;
