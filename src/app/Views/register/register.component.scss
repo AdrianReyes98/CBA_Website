@@ -84,10 +84,21 @@ $border-rad: 20px;
   color: $main-bg-color;
   font-size: 15px;
 }
+
 .txt-recuperar{
   justify-content: right;
   font-size: 10px;
   padding-left: 50%;
+}
+
+.checkbox{
+  color: #fff;
+  width: 70%;
+  height: 40px;
+}
+
+.checkbox input:checked{
+  background-color: #AF0404;
 }
 
 .txt-recuperar:hover{
