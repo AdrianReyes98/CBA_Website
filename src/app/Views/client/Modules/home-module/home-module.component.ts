@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogRequestComponent } from './dialog-request/dialog-request.component';
 
 @Component({
   selector: 'app-home-module',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeModuleComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
+
+
+  openDialogRequest(){
+    const dialogRef = this.dialog.open( DialogRequestComponent, {
+      width: '1100px',
+      panelClass: 'no-padding-dialog',
+      
+    });
+    
+  }
 }

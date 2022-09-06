@@ -40,12 +40,12 @@ import { RegisterComponent } from './Views/register/register.component';
 import { InputDialogComponent } from './Views/Common/input-dialog/input-dialog.component';
 import { ConfirmDialogComponent } from './Views/Common/confirm-dialog/confirm-dialog.component';
 import { HomeModuleComponent } from './Views/client/Modules/home-module/home-module.component';
-import { DigitadorModuleComponent } from './Views/admin/Modules/digitador-module/digitador-module.component';
 import { DigitadorComponent } from './Views/digitador/digitador.component';
 import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
 import { SupervisorComponent } from './Views/supervisor/supervisor.component';
 import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-supervisor-module/home-supervisor-module.component';
 import { PermisionsClientModuleComponent } from './Views/client/Modules/permisions-client-module/permisions-client-module.component';
+import { DialogRequestComponent } from './Views/client/Modules/home-module/dialog-request/dialog-request.component';
 
 
 @NgModule({
@@ -65,12 +65,12 @@ import { PermisionsClientModuleComponent } from './Views/client/Modules/permisio
     InputDialogComponent,
     ConfirmDialogComponent,
     HomeModuleComponent,
-    DigitadorModuleComponent,
     DigitadorComponent,
     HomeDigitadorModuleComponent,
     SupervisorComponent,
     HomeSupervisorModuleComponent,
     PermisionsClientModuleComponent,
+    DialogRequestComponent,
 
   ],
   imports: [
