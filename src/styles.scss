@@ -29,6 +29,7 @@
 }
 
 .options{
+
   display: flex;
   flex-direction: row;
   background-color: transparent;
@@ -53,16 +54,12 @@
     padding: 20px;
     font-size: 18px;
     font-weight: bold;
+    transition: background-color,color 1s;
   }
 
   button:hover{
     color: #252525eb;
     background-color: #fff;
-    border-radius: 10px 10px 0 0;
-  }
-
-  button:visited{
-    color: rgb(247, 49, 49);
   }
 }
 
