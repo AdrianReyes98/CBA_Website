@@ -20,7 +20,7 @@ export class HomeModuleComponent implements OnInit {
 
   openDialogRequest(){
     const dialogRef = this.dialog.open( DialogRequestComponent, {
-      width: '1100px',
+      width: '650px',
       panelClass: 'no-padding-dialog',
       
     });

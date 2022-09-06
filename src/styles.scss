@@ -29,7 +29,6 @@
 }
 
 .options{
-
   display: flex;
   flex-direction: row;
   background-color: transparent;
@@ -54,13 +53,15 @@
     padding: 20px;
     font-size: 18px;
     font-weight: bold;
-    transition: background-color,color 1s;
+    transition-property: background-color,color;
+    transition-duration: 0.5s;
   }
 
   button:hover{
     color: #252525eb;
     background-color: #fff;
   }
+
 }
 
 .user {

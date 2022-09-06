@@ -1,22 +1,52 @@
+$main-bg-color: #00aec1dd;
+
 .content{
     background-color: white;
-    padding: 10px;
     display: flex;
-    flex-direction: row;
-   
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
 }
 
 .button{
- 
-    margin: 30px;
-    text-align: center;
+    transition-property: background-color, color, box-shadow;
+    transition-duration: 0.4s;
+    transition-delay: 0.1s;
+    display: flex;
+    flex-direction: row;
+    margin: 6px;
+    padding: 7px;
+    width: 95%;
+    box-shadow: 0 0 3px #272727eb;
+    border-radius: 5px;
 
-    .image{
-        width: 100px;
-        height: 100px;
-        background-size:cover;
-        background-repeat: no-repeat;
+    .image-cont{
+        padding: 10px;
+        border-radius: 50%;
+        transition-property: border-radius,background-color;
+        transition-duration: 0.5s;
+        width: 15%;
+        background-color: #50dcec;
+
+        .image{
+            width: 90px;
+            height: 100%;
+            background-size:contain;
+            background-repeat: no-repeat;
+        }
     }
+
+    .text{
+        width: 80%;
+        margin-left: 10px;
+        font-weight: bolder;
+
+        .description{
+            font-size: 12px;
+            font-weight: lighter;
+        }
+    }
+
 
     #img1{
         background-image: 
@@ -38,4 +68,15 @@
     }
     
 
+}
+
+.button:hover{
+    background-color: $main-bg-color;
+    color: #fff;
+    box-shadow: 0 0 20px #272727eb;
+    
+    .image-cont{
+        border-radius: 0;
+        background-color: transparent;
+    }
 }
