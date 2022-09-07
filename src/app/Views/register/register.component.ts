@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildFormAdd();
-    
   }
 
 
@@ -37,7 +36,7 @@ export class RegisterComponent implements OnInit {
   buildFormAdd(){
     this.formUser = this.formBuilder.group({
       email: ['',[Validators.required,Validators.email]],
-      password: ['',[Validators.required]],
+      password: ['',[Validators.required,Validators.minLength(8)]],
       identification: ['',[Validators.maxLength(10),Validators.minLength(10),Validators.required]]
     });
   }
