@@ -25,8 +25,5 @@ export class HomeModuleComponent implements OnInit {
       panelClass: 'no-padding-dialog',
     });
 
-    dialogRef.afterClosed().subscribe( result => {
-      console.log(this.router.navigateByUrl('/Cliente/Permisos'));
-    });
   }
 }

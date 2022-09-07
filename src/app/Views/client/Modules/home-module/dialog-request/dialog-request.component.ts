@@ -18,6 +18,9 @@ export class DialogRequestComponent implements OnInit {
   }
 
   open(){
+  
+      console.log(this.router.navigateByUrl('/Cliente/PermisosFuncionamiento'));
+    
     this.dialogRef.close();
   }
 

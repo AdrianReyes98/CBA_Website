@@ -1,13 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+import {FormBuilder, Validators} from '@angular/forms';
+
 @Component({
   selector: 'app-operating-permits',
   templateUrl: './operating-permits.component.html',
   styleUrls: ['./operating-permits.component.scss']
 })
 export class OperatingPermitsComponent implements OnInit {
+  firstFormGroup = this.formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  secondFormGroup = this.formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+  isLinear = false;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }

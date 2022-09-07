@@ -47,6 +47,7 @@ import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-s
 import { PermisionsClientModuleComponent } from './Views/client/Modules/permisions-client-module/permisions-client-module.component';
 import { DialogRequestComponent } from './Views/client/Modules/home-module/dialog-request/dialog-request.component';
 import { OperatingPermitsComponent } from './Views/client/Modules/operating-permisions/operating-permits.component';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { OperatingPermitsComponent } from './Views/client/Modules/operating-perm
     MatButtonModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatStepperModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
