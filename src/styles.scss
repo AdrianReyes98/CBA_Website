@@ -107,6 +107,8 @@ body::-webkit-scrollbar-button{
 }
 
 .no-padding-dialog .mat-dialog-container {   
+  scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
   padding: 0px;
   margin: 0px;
   box-shadow: none;
