@@ -4,10 +4,10 @@ $main-bg-color: #D67D3E;
     background-color: rgb(66, 66, 66);
     color: #fff;
     display: flex;
-    flex-direction: column;
     padding: 5px;
+    flex-direction: column;
     border-radius: 15px;
-    
+
 }
 
 .button{
@@ -18,7 +18,7 @@ $main-bg-color: #D67D3E;
     flex-direction: row;
     margin: 6px;
     padding: 7px;
-    
+    height: 18%;
     width: 95%;
     border-radius: 5px;
 
@@ -80,4 +80,20 @@ $main-bg-color: #D67D3E;
         border-radius: 0;
         background-color: transparent;
     }
+}
+
+.content::-webkit-scrollbar-thumb{
+background-color: #252525;
+}
+  
+.content::-webkit-scrollbar{
+width: 8px;
+}
+  
+::-webkit-scrollbar-track-piece{
+background-color: #fff;
+}
+  
+::-webkit-scrollbar-button{
+background-color: #252525;
 }
