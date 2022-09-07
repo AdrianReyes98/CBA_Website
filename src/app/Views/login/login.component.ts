@@ -50,13 +50,11 @@ export class LoginComponent implements OnInit {
     });
 
 
-  }
+  } 
 
   openRegister(){
     this.router.navigate(['/register'])
   }
-
-
   
 
 }

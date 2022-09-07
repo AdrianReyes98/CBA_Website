@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialog-request',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogRequestComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    public dialogRef: MatDialogRef<DialogRequestComponent>,
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  open(){
+    this.dialogRef.close();
   }
 
 }
