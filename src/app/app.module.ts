@@ -46,6 +46,7 @@ import { SupervisorComponent } from './Views/supervisor/supervisor.component';
 import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-supervisor-module/home-supervisor-module.component';
 import { PermisionsClientModuleComponent } from './Views/client/Modules/permisions-client-module/permisions-client-module.component';
 import { DialogRequestComponent } from './Views/client/Modules/home-module/dialog-request/dialog-request.component';
+import { OperatingPermitsComponent } from './Views/client/Modules/operating-permisions/operating-permits.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { DialogRequestComponent } from './Views/client/Modules/home-module/dialo
     HomeSupervisorModuleComponent,
     PermisionsClientModuleComponent,
     DialogRequestComponent,
+    OperatingPermitsComponent,
 
   ],
   imports: [
