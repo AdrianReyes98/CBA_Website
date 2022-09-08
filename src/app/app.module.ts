@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 //Componentes Funcionalidad
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
@@ -100,7 +101,8 @@ import { MapModuleComponent } from './Views/Common/map-module/map-module.compone
     MatSelectModule,
     MatSnackBarModule,
     MatDividerModule,
-    MatStepperModule
+    MatStepperModule,
+    GoogleMapsModule
     
   ],
   providers: [
