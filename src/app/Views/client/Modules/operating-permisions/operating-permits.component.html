@@ -6,22 +6,32 @@
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Informativo</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+        <div class="dis">
+            <div id="subtitle">
+                <h1>PERMISO DE ESTABLECIMIENTO POR PRIMERA VEZ</h1>
+            </div>
+            <div class ="content">
+                     Requisitos Obligatorios: 
+                     <ul>
+                    <li> Certificado de Establecimiento (SRI) </li>
+                    <li>Predio Urbano Cancelado del Año actual. </li>
+                    <li> Foto de la fachada del establecimiento, en formato JPG,PNG.    </li>
+                    <li> Para personas Naturales: cédula y certificado de votación.</li>
+                    <li> En el caso que su establecimiento posea Calificación Artesanal, deberá adjuntarlo.</li>
+                    <li> Para personas Jurídicas: cédula, certificado de votación del representante 
+                    legal y el nombramiento que lo acredite como representante de la empresa.</li>
+                    </ul>
+           </div>
         </div>
+        <button mat-button matStepperNext class="mat">Siguiente</button>
       </form>
     </mat-step>
+
     <mat-step [stepControl]="secondFormGroup" label="Datos">
       <form [formGroup]="secondFormGroup">
-        <mat-form-field appearance="fill">
-          <mat-label>Address</mat-label>
-          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                 required>
-        </mat-form-field>
+        <div class="dis">
+         
+          </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
@@ -50,3 +60,4 @@
       </div>
     </mat-step>
   </mat-stepper>
+

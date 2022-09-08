@@ -3,10 +3,28 @@
     padding: 20px;
 }
 
+#subtitle{
+  text-align: center;
+  padding: 30px;
+  font-size: 9px;
+
+}
+
+.dis{
+  background: #F0F0F0;
+  margin: 0 250px 0 250px;
+  padding: 0 200px 0 200px;
+  height: 400px;
+}
+
 .mat-stepper-horizontal {
     margin-top: 8px;
-  }
-  
-  .mat-form-field {
-    margin-top: 16px;
-  }
+}
+
+
+.mat {
+  background-color:rgb(59, 59, 213);
+  color: white;
+  left: 90%;
+}
+

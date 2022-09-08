@@ -9,10 +9,10 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class OperatingPermitsComponent implements OnInit {
   firstFormGroup = this.formBuilder.group({
-    firstCtrl: ['', Validators.required],
+    
   });
   secondFormGroup = this.formBuilder.group({
-    secondCtrl: ['', Validators.required],
+    secondCtrl:['',Validators.required]
   });
   isLinear = false;
 
