@@ -13,15 +13,14 @@ export class MapModuleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
   }
   display: any;
   center: google.maps.LatLngLiteral = {
-      lat: 24,
-      lng: 12
+      lat: -1.2449722676037696,
+      lng:  -78.60745217922444
   };
 
-  zoom = 4;
+  zoom = 12;
     moveMap(event: google.maps.MapMouseEvent) {
         if (event.latLng != null) this.center = (event.latLng.toJSON());
     }

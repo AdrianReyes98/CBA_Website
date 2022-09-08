@@ -1,4 +1,3 @@
-
 #title{
     text-align: center;
     padding: 20px;
@@ -22,12 +21,22 @@
     margin-top: 8px;
 }
 
+.actions{
+  justify-content: right;
+  align-items: center; 
+  display: flex;
+  margin-top: 20px;
+  
+  .btnNext{
+    background-color: rgb(59, 59, 203);
+    color: #fff;
+    margin-left: 15px;
+  }
 
-.mat {
-  background-color:rgb(59, 59, 213);
-  color: white;
-  left: 88%;
-  margin-right: 20px;
+  .btnBack{
+    background-color: rgb(252, 109, 109);
+    color: #fff;
+  }
 }
 
 .disOption{
@@ -41,7 +50,6 @@
   padding: 0.5px;
 
   input{
-
     width: 500px;
     height: 25px;
     border-radius: 5px;
@@ -51,7 +59,21 @@
   
 }
 
+.mapContainer{
+  justify-content: right;
+  display: flex;
+}
 
+.ubicationForm{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.mapForm{
+  background: #F0F0F0;
+  height: 400px;
+  margin: 0 20px 0 20px;
+}
 
 label{
   display: inline-block;
