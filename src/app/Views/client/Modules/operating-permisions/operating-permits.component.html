@@ -1,11 +1,12 @@
 <div class="content">
 
 <div id="title">
-    <h1>Solicitud de Inspección</h1>
+  <h1>Solicitud de Inspección</h1>
 </div>
 
   <mat-stepper [linear]="true" #stepper>
     <mat-step [stepControl]="firstFormGroup">
+
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Informativo</ng-template>
         <div class="dis">
@@ -13,8 +14,8 @@
                 <h1>PERMISO DE ESTABLECIMIENTO POR PRIMERA VEZ</h1>
             </div>
             <div class ="content">
-                     Requisitos Obligatorios: 
-                     <ul>
+                    Requisitos Obligatorios: 
+                    <ul>
                     <li> Certificado de Establecimiento (SRI) </li>
                     <li>Predio Urbano Cancelado del Año actual. </li>
                     <li> Foto de la fachada del establecimiento, en formato JPG,PNG.    </li>
@@ -73,7 +74,7 @@
           <mat-form-field appearance="fill">
             <mat-label>Address</mat-label>
             <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                   required>
+                  required>
           </mat-form-field>
           <div>
             <button mat-button matStepperPrevious>Back</button>

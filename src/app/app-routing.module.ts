@@ -18,6 +18,7 @@ import { SupervisorComponent } from './Views/supervisor/supervisor.component';
 import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-supervisor-module/home-supervisor-module.component';
 import { PermisionsClientModuleComponent } from './Views/client/Modules/permisions-client-module/permisions-client-module.component';
 import { OperatingPermitsComponent } from './Views/client/Modules/operating-permisions/operating-permits.component';
+import { MapModuleComponent } from './Views/Common/map-module/map-module.component';
 
 const routes: Routes = [
   {
@@ -53,7 +54,7 @@ const routes: Routes = [
         path: 'Clientes', 
         component: ClientModuleComponent
       },
-     
+      
       {
         path: 'Supervisores', 
         component: SupervisorModuleComponent
@@ -104,6 +105,10 @@ const routes: Routes = [
       {
         path: 'PermisosFuncionamiento',
         component: OperatingPermitsComponent
+      },
+      {
+        path: 'Map',
+        component: MapModuleComponent
       }
     ],
     canActivate: [LoginGuardGuard]
