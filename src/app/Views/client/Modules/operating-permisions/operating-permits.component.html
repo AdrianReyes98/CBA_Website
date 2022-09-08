@@ -1,3 +1,5 @@
+<div class="content">
+
 <div id="title">
     <h1>Solicitud de Inspección</h1>
 </div>
@@ -29,12 +31,40 @@
 
     <mat-step [stepControl]="secondFormGroup" label="Datos">
       <form [formGroup]="secondFormGroup">
-        <div class="dis">
-         
+        <div class="disOption">
+          <div class="options">
+            <label>Ruc del Cliente:</label>
+            <input placeholder="18030XXXXX001">
           </div>
+          <div class="options">
+            <label>Razón Social (Si aplica):</label>
+            <input placeholder="CORPORACIÓN CIA.LTDA">
+          </div>
+          <div class="options">
+            <label>Nombre comercial (Si aplica):</label>
+            <input placeholder="SUPERVENTAS">
+          </div>
+          <div class="options">
+            <label>Representante Legal, como consta en el RUC:</label>
+            <input placeholder="SALVATIERRA JONAS JUAN ALEXANDER">
+          </div>
+          <div class="options">
+            <label>Actividad Económica, como consta en el RUC:</label>
+            <input placeholder="VENTA AL POR MENOR DE MATERIAL DE ZAPATERÍA(PLANTILLAS,TALONERAS,SUELA Y ARTÍCULOS ANÁLOGOS) EN ESTABLECIEMIENTOS ESPECIALIZADOS">
+          </div>
+          <div class="options">
+            <label>Teléfono Móvil:</label>
+            <input placeholder="09XXXXXXXX">
+          </div>
+          <div class="options">
+            <label>Correo Electrónico del propietario del local :</label>
+            <input placeholder="JUAN@HOTMAIL.COM">
+          </div>
+        
+        </div>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperPrevious class="mat">Anterior</button>
+          <button mat-button matStepperNext class="mat">Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -61,3 +91,4 @@
     </mat-step>
   </mat-stepper>
 
+</div>

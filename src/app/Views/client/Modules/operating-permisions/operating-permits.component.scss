@@ -1,3 +1,4 @@
+
 #title{
     text-align: center;
     padding: 20px;
@@ -25,6 +26,39 @@
 .mat {
   background-color:rgb(59, 59, 213);
   color: white;
-  left: 90%;
+  left: 88%;
+  margin-right: 20px;
 }
+
+.disOption{
+  background: #F0F0F0;
+  margin: 0 130px 0 130px;
+  padding: 30px 100px 0 100px;
+  height: 400px;
+  
+}
+.options{
+  padding: 0.5px;
+
+  input{
+
+    width: 500px;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    padding: 5px;
+  }
+  
+}
+
+
+
+label{
+  display: inline-block;
+  width: 400px;
+  text-align: right;
+  margin-right: 40px;
+}
+
+
 
