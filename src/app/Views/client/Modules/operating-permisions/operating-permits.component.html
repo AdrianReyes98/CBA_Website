@@ -26,7 +26,9 @@
                     </ul>
           </div>
         </div>
-        <button mat-button matStepperNext class="mat">Siguiente</button>
+        <div class="actions">
+          <button mat-button matStepperNext class="btnNext">Siguiente</button>
+        </div>
       </form>
     </mat-step>
 
@@ -63,28 +65,47 @@
           </div>
         
         </div>
-        <div>
-          <button mat-button matStepperPrevious class="mat">Anterior</button>
-          <button mat-button matStepperNext class="mat">Siguiente</button>
+        <div class="actions">
+          <button mat-button matStepperPrevious class="btnBack">Anterior</button>
+          <button mat-button matStepperNext class="btnNext">Siguiente</button>
         </div>
       </form>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup" label="Ubicación">
         <form [formGroup]="secondFormGroup">
-          <app-map-module></app-map-module>
-
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+          <div class="ubicationForm">
+            <div class="mapContainer">
+              <app-map-module></app-map-module>
+            </div>
+            <div class="mapForm">
+              <div class="options">
+                <label>Parroquia:</label>
+                <input placeholder="-- Seleccione Parroquia --">
+              </div>
+              <div class="options">
+                <label>Sector:</label>
+                <input placeholder="-- Seleccione Sector --">
+              </div>
+              <div class="options">
+                <label>Referencia:</label>
+                <input placeholder="Referencia Direccion">
+              </div>
+            </div>
           </div>
+
+          <div class="actions">
+            <button mat-button matStepperPrevious class="btnBack">Anterior</button>
+            <button mat-button matStepperNext class="btnNext">Siguiente</button>
+          </div>
+
         </form>
       </mat-step>
     <mat-step>
       <ng-template matStepLabel>Documentos</ng-template>
-      <p>You are now done.</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+      <p>Terminaste</p>
+      <div class="actions">
+        <button mat-button matStepperPrevious class="btnBack">Anterior</button>
+        <button mat-button (click)="stepper.reset()" class="btnNext">Reiniciar</button>
       </div>
     </mat-step>
   </mat-stepper>
