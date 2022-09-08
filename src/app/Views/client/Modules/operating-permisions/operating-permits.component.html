@@ -1,9 +1,10 @@
 <div id="title">
-    <h1>Solicitud de Inspección</h1>
+  <h1>Solicitud de Inspección</h1>
 </div>
 
   <mat-stepper [linear]="true" #stepper>
     <mat-step [stepControl]="firstFormGroup">
+
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Informativo</ng-template>
         <mat-form-field appearance="fill">
@@ -15,6 +16,7 @@
         </div>
       </form>
     </mat-step>
+    
     <mat-step [stepControl]="secondFormGroup" label="Datos">
       <form [formGroup]="secondFormGroup">
         <mat-form-field appearance="fill">
@@ -33,7 +35,7 @@
           <mat-form-field appearance="fill">
             <mat-label>Address</mat-label>
             <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                   required>
+                  required>
           </mat-form-field>
           <div>
             <button mat-button matStepperPrevious>Back</button>
