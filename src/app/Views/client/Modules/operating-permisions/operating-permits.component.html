@@ -24,7 +24,7 @@
                     <li> Para personas Jurídicas: cédula, certificado de votación del representante 
                     legal y el nombramiento que lo acredite como representante de la empresa.</li>
                     </ul>
-           </div>
+          </div>
         </div>
         <button mat-button matStepperNext class="mat">Siguiente</button>
       </form>
@@ -69,13 +69,12 @@
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Ubicación">
-        <form [formGroup]="secondFormGroup">
-          <mat-form-field appearance="fill">
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                  required>
-          </mat-form-field>
+    <mat-step [stepControl]="thirdFormGroup" label="Ubicación">
+        <form [formGroup]="thirdFormGroup">
+          <div>
+            <app-map-module></app-map-module>
+          </div>
+
           <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
