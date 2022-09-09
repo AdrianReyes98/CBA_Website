@@ -4,7 +4,7 @@
   <h1>Solicitud de Inspección</h1>
 </div>
 
-  <mat-stepper [linear]="true" #stepper>
+  <mat-stepper [linear]="false" #stepper>
     <mat-step [stepControl]="firstFormGroup">
 
       <form [formGroup]="firstFormGroup">
@@ -35,31 +35,31 @@
     <mat-step [stepControl]="secondFormGroup" label="Datos">
       <form [formGroup]="secondFormGroup">
         <div class="dataForm">
-          <div class="options">
+          <div class="input">
             <label>Ruc del Cliente:</label>
             <input placeholder="18030XXXXX001">
           </div>
-          <div class="options">
+          <div class="input">
             <label>Razón Social (Si aplica):</label>
             <input placeholder="CORPORACIÓN CIA.LTDA">
           </div>
-          <div class="options">
+          <div class="input">
             <label>Nombre comercial (Si aplica):</label>
             <input placeholder="SUPERVENTAS">
           </div>
-          <div class="options">
+          <div class="input">
             <label>Representante Legal, como consta en el RUC:</label>
             <input placeholder="SALVATIERRA JONAS JUAN ALEXANDER">
           </div>
-          <div class="options">
+          <div class="input">
             <label>Actividad Económica, como consta en el RUC:</label>
             <input placeholder="VENTA AL POR MENOR DE MATERIAL DE ZAPATERÍA(PLANTILLAS,TALONERAS,SUELA Y ARTÍCULOS ANÁLOGOS) EN ESTABLECIEMIENTOS ESPECIALIZADOS">
           </div>
-          <div class="options">
+          <div class="input">
             <label>Teléfono Móvil:</label>
             <input placeholder="09XXXXXXXX">
           </div>
-          <div class="options">
+          <div class="input">
             <label>Correo Electrónico del propietario del local :</label>
             <input placeholder="JUAN@HOTMAIL.COM">
           </div>
@@ -75,15 +75,20 @@
         <form [formGroup]="secondFormGroup">
           <div class="ubicationForm">
             <div class="mapForm">
-              <div class="options">
+              <div class="input">
                 <label>Parroquia:</label>
-                <input type="" placeholder="-- Seleccione Parroquia --">
+                <select name="address">
+                  <option value="Atahualpa">Atahualpa</option>
+                  <option value="Martinez">Martinez</option>
+                  <option value="Izamba">Izamba</option>
+                  <option value="Centro">Centro</option>
+                </select>
               </div>
-              <div class="options">
+              <div class="input">
                 <label>Sector:</label>
-                <input placeholder="-- Seleccione Sector --">
+                <input type="" placeholder="-- Seleccione Sector --">
               </div>
-              <div class="options">
+              <div class="input">
                 <label>Referencia:</label>
                 <input placeholder="Referencia Direccion">
               </div>
@@ -92,7 +97,7 @@
             <div class="mapContainer">
               <app-map-module></app-map-module>
             </div>
-            
+
           </div>
 
           <div class="actions">
@@ -105,8 +110,18 @@
     <mat-step>
       <ng-template matStepLabel>Documentos</ng-template>
       <div class="documentsForm">
+        <label id="titleDocs">Adjuntar Archivos:</label>
         <div class="document">
-          <button>Selecionar</button>
+          <label>Copia de RUC: </label>
+          <input type="file">
+        </div>
+        <div class="document">
+          <label>Foto Fachada: </label>
+          <input type="file">
+        </div>
+        <div class="document">
+          <label>Predio Local: </label>
+          <input type="file">
         </div>
       </div>
       <div class="actions">

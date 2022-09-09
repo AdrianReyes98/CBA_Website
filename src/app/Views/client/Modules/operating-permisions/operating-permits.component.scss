@@ -46,18 +46,25 @@ $main-bg-color: #F0F0F0;
   margin: 0 130px 0 130px;
   padding: 30px 100px 0 100px;
   height: 400px;
-}
-.options{
-  padding: 0.5px;
 
-  input{
-    width: 500px;
-    height: 25px;
-    border-radius: 5px;
-    border: 0;
-    padding: 5px;
+  label{
+    width: 40%;
+    display: inline-block;
+    text-align: right;
+    margin-right: 40px;
   }
+  .input{
+    padding: 0.5px;
   
+    input{
+      width: 40%;
+      height: 25px;
+      border-radius: 5px;
+      border: 0;
+      padding: 5px;
+      margin: 5px 0 5px 0;
+    }
+  }
 }
 
 .ubicationForm{
@@ -69,22 +76,81 @@ $main-bg-color: #F0F0F0;
 
 .mapContainer{
   display: flex;
-  justify-content: center;
-  width: fit-content;
+  width: 50%;
+  margin-left: 30px;
 }
 
 .mapForm{
   background: $main-bg-color;
-  height: 400px;
-  width: 50%;
+  height: fit-content + 100px;
+  width: 45%;
   margin-right: 30px;
+  padding: 5% 0 5% 0;
+
+  label{
+    width: 10%;
+    display: inline-block;
+    margin: 0 40px 0 150px;
+  }
+
+  .input{
+    padding: 0.5px;
+  
+    input{
+      width: 40%;
+      height: 25px;
+      border-radius: 5px;
+      border: 0;
+      padding: 5px;
+      margin: 5px 0 5px 0;
+    }
+
+    select{
+      width: 42%;
+      height: 30px;
+      border-radius: 5px;
+      border: 0;
+      padding: 5px;
+      margin: 5px 0 5px 0;
+    }
+  }
 }
 
-label{
-  display: inline-block;
-  width: 400px;
-  text-align: right;
-  margin-right: 40px;
+.documentsForm{
+  height: 350PX;
+  margin: 0 150px 0 150px;
+  background-color: $main-bg-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  #titleDocs{
+    margin-bottom: 30px;
+    margin-left: 6%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  label{
+    display:inline-block;
+    margin-right: 10px;
+  }
+
+  .document{
+    padding: 10px;
+    width: 80%;
+    margin-left: 5%;
+
+    label{
+      font-size: 15px;
+    }
+
+    input{
+      background-color: #fff;
+      padding: 5px;
+      width: 80%;
+    }
+  }
 }
 
 

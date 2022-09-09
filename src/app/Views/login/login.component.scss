@@ -136,3 +136,19 @@ $border-rad: 20px;
 .footer .btnLogin i{
   font-size: 18px;
 }
+
+@media screen and (max-width: 850px) {
+  .login-logo{
+    display: none;
+  }
+
+  .form{
+    justify-content: center;
+  }
+
+  .data{
+    border-radius: $border-rad;
+    padding-left: 40px;
+  }
+  
+}
