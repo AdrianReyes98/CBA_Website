@@ -1,3 +1,5 @@
+$main-bg-color: #F0F0F0;
+
 #title{
     text-align: center;
     padding: 20px;
@@ -10,8 +12,8 @@
 
 }
 
-.dis{
-  background: #F0F0F0;
+.infoForm{
+  background: $main-bg-color;
   margin: 0 250px 0 250px;
   padding: 0 200px 0 200px;
   height: 400px;
@@ -39,12 +41,11 @@
   }
 }
 
-.disOption{
-  background: #F0F0F0;
+.dataForm{
+  background: $main-bg-color;
   margin: 0 130px 0 130px;
   padding: 30px 100px 0 100px;
   height: 400px;
-  
 }
 .options{
   padding: 0.5px;
@@ -59,20 +60,24 @@
   
 }
 
-.mapContainer{
-  justify-content: right;
+.ubicationForm{
+  margin-top: 10px;
+  width: 100%;
   display: flex;
+  flex-direction: row;
 }
 
-.ubicationForm{
+.mapContainer{
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: center;
+  width: fit-content;
 }
 
 .mapForm{
-  background: #F0F0F0;
+  background: $main-bg-color;
   height: 400px;
-  margin: 0 20px 0 20px;
+  width: 50%;
+  margin-right: 30px;
 }
 
 label{

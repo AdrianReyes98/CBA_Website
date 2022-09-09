@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -16,11 +17,23 @@ export class OperatingPermitsComponent implements OnInit {
   });
   isLinear = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router 
+    ) { }
 
   ngOnInit(): void {
   }
+
+  
+
   display: any;
+
+  returnHome(){
+    this.router.navigateByUrl('/Cliente/Permisos');
+    
+  }
+
   center: google.maps.LatLngLiteral = {
       lat: 24,
       lng: 12
