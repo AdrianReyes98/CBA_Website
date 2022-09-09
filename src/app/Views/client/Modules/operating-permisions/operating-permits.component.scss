@@ -153,5 +153,18 @@ $main-bg-color: #F0F0F0;
   }
 }
 
+@media screen and (max-width: 850px) {
+  .login-logo{
+    display: none;
+  }
 
+  .form{
+    justify-content: center;
+  }
+
+  .data{
+    border-radius: 20px;
+    padding-left: 40px;
+  }
+}
 
