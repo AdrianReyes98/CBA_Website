@@ -9,7 +9,7 @@
 
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Informativo</ng-template>
-        <div class="dis">
+        <div class="infoForm">
             <div id="subtitle">
                 <h1>PERMISO DE ESTABLECIMIENTO POR PRIMERA VEZ</h1>
             </div>
@@ -34,7 +34,7 @@
 
     <mat-step [stepControl]="secondFormGroup" label="Datos">
       <form [formGroup]="secondFormGroup">
-        <div class="disOption">
+        <div class="dataForm">
           <div class="options">
             <label>Ruc del Cliente:</label>
             <input placeholder="18030XXXXX001">
@@ -74,13 +74,10 @@
     <mat-step [stepControl]="secondFormGroup" label="Ubicación">
         <form [formGroup]="secondFormGroup">
           <div class="ubicationForm">
-            <div class="mapContainer">
-              <app-map-module></app-map-module>
-            </div>
             <div class="mapForm">
               <div class="options">
                 <label>Parroquia:</label>
-                <input placeholder="-- Seleccione Parroquia --">
+                <input type="" placeholder="-- Seleccione Parroquia --">
               </div>
               <div class="options">
                 <label>Sector:</label>
@@ -91,6 +88,11 @@
                 <input placeholder="Referencia Direccion">
               </div>
             </div>
+
+            <div class="mapContainer">
+              <app-map-module></app-map-module>
+            </div>
+            
           </div>
 
           <div class="actions">
@@ -102,10 +104,14 @@
       </mat-step>
     <mat-step>
       <ng-template matStepLabel>Documentos</ng-template>
-      <p>Terminaste</p>
+      <div class="documentsForm">
+        <div class="document">
+          <button>Selecionar</button>
+        </div>
+      </div>
       <div class="actions">
         <button mat-button matStepperPrevious class="btnBack">Anterior</button>
-        <button mat-button (click)="stepper.reset()" class="btnNext">Reiniciar</button>
+        <button mat-button (click)="returnHome()" class="btnNext">Finalizar</button>
       </div>
     </mat-step>
   </mat-stepper>
