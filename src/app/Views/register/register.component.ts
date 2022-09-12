@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   formUser: any;
   hide = true;
   id: number = 0;
+  element = true;
   
   constructor(
     private router: Router,
@@ -34,24 +35,21 @@ export class RegisterComponent implements OnInit {
 
 
   buildFormAdd(){
-    this.formUser = this.formBuilder.group({
-      email: ['',[Validators.required,Validators.email]],
-      password: ['',[Validators.required,Validators.minLength(8)]],
-      identification: ['',[Validators.maxLength(10),Validators.minLength(10),Validators.required]]
-    });
+      this.formUser = this.formBuilder.group({
+        email: ['',[Validators.required,Validators.email]],
+        password: ['',[Validators.required,Validators.minLength(8)]],
+        identification: ['',[Validators.maxLength(10),Validators.minLength(10),Validators.required]],
+        ruc: ['']
+      });
   }
 
   addUserService(){
     const user: User = {
       id: this.id,
-      usuario1: this.formUser.value.user,
       contraseña: this.formUser.value.password,
-      nombre: this.formUser.value.name,
       email: this.formUser.value.email,
-      direccion: this.formUser.value.address,
-      telefono: this.formUser.value.phone,
-      cedula: this.formUser.value.identification,
-      idRol: 2
+      ruc: this.formUser.value.ruc,
+      cedula: this.formUser.value.identification
     };
     this.apiClient.addUser(user).subscribe(response => {
       if( response.status === 1 ){
@@ -66,4 +64,21 @@ export class RegisterComponent implements OnInit {
       }
     })
   }
+
+  hideData() {
+    if(this.element){
+      this.element = false;
+      this.formUser = this.formBuilder.group({
+        email: ['',[Validators.required,Validators.email]],
+        password: ['',[Validators.required,Validators.minLength(8)]],
+        identification: [''],
+        ruc: ['',[Validators.maxLength(13),Validators.minLength(13),Validators.required]]
+      });
+    }else{
+      this.element = true;
+      
+    }
+  }
 }
+  
+
