@@ -8,12 +8,13 @@ import { map } from 'rxjs/operators';
 const httpOption = {
   headers: new HttpHeaders({
     'Contend-Type': 'application/json'
-  })
+  })  
 };
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiLoginService {
 
   url: string = "https://prevencioncbd.somee.com/Login";
