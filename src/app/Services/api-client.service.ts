@@ -17,13 +17,13 @@ const httpOption = {
 
 export class ApiClientService {
 
-  url: string = "https://prevencioncbd.somee.com/Login/register";
+  urlRegister: string = "https://prevencioncbd.somee.com/Login/register";
 
   constructor(
     private _http: HttpClient
   ) {}
 
   newClient(client: Client): Observable<Response>{
-    return this._http.post<Response>(this.url, client, httpOption);
+    return this._http.post<Response>(this.urlRegister, client, httpOption);
   }
 }
