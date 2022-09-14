@@ -48,25 +48,23 @@ export class RegisterComponent implements OnInit {
       
   }
 
-  
-
-
 
   addClientService(){
-
-    console.log(this.formClient)
+    
      var type: string= 'Natural'; 
-     if(this.element){
+     var ruc = this.formClient.value.identification + "001";
+     if(!this.element){
       type='Juridica';
+      ruc= this.formClient.value.ruc;
      }
     const client: Client = {
       email: this.formClient.value.email,
-      ruc: this.formClient.value.ruc,
+      ruc: ruc,
       password: this.formClient.value.password,
       identification:this.formClient.value.identification,
       type: type
     };
-    
+    console.log(client)
     this.apiNewClient.newClient(client).subscribe(response => {
       if( response.status === 1 ){
         this.snackBar.open(response.result+': Usuario insertado con Exito', '',{
