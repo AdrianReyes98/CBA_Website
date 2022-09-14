@@ -95,7 +95,16 @@
             </div>
 
             <div class="mapContainer">
-              <app-map-module></app-map-module>
+              <google-map height="400px"
+            width="750px"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="addMarker($event)"
+            (mapMousemove)="move($event)" >
+            <map-marker *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              [options]="markerOptions"> </map-marker>
+            </google-map>
             </div>
 
           </div>

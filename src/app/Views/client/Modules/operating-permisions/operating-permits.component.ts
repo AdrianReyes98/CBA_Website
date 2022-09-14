@@ -37,18 +37,42 @@ export class OperatingPermitsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+
+  zoom = 12;
+  markerOptions: google.maps.MarkerOptions={
+    draggable: false
+    
+  };
+  
+  markerPositions: google.maps.LatLngLiteral[] = [];
+
+  addMarker(event: google.maps.MapMouseEvent) {
+      if (event.latLng != null) this.markerPositions.push(event.latLng.toJSON()); 
+      if (this.markerPositions.length != 1){
+        console.log(this.markerPositions.reverse)
+        this.markerPositions = this.markerPositions.reverse();
+        this.markerPositions.pop(); 
+      }
+      var latitud=event.latLng?.toJSON().lat;
+      var longitud= event.latLng?.toJSON().lng;
+
+      console.log(latitud)
+      console.log(longitud)
+  }
+
+    moveMap(event: google.maps.MapMouseEvent) {
+        if (event.latLng != null) this.center = (event.latLng.toJSON());
+    }
+    move(event: google.maps.MapMouseEvent) {
+        if (event.latLng != null) this.display = event.latLng.toJSON();
+    }
+
 
   returnHome(){
     this.router.navigateByUrl('/Cliente/Permisos');
   }
 
-  moveMap(event: google.maps.MapMouseEvent) {
-      if (event.latLng != null) this.center = (event.latLng.toJSON());
-  }
-
-  move(event: google.maps.MapMouseEvent) {
-      if (event.latLng != null) this.display = event.latLng.toJSON();
-  }
   
   //Finalizar el permiso
   finishPermission(){

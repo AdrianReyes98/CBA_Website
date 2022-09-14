@@ -23,6 +23,8 @@ export class PermisionsClientModuleComponent implements OnInit {
     this.setPaginatorSpanish();
   }
 
+  
+
   setPaginatorSpanish(){
     this.paginator._intl.itemsPerPageLabel="Items por página";
     this.paginator._intl.firstPageLabel = 'Primera página';
