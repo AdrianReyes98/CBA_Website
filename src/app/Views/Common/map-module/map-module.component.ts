@@ -20,7 +20,7 @@ export class MapModuleComponent implements OnInit {
       lng:  -78.60745217922444
   };
 
-  zoom = 12;
+  zoom = 13;
     moveMap(event: google.maps.MapMouseEvent) {
         if (event.latLng != null) this.center = (event.latLng.toJSON());
     }

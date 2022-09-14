@@ -19,16 +19,8 @@ export class OperatingPermitsComponent implements OnInit {
     secondCtrl:['']
   });
 
-
-
   isLinear = false;
-  display: any;
 
-  center: google.maps.LatLngLiteral = {
-    lat: 24,
-    lng: 12
-  }; 
-  
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -42,14 +34,6 @@ export class OperatingPermitsComponent implements OnInit {
     this.router.navigateByUrl('/Cliente/Permisos');
   }
 
-  moveMap(event: google.maps.MapMouseEvent) {
-      if (event.latLng != null) this.center = (event.latLng.toJSON());
-  }
-
-  move(event: google.maps.MapMouseEvent) {
-      if (event.latLng != null) this.display = event.latLng.toJSON();
-  }
-  
   //Finalizar el permiso
   finishPermission(){
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
