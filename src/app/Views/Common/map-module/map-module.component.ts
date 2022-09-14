@@ -19,7 +19,6 @@ export class MapModuleComponent implements OnInit {
       lng:  -78.60745217922444
   };
 
-<<<<<<< HEAD
   zoom = 12;
   markerOptions: google.maps.MarkerOptions={
     draggable: false
@@ -42,21 +41,10 @@ export class MapModuleComponent implements OnInit {
       console.log(longitud)
   }
 
-
-  
-
-
-
-
-=======
-  zoom = 13;
->>>>>>> a96cec57aa8b1e104888e11b94005ce94faf989d
     moveMap(event: google.maps.MapMouseEvent) {
         if (event.latLng != null) this.center = (event.latLng.toJSON());
     }
     move(event: google.maps.MapMouseEvent) {
         if (event.latLng != null) this.display = event.latLng.toJSON();
     }
-
-
 }
