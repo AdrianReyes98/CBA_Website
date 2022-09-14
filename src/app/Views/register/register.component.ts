@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/Models/User';
+import {Client} from 'src/app/Models/Client';
 import { ApiUsersService } from 'src/app/Services/api-users.service';
+import{ApiClientService} from 'src/app/Services/api-client.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,6 +15,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   
   formUser: any;
+  formClient:any;
   hide = true;
   id: number = 0;
   element = true;
@@ -20,6 +23,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private router: Router,
     public apiClient: ApiUsersService,
+    public apiNewClient: ApiClientService,
     public snackBar: MatSnackBar,
     private formBuilder: FormBuilder
   ) { }
@@ -35,23 +39,35 @@ export class RegisterComponent implements OnInit {
 
 
   buildFormAdd(){
-      this.formUser = this.formBuilder.group({
+      this.formClient = this.formBuilder.group({
         email: ['',[Validators.required,Validators.email]],
         password: ['',[Validators.required,Validators.minLength(8)]],
-        identification: ['',[Validators.maxLength(10),Validators.minLength(10),Validators.required]],
+        identification: ['', [Validators.required, Validators.minLength(10)]],  
         ruc: ['']
       });
+      
   }
 
-  addUserService(){
-    const user: User = {
-      id: this.id,
-      contraseña: this.formUser.value.password,
-      email: this.formUser.value.email,
-      ruc: this.formUser.value.ruc,
-      cedula: this.formUser.value.identification
+  
+
+
+
+  addClientService(){
+
+    console.log(this.formClient)
+     var type: string= 'Natural'; 
+     if(this.element){
+      type='Juridica';
+     }
+    const client: Client = {
+      email: this.formClient.value.email,
+      ruc: this.formClient.value.ruc,
+      password: this.formClient.value.password,
+      identification:this.formClient.value.identification,
+      type: type
     };
-    this.apiClient.addUser(user).subscribe(response => {
+    
+    this.apiNewClient.newClient(client).subscribe(response => {
       if( response.status === 1 ){
         this.snackBar.open(response.result+': Usuario insertado con Exito', '',{
           duration: 2000
@@ -68,7 +84,7 @@ export class RegisterComponent implements OnInit {
   hideData() {
     if(this.element){
       this.element = false;
-      this.formUser = this.formBuilder.group({
+      this.formClient = this.formBuilder.group({
         email: ['',[Validators.required,Validators.email]],
         password: ['',[Validators.required,Validators.minLength(8)]],
         identification: [''],
@@ -79,6 +95,9 @@ export class RegisterComponent implements OnInit {
       
     }
   }
+
+
+  
 }
   
 

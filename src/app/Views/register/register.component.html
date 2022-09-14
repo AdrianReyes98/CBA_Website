@@ -11,7 +11,7 @@
     </div>
 
     <div class="data">
-      <div [formGroup]="formUser"> 
+      <div [formGroup]="formClient"> 
         
         <div class="titulo">
           <label>Nuevo Usuario</label>
@@ -22,7 +22,7 @@
         </div>
    
         <div class="checkbox" >
-          <input type="number" placeholder="RUC" formControlName="ruc">
+          <input type="text" placeholder="RUC" formControlName="ruc">
           <input type="checkbox" id="RUC" (click)="hideData()">
           <i class='bx bx-receipt' ></i>
           <div class="label">
@@ -31,7 +31,8 @@
         </div>
        
         <div class="input" *ngIf="element">
-          <input type="number" placeholder="Cedula" formControlName="identification">
+         
+          <input type="text" placeholder="Cedula" formControlName="identification" maxlength="10">
           <i class='bx bx-id-card'></i>
         </div>
 
@@ -49,7 +50,7 @@
 
         <div class="footer">
           
-          <button type ="button" class="btnLogin" [disabled]="formUser.invalid"  (click)="addUserService()">Registrarse</button>
+          <button type ="button" class="btnLogin" [disabled]="formClient.invalid"  (click)="addClientService()">Registrarse</button>
           
           <div>
             <label>Ya tienes cuenta?<button class="btn-registrarse"  (click)="returnLogin()">Iniciar Sesión</button> </label>
