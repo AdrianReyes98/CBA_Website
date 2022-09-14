@@ -1,4 +1,5 @@
 import { Component, OnInit,Inject,Input } from '@angular/core';
+import { latLng } from 'leaflet';
 
 @Component({
   selector: 'app-map-module',
@@ -6,8 +7,6 @@ import { Component, OnInit,Inject,Input } from '@angular/core';
   styleUrls: ['./map-module.component.scss']
 })
 export class MapModuleComponent implements OnInit {
-
-
 
   constructor() {
   }
@@ -21,6 +20,33 @@ export class MapModuleComponent implements OnInit {
   };
 
   zoom = 12;
+  markerOptions: google.maps.MarkerOptions={
+    draggable: false
+    
+  };
+  
+  markerPositions: google.maps.LatLngLiteral[] = [];
+
+  addMarker(event: google.maps.MapMouseEvent) {
+      if (event.latLng != null) this.markerPositions.push(event.latLng.toJSON()); 
+      if (this.markerPositions.length != 1){
+        console.log(this.markerPositions.reverse)
+        this.markerPositions = this.markerPositions.reverse();
+        this.markerPositions.pop(); 
+      }
+      var latitud=event.latLng?.toJSON().lat;
+      var longitud= event.latLng?.toJSON().lng;
+
+      console.log(latitud)
+      console.log(longitud)
+  }
+
+
+  
+
+
+
+
     moveMap(event: google.maps.MapMouseEvent) {
         if (event.latLng != null) this.center = (event.latLng.toJSON());
     }

@@ -2,7 +2,9 @@
             width="750px"
             [center]="center"
             [zoom]="zoom"
-            (mapClick)="moveMap($event)"
-            (mapMousemove)="move($event)"
-            class="mapContainer">
+            (mapClick)="addMarker($event)"
+            (mapMousemove)="move($event)"  class="mapContainer">
+            <map-marker *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              [options]="markerOptions"> </map-marker>
 </google-map>
