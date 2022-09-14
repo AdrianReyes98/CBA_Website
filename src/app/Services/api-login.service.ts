@@ -17,7 +17,7 @@ const httpOption = {
 
 export class ApiLoginService {
 
-  url: string = "https://prevencioncbd.somee.com/Login";
+  url: string = "https://prevencioncbd.somee.com/Login/login";
 
   private userSubject: BehaviorSubject<Login>;
 
