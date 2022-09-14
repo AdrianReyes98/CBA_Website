@@ -25,8 +25,8 @@ export class OperatingPermitsComponent implements OnInit {
   display: any;
 
   center: google.maps.LatLngLiteral = {
-    lat: 24,
-    lng: 12
+    lat: -1.2449722676037696,
+    lng:  -78.60745217922444
   }; 
   
   constructor(
