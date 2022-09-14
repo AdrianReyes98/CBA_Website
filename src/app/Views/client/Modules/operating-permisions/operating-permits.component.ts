@@ -23,6 +23,8 @@ export class OperatingPermitsComponent implements OnInit {
 
   isLinear = false;
   display: any;
+  public lati:any;
+  public long: any;
 
   center: google.maps.LatLngLiteral = {
     lat: -1.2449722676037696,
@@ -54,11 +56,11 @@ export class OperatingPermitsComponent implements OnInit {
         this.markerPositions = this.markerPositions.reverse();
         this.markerPositions.pop(); 
       }
-      var latitud=event.latLng?.toJSON().lat;
-      var longitud= event.latLng?.toJSON().lng;
+      this.lati =  (event.latLng?.toJSON().lat);
+      this.long = (event.latLng?.toJSON().lng);
+      
 
-      console.log(latitud)
-      console.log(longitud)
+      console.log(this.lati)
   }
 
     moveMap(event: google.maps.MapMouseEvent) {
