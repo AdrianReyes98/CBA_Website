@@ -35,8 +35,11 @@ $main-bg-color: #F0F0F0;
   }
 }
 
-form input:required {
-  content:"*";
+.is-required:after {
+  content: '*';
+  margin-left: 3px;
+  color: red;
+  font-weight: bold;
 }
 
 //Disenio formulario de Informacion

@@ -52,24 +52,26 @@
           </div>
           
           <div class="input">
-            <label>Razón Social (Si aplica):</label>
-            <input placeholder="CORPORACIÓN CIA.LTDA">
+            <label class="is-required">Razón Social (Si aplica):</label>
+            <input 
+            placeholder="CORPORACIÓN CIA.LTDA"
+            formControlName = "socialReason">
           </div>
 
           <div class="input">
-            <label>Nombre comercial (Si aplica):</label>
+            <label class="is-required">Nombre comercial (Si aplica):</label>
             <input 
             placeholder="SUPERVENTAS"
             formControlName="name">
           </div>
 
           <div class="input">
-            <label>Representante Legal, como consta en el RUC:</label>
+            <label class="is-required">Representante Legal, como consta en el RUC:</label>
             <input placeholder="SALVATIERRA JONAS JUAN ALEXANDER">
           </div>
 
           <div class="input">
-            <label>Actividad Económica, como consta en el RUC:</label>
+            <label class="is-required">Actividad Económica, como consta en el RUC:</label>
             <input 
             placeholder="VENTA AL POR MENOR DE MATERIAL DE ZAPATERÍA"
             formControlName="economicActivity"
