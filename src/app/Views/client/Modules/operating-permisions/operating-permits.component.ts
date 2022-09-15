@@ -4,6 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router} from '@angular/router';
 import { Permission } from 'src/app/Models/Permission';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
+import { Locale } from 'src/app/Models/Locale';
+import { ApiPermissionService } from 'src/app/Services/api-permission.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -16,7 +19,9 @@ export class OperatingPermitsComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private confirmDialog: MatDialog
+    private confirmDialog: MatDialog,
+    private apiPermission:ApiPermissionService,
+    private snackbar: MatSnackBar
   ) { }
 
   firstFormGroup = this.formBuilder.group({
@@ -94,11 +99,7 @@ export class OperatingPermitsComponent implements OnInit {
 
   //Registrar el Permiso
   registerPermission(){
-    const permission: Permission = {
-      "idSubCat": 0,
-      "state": "string",
-      "economicActivity": "string",
-      "rucCopy": "string",
+    const locale: Locale = {
       "name": "string",
       "address": "string",
       "coordinateX": 0,
@@ -106,8 +107,28 @@ export class OperatingPermitsComponent implements OnInit {
       "socialReason": "string",
       "photo": "string",
       "property": "string",
-      "idCli": 0
+      "idCli": 1
     }
+
+    const permission: Permission = {
+      "idSubCat": 1,
+      "state": "string",
+      "economicActivity": "string",
+      "rucCopy": "string",
+      "locale": locale
+    }
+
+    this.apiPermission.newOperatingPermission(permission).subscribe(response => {
+      if(response.status == 1){
+        this.snackbar.open(response.result+': Permiso Registrado', '',{
+          duration: 2000
+        });
+      }else{
+        this.snackbar.open(response.result+': Permiso NO Registrado', '',{
+          duration: 2000
+        });
+      }
+    })
   }
 
 
