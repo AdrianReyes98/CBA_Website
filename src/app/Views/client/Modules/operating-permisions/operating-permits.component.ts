@@ -69,19 +69,19 @@ export class OperatingPermitsComponent implements OnInit {
       console.log(this.lati)
   }
 
-    moveMap(event: google.maps.MapMouseEvent) {
-        if (event.latLng != null) this.center = (event.latLng.toJSON());
-    }
-    move(event: google.maps.MapMouseEvent) {
-        if (event.latLng != null) this.display = event.latLng.toJSON();
-    }
+  moveMap(event: google.maps.MapMouseEvent) {
+      if (event.latLng != null) this.center = (event.latLng.toJSON());
+  }
+
+  move(event: google.maps.MapMouseEvent) {
+      if (event.latLng != null) this.display = event.latLng.toJSON();
+  }
 
 
   returnHome(){
     this.router.navigateByUrl('/Cliente/Permisos');
   }
 
-  
   //Finalizar el permiso
   finishPermission(){
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
@@ -92,14 +92,18 @@ export class OperatingPermitsComponent implements OnInit {
     dialogRef.afterClosed().subscribe( result => {
       if(result){
         this.registerPermission();
-        this.returnHome();
       }
     })
   }
 
   //Registrar el Permiso
   registerPermission(){
-    const locale: Locale = {
+
+    const permission: Permission = {
+      "idSubCat": 1,
+      "state": "string",
+      "economicActivity": "string",
+      "rucCopy": "string",
       "name": "string",
       "address": "string",
       "coordinateX": 0,
@@ -110,25 +114,18 @@ export class OperatingPermitsComponent implements OnInit {
       "idCli": 1
     }
 
-    const permission: Permission = {
-      "idSubCat": 1,
-      "state": "string",
-      "economicActivity": "string",
-      "rucCopy": "string",
-      "locale": locale
-    }
-
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
       if(response.status == 1){
         this.snackbar.open(response.result+': Permiso Registrado', '',{
           duration: 2000
         });
+        this.returnHome();
       }else{
         this.snackbar.open(response.result+': Permiso NO Registrado', '',{
           duration: 2000
         });
       }
-    })
+    });
   }
 
 

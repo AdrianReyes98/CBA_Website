@@ -15,7 +15,7 @@ const httpOption = {
 })
 export class ApiPermissionService {
 
-  url: string = "https://prevencioncbd.somee.com/permission/operation";
+  url: string = "https://prevencioncbd.somee.com/Permissions/Operation";
 
   constructor(
     private _http: HttpClient
