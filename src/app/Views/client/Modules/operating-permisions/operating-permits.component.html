@@ -105,18 +105,10 @@
         <div class="mapForm">
           
           <div class="input">
-
             <label>Parroquia:</label>
             <select name="address" [(ngModel)]="sector" (ngModelChange)="selectSector()">
               <option [ngValue]="element" *ngFor="let element of parroquias" >{{element}}</option>
-            
             </select>
-
-          </div>
-
-          <div class="input">
-            <label>Sector:</label>
-            <input type="" placeholder="-- Seleccione Sector --">
           </div>
 
           <div class="input">
