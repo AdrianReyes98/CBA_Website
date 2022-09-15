@@ -20,7 +20,7 @@
         <div class="subtitulo">
           <label>Ingrese Nuevo Cliente</label>
         </div>
-   
+
         <div class="checkbox" >
           <input type="text" placeholder="RUC" formControlName="ruc">
           <input type="checkbox" id="RUC" (click)="hideData()">
@@ -29,9 +29,9 @@
             <label for="RUC">Persona Jurídica</label>
           </div>
         </div>
-       
+      
         <div class="input" *ngIf="element">
-         
+        
           <input type="text" placeholder="Cedula" formControlName="identification" maxlength="10">
           <i class='bx bx-id-card'></i>
         </div>
@@ -46,16 +46,11 @@
           <i class='bx bx-lock-alt'></i>
         </div>
 
-             
-
         <div class="footer">
-          
           <button type ="button" class="btnLogin" [disabled]="formClient.invalid"  (click)="addClientService()">Registrarse</button>
-          
           <div>
             <label>Ya tienes cuenta?<button class="btn-registrarse"  (click)="returnLogin()">Iniciar Sesión</button> </label>
           </div>
-
         </div>
         
       </div>

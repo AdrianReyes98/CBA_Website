@@ -35,6 +35,10 @@ $main-bg-color: #F0F0F0;
   }
 }
 
+form input:required {
+  content:"*";
+}
+
 //Disenio formulario de Informacion
 .infoForm{
   background: $main-bg-color;

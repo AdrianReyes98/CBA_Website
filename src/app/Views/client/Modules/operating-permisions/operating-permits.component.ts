@@ -4,7 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router} from '@angular/router';
 import { Permission } from 'src/app/Models/Permission';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
-import { Locale } from 'src/app/Models/Locale';
 import { ApiPermissionService } from 'src/app/Services/api-permission.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -25,14 +24,17 @@ export class OperatingPermitsComponent implements OnInit {
   ) { }
 
   firstFormGroup = this.formBuilder.group({
-    
+    economicActivity: ['', [Validators.required,Validators.minLength(10)]],
+    name: ['',[Validators.required, Validators.minLength(5)]],
+    socialReason: ['', [Validators.required, Validators.minLength(10)]],
+
   });
   secondFormGroup = this.formBuilder.group({
     secondCtrl:['']
   });
 
 
-  isLinear = false;
+  isLinear = true;
   display: any;
   public lati:any;
   public long: any;
@@ -50,7 +52,6 @@ export class OperatingPermitsComponent implements OnInit {
   zoom = 12;
   markerOptions: google.maps.MarkerOptions={
     draggable: false
-    
   };
   
   markerPositions: google.maps.LatLngLiteral[] = [];
@@ -65,7 +66,6 @@ export class OperatingPermitsComponent implements OnInit {
       this.lati =  (event.latLng?.toJSON().lat);
       this.long = (event.latLng?.toJSON().lng);
       
-
       console.log(this.lati)
   }
 
@@ -101,14 +101,13 @@ export class OperatingPermitsComponent implements OnInit {
 
     const permission: Permission = {
       "idSubCat": 1,
-      "state": "string",
-      "economicActivity": "string",
+      "economicActivity": this.firstFormGroup.value.economicActivity!,
       "rucCopy": "string",
-      "name": "string",
+      "name": this.firstFormGroup.value.name!,
       "address": "string",
-      "coordinateX": 0,
-      "coordinateY": 0,
-      "socialReason": "string",
+      "coordinateX": this.lati,
+      "coordinateY": this.long,
+      "socialReason": this.firstFormGroup.value.socialReason!,
       "photo": "string",
       "property": "string",
       "idCli": 1

@@ -4,10 +4,10 @@
     <h1>Solicitud de Inspección</h1>
   </div>
 
-  <mat-stepper [linear]="false" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step>
 
-      <form [formGroup]="firstFormGroup">
+      <form>
 
         <ng-template matStepLabel>Informativo</ng-template>
 
@@ -40,15 +40,15 @@
 
     </mat-step>
 
-    <mat-step [stepControl]="secondFormGroup" label="Datos">
+    <mat-step [stepControl]="firstFormGroup" label="Datos">
 
-      <form [formGroup]="secondFormGroup">
+      <form [formGroup]="firstFormGroup">
 
         <div class="dataForm">
 
           <div class="input">
             <label>Ruc del Cliente:</label>
-            <input placeholder="18030XXXXX001">
+            <input placeholder="18030XXXXX001" disabled>
           </div>
           
           <div class="input">
@@ -58,7 +58,9 @@
 
           <div class="input">
             <label>Nombre comercial (Si aplica):</label>
-            <input placeholder="SUPERVENTAS">
+            <input 
+            placeholder="SUPERVENTAS"
+            formControlName="name">
           </div>
 
           <div class="input">
@@ -68,7 +70,10 @@
 
           <div class="input">
             <label>Actividad Económica, como consta en el RUC:</label>
-            <input placeholder="VENTA AL POR MENOR DE MATERIAL DE ZAPATERÍA(PLANTILLAS,TALONERAS,SUELA Y ARTÍCULOS ANÁLOGOS) EN ESTABLECIEMIENTOS ESPECIALIZADOS">
+            <input 
+            placeholder="VENTA AL POR MENOR DE MATERIAL DE ZAPATERÍA"
+            formControlName="economicActivity"
+            required>
           </div>
 
           <div class="input">
@@ -91,9 +96,9 @@
 
     </mat-step>
 
-    <mat-step label="Ubicación">
+    <mat-step [stepControl]="secondFormGroup" label="Ubicación">
 
-        <form>
+        <form [formGroup]="secondFormGroup">
 
           <div class="ubicationForm">
 
@@ -160,9 +165,7 @@
         </form>
     </mat-step>
 
-    <mat-step>
-
-      <ng-template matStepLabel>Documentos</ng-template>
+    <mat-step [stepControl]="secondFormGroup" label="Documentos">
 
       <div class="documentsForm">
 
