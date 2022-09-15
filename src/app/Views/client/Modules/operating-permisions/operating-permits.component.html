@@ -98,9 +98,9 @@
 
     </mat-step>
 
-    <mat-step [stepControl]="secondFormGroup" label="Ubicación">
+    <mat-step  label="Ubicación">
 
-        <form [formGroup]="secondFormGroup">
+   
 
           <div class="ubicationForm">
 
@@ -109,11 +109,9 @@
               <div class="input">
 
                 <label>Parroquia:</label>
-                <select name="address">
-                  <option value="Atahualpa">Atahualpa</option>
-                  <option value="Martinez">Martinez</option>
-                  <option value="Izamba">Izamba</option>
-                  <option value="Centro">Centro</option>
+                <select name="address" [(ngModel)]="sector" (ngModelChange)="selectSector()">
+                  <option [ngValue]="element" *ngFor="let element of parroquias" >{{element}}</option>
+                
                 </select>
 
               </div>
@@ -164,7 +162,7 @@
             <button mat-button matStepperNext class="btnNext">Siguiente</button>
           </div>
 
-        </form>
+   
     </mat-step>
 
     <mat-step [stepControl]="secondFormGroup" label="Documentos">
