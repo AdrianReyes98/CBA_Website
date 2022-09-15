@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router} from '@angular/router';
+import { Permission } from 'src/app/Models/Permission';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
 
 
@@ -12,13 +13,18 @@ import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/conf
 })
 export class OperatingPermitsComponent implements OnInit {
 
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private confirmDialog: MatDialog
+  ) { }
+
   firstFormGroup = this.formBuilder.group({
     
   });
   secondFormGroup = this.formBuilder.group({
     secondCtrl:['']
   });
-
 
 
   isLinear = false;
@@ -31,11 +37,6 @@ export class OperatingPermitsComponent implements OnInit {
     lng:  -78.60745217922444
   }; 
   
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-    private confirmDialog: MatDialog
-    ) { }
 
   ngOnInit(): void {
   }
@@ -85,6 +86,7 @@ export class OperatingPermitsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
+        this.registerPermission();
         this.returnHome();
       }
     })
@@ -92,7 +94,20 @@ export class OperatingPermitsComponent implements OnInit {
 
   //Registrar el Permiso
   registerPermission(){
-    
+    const permission: Permission = {
+      "idSubCat": 0,
+      "state": "string",
+      "economicActivity": "string",
+      "rucCopy": "string",
+      "name": "string",
+      "address": "string",
+      "coordinateX": 0,
+      "coordinateY": 0,
+      "socialReason": "string",
+      "photo": "string",
+      "property": "string",
+      "idCli": 0
+    }
   }
 
 
