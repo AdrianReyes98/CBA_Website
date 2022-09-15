@@ -1,64 +1,81 @@
 <div class="content">
 
-<div id="title">
-  <h1>Solicitud de Inspección</h1>
-</div>
+  <div id="title">
+    <h1>Solicitud de Inspección</h1>
+  </div>
 
   <mat-stepper [linear]="false" #stepper>
     <mat-step [stepControl]="firstFormGroup">
 
       <form [formGroup]="firstFormGroup">
+
         <ng-template matStepLabel>Informativo</ng-template>
+
         <div class="infoForm">
+
           <div id="subtitle">
               <h1>PERMISO DE ESTABLECIMIENTO POR PRIMERA VEZ</h1>
           </div>
+
           <div class ="content">
-                  Requisitos Obligatorios: 
-                  <ul>
-                  <li> Certificado de Establecimiento (SRI) </li>
-                  <li>Predio Urbano Cancelado del Año actual. </li>
-                  <li> Foto de la fachada del establecimiento, en formato JPG,PNG.    </li>
-                  <li> Para personas Naturales: cédula y certificado de votación.</li>
-                  <li> En el caso que su establecimiento posea Calificación Artesanal, deberá adjuntarlo.</li>
-                  <li> Para personas Jurídicas: cédula, certificado de votación del representante 
-                  legal y el nombramiento que lo acredite como representante de la empresa.</li> 
-                  </ul>
+            Requisitos Obligatorios: 
+            <ul>
+            <li> Certificado de Establecimiento (SRI) </li>
+            <li>Predio Urbano Cancelado del Año actual. </li>
+            <li> Foto de la fachada del establecimiento, en formato JPG,PNG.    </li>
+            <li> Para personas Naturales: cédula y certificado de votación.</li>
+            <li> En el caso que su establecimiento posea Calificación Artesanal, deberá adjuntarlo.</li>
+            <li> Para personas Jurídicas: cédula, certificado de votación del representante 
+            legal y el nombramiento que lo acredite como representante de la empresa.</li> 
+            </ul>
           </div>
+
         </div>
+
         <div class="actions">
           <button mat-button matStepperNext class="btnNext">Siguiente</button>
         </div>
+
       </form>
+
     </mat-step>
 
     <mat-step [stepControl]="secondFormGroup" label="Datos">
+
       <form [formGroup]="secondFormGroup">
+
         <div class="dataForm">
+
           <div class="input">
             <label>Ruc del Cliente:</label>
             <input placeholder="18030XXXXX001">
           </div>
+          
           <div class="input">
             <label>Razón Social (Si aplica):</label>
             <input placeholder="CORPORACIÓN CIA.LTDA">
           </div>
+
           <div class="input">
             <label>Nombre comercial (Si aplica):</label>
             <input placeholder="SUPERVENTAS">
           </div>
+
           <div class="input">
             <label>Representante Legal, como consta en el RUC:</label>
             <input placeholder="SALVATIERRA JONAS JUAN ALEXANDER">
           </div>
+
           <div class="input">
             <label>Actividad Económica, como consta en el RUC:</label>
             <input placeholder="VENTA AL POR MENOR DE MATERIAL DE ZAPATERÍA(PLANTILLAS,TALONERAS,SUELA Y ARTÍCULOS ANÁLOGOS) EN ESTABLECIEMIENTOS ESPECIALIZADOS">
           </div>
+
           <div class="input">
             <label>Teléfono Móvil:</label>
             <input placeholder="09XXXXXXXX">
           </div>
+
           <div class="input">
             <label>Correo Electrónico del propietario del local :</label>
             <input placeholder="JUAN@HOTMAIL.COM">
@@ -69,13 +86,35 @@
           <button mat-button matStepperPrevious class="btnBack">Anterior</button>
           <button mat-button matStepperNext class="btnNext">Siguiente</button>
         </div>
+
       </form>
+
     </mat-step>
+
     <mat-step label="Ubicación">
+
         <form>
+
           <div class="ubicationForm">
+
             <div class="mapForm">
+
+              <div class="coordsContainer">
+
+                <div class="inputCoords">
+                  <label>Latitud</label> <br>
+                  <label>{{lati}} </label>
+                </div>
+  
+                <div class="inputCoords">
+                  <label>Longitud</label> <br>
+                  <label>{{long}} </label>
+                </div>
+                
+              </div>
+              
               <div class="input">
+
                 <label>Parroquia:</label>
                 <select name="address">
                   <option value="Atahualpa">Atahualpa</option>
@@ -83,35 +122,32 @@
                   <option value="Izamba">Izamba</option>
                   <option value="Centro">Centro</option>
                 </select>
+
               </div>
+
               <div class="input">
                 <label>Sector:</label>
                 <input type="" placeholder="-- Seleccione Sector --">
               </div>
+
               <div class="input">
                 <label>Referencia:</label>
                 <input placeholder="Referencia Direccion">
               </div>
-              <div class="inputcoords">
-                <label>Latitud: {{lati}} </label>
-              </div>
-              <div class="input" >
-                <label>Longitud: {{long}}</label>
-                
-              </div>
+              
             </div>
 
             <div class="mapContainer">
               <google-map height="400px"
-            width="750px"
-            [center]="center"
-            [zoom]="zoom"
-            (mapClick)="addMarker($event)"
-            (mapMousemove)="move($event)" >
-            <map-marker *ngFor="let markerPosition of markerPositions"
-              [position]="markerPosition"
-              [options]="markerOptions"> </map-marker>
-            </google-map>
+                          width="750px"
+                          [center]="center"
+                          [zoom]="zoom"
+                          (mapClick)="addMarker($event)"
+                          (mapMousemove)="move($event)" >
+                          <map-marker *ngFor="let markerPosition of markerPositions"
+                          [position]="markerPosition"
+                          [options]="markerOptions"> </map-marker>
+              </google-map>
             </div>
 
           </div>
@@ -122,29 +158,40 @@
           </div>
 
         </form>
-      </mat-step>
+    </mat-step>
+
     <mat-step>
+
       <ng-template matStepLabel>Documentos</ng-template>
+
       <div class="documentsForm">
+
         <label id="titleDocs">Adjuntar Archivos:</label>
+
         <div class="document">
           <label>Copia de RUC: </label>
           <input type="file">
         </div>
+
         <div class="document">
           <label>Foto Fachada: </label>
           <input type="file">
         </div>
+
         <div class="document">
           <label>Predio Local : </label>
           <input type="file">
         </div>
+
       </div>
+
       <div class="actions">
         <button mat-button matStepperPrevious class="btnBack">Anterior</button>
         <button mat-button (click)="finishPermission()" class="btnNext">Finalizar</button>
       </div>
+
     </mat-step>
+
   </mat-stepper>
 
 </div>

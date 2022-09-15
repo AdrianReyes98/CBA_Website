@@ -1,5 +1,6 @@
 $main-bg-color: #F0F0F0;
 
+//Disenio General
 #title{
     text-align: center;
     padding: 20px;
@@ -12,15 +13,8 @@ $main-bg-color: #F0F0F0;
 
 }
 
-.infoForm{
-  background: $main-bg-color;
-  margin: 0 250px 0 250px;
-  padding: 0 200px 0 200px;
-  height: 400px;
-}
-
 .mat-stepper-horizontal {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
 .actions{
@@ -28,7 +22,7 @@ $main-bg-color: #F0F0F0;
   align-items: center; 
   display: flex;
   margin-top: 20px;
-  
+
   .btnNext{
     background-color: rgb(59, 59, 203);
     color: #fff;
@@ -41,6 +35,16 @@ $main-bg-color: #F0F0F0;
   }
 }
 
+//Disenio formulario de Informacion
+.infoForm{
+  background: $main-bg-color;
+  margin: 0 250px 0 250px;
+  padding: 0 200px 0 200px;
+  height: 400px;
+}
+
+
+//Disenio formulario de Datos
 .dataForm{
   background: $main-bg-color;
   margin: 0 130px 0 130px;
@@ -67,6 +71,7 @@ $main-bg-color: #F0F0F0;
   }
 }
 
+//Disenio Formulario Ubicacion
 .ubicationForm{
   margin-top: 10px;
   width: 100%;
@@ -114,8 +119,33 @@ $main-bg-color: #F0F0F0;
       margin: 5px 0 5px 0;
     }
   }
+
+  .coordsContainer{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5%;
+    margin-left: 18%;
+
+    .inputCoords{
+      width: 25%;
+      margin-left: 5%;
+      background-color: #fff;
+      justify-content: center;
+      height: 50px;
+      padding: 20px;
+      border-radius: 10px;
+
+      label{
+        font-size: 14px;
+        display: contents;
+      }
+
+    }
+  }
+  
 }
 
+//Disenio Formulario de documentos
 .documentsForm{
   height: 350PX;
   margin: 0 150px 0 150px;
@@ -132,7 +162,6 @@ $main-bg-color: #F0F0F0;
   }
 
   label{
-    display:inline-block;
     margin-right: 10px;
   }
 
@@ -153,6 +182,9 @@ $main-bg-color: #F0F0F0;
   }
 }
 
+
+
+//Disenio Responsive
 @media screen and (max-width: 850px) {
   .login-logo{
     display: none;
@@ -166,8 +198,4 @@ $main-bg-color: #F0F0F0;
     border-radius: 20px;
     padding-left: 40px;
   }
-}
-
-.inputcoords{
-  
 }

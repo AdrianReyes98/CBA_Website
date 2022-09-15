@@ -89,4 +89,11 @@ export class OperatingPermitsComponent implements OnInit {
       }
     })
   }
+
+  //Registrar el Permiso
+  registerPermission(){
+    
+  }
+
+
 }
