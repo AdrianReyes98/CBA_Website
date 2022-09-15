@@ -71,8 +71,8 @@
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Ubicación">
-        <form [formGroup]="secondFormGroup">
+    <mat-step label="Ubicación">
+        <form>
           <div class="ubicationForm">
             <div class="mapForm">
               <div class="input">
@@ -91,6 +91,13 @@
               <div class="input">
                 <label>Referencia:</label>
                 <input placeholder="Referencia Direccion">
+              </div>
+              <div class="inputcoords">
+                <label>Latitud: {{lati}} </label>
+              </div>
+              <div class="input" >
+                <label>Longitud: {{long}}</label>
+                
               </div>
             </div>
 
