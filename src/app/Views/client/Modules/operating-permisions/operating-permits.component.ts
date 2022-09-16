@@ -34,10 +34,11 @@ export class OperatingPermitsComponent implements OnInit {
   });
 
 
-  isLinear = true;
+  isLinear = false;
   display: any;
   public lati:any;
   public long: any;
+
   parroquias: string[]=["---Seleccionar Sector---","Atahualpa","Atocha","Augusto Martinez","Ambatillo",
   "Constantino Fernández","Cunchibamba","Celiano Monge",
   "Ficoa",
@@ -82,7 +83,6 @@ export class OperatingPermitsComponent implements OnInit {
       this.lati =  (event.latLng?.toJSON().lat);
       this.long = (event.latLng?.toJSON().lng);
       
-      console.log(this.lati)
   }
 
   moveMap(event: google.maps.MapMouseEvent) {
@@ -93,12 +93,9 @@ export class OperatingPermitsComponent implements OnInit {
       if (event.latLng != null) this.display = event.latLng.toJSON();
   }
 
-
   returnHome(){
     this.router.navigateByUrl('/Cliente/Permisos');
   }
-
-
 
   selectSector(){
     
@@ -218,12 +215,13 @@ export class OperatingPermitsComponent implements OnInit {
       default:
         this.center = {
           lat: -1.2449722676037696,
-          lng:  -78.60745217922444
-        }; 
-        this.zoom=12;
+        lng:  -78.60745217922444
+      }; 
+      this.zoom=12;
 
-      }
     }
+  }
+
   changeU(x:number,y:number){
     this.center={ 
       lat:x,
