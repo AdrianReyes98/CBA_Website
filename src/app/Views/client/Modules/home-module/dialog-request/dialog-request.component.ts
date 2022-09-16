@@ -17,8 +17,8 @@ export class DialogRequestComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  open(){
-      console.log(this.router.navigateByUrl('/Cliente/PermisosFuncionamiento'));
+  open(link: string){
+      console.log(this.router.navigateByUrl(link));
       this.dialogRef.close();
   }
 

@@ -18,6 +18,10 @@ import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-s
 import { PermisionsClientModuleComponent } from './Views/client/Modules/permisions-client-module/permisions-client-module.component';
 import { OperatingPermitsComponent } from './Views/client/Modules/operating-permisions/operating-permits.component';
 import { MapModuleComponent } from './Views/Common/map-module/map-module.component';
+import { PlansApprovalComponent } from './Views/client/Modules/plans-approval/plans-approval.component';
+import { OccupancyPermisionsComponent } from './Views/client/Modules/occupancy-permisions/occupancy-permisions.component';
+import { GLCarsPermissionsComponent } from './Views/client/Modules/glpcars-permissions/glcars-permissions.component';
+import { GLPDefinitivePermissionsComponent } from './Views/client/Modules/glpdefinitive-permissions/glpdefinitive-permissions.component';
 
 const routes: Routes = [
   {
@@ -104,6 +108,22 @@ const routes: Routes = [
       {
         path: 'Map',
         component: MapModuleComponent
+      },
+      {
+        path: 'PlansApproval',
+        component: PlansApprovalComponent
+      },
+      {
+        path: 'OccupancyPermission',
+        component: OccupancyPermisionsComponent
+      },
+      {
+        path: 'GlpPermission',
+        component: GLCarsPermissionsComponent
+      },
+      {
+        path: 'GlpDefinitive',
+        component: GLPDefinitivePermissionsComponent
       }
     ],
     canActivate: [LoginGuardGuard]

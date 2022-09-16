@@ -49,6 +49,10 @@ import { DialogRequestComponent } from './Views/client/Modules/home-module/dialo
 import { OperatingPermitsComponent } from './Views/client/Modules/operating-permisions/operating-permits.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MapModuleComponent } from './Views/Common/map-module/map-module.component';
+import { PlansApprovalComponent } from './Views/client/Modules/plans-approval/plans-approval.component';
+import { OccupancyPermisionsComponent } from './Views/client/Modules/occupancy-permisions/occupancy-permisions.component';
+import { GLCarsPermissionsComponent } from './Views/client/Modules/glpcars-permissions/glcars-permissions.component';
+import { GLPDefinitivePermissionsComponent } from './Views/client/Modules/glpdefinitive-permissions/glpdefinitive-permissions.component';
 
 
 @NgModule({
@@ -75,6 +79,10 @@ import { MapModuleComponent } from './Views/Common/map-module/map-module.compone
     DialogRequestComponent,
     OperatingPermitsComponent,
     MapModuleComponent,
+    PlansApprovalComponent,
+    OccupancyPermisionsComponent,
+    GLCarsPermissionsComponent,
+    GLPDefinitivePermissionsComponent
 
   ],
   imports: [
