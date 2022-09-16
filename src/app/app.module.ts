@@ -49,6 +49,7 @@ import { DialogRequestComponent } from './Views/client/Modules/home-module/dialo
 import { OperatingPermitsComponent } from './Views/client/Modules/operating-permisions/operating-permits.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MapModuleComponent } from './Views/Common/map-module/map-module.component';
+import { DialogAgreementsRegisterComponent } from './Views/register/dialog-agreements-register/dialog-agreements-register.component';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { MapModuleComponent } from './Views/Common/map-module/map-module.compone
     DialogRequestComponent,
     OperatingPermitsComponent,
     MapModuleComponent,
+    DialogAgreementsRegisterComponent,
 
   ],
   imports: [

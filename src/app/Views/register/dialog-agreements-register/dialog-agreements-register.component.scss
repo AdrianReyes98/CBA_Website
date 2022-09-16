@@ -1,0 +1,74 @@
+$main-color: #CC3636;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ h1{
+    text-align: left;
+    color: #fff;
+    padding-left: 20px;
+}
+.title{
+    background-color: $main-color;
+}
+
+ i{
+    background-color: transparent;
+    color: #fff;
+    padding-top: 10px;
+    font-size: 25px;
+    margin-left: 96%;
+}
+
+
+.content{
+    background-color: #fff;
+    padding: 20px;
+    
+}
+
+.actions{
+    background-color: #fff;
+    justify-content:center;
+    padding-block: 10px;
+    padding-left: 850px;
+    padding-top: 1px;
+    
+}
+
+.actions button{
+    margin-left: 25px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.texto{
+width: 900px;
+height: 300px;
+    overflow-y: scroll;
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: justify;
+    padding-right: 30px;
+    border-width: 5px;;
+    border-left-style: solid;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+
+    
+}
+
+ul{
+    padding-left: 40px;
+}
+
+ol{
+    padding-left: 80px;
+}
+
+.checkbox{
+    padding-top: 25px;
+}

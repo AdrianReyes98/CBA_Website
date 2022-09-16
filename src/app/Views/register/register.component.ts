@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { User } from 'src/app/Models/User';
 import {Client} from 'src/app/Models/Client';
 import { ApiUsersService } from 'src/app/Services/api-users.service';
 import{ApiClientService} from 'src/app/Services/api-client.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogAgreementsRegisterComponent } from './dialog-agreements-register/dialog-agreements-register.component';
 
 @Component({
   selector: 'app-register',
@@ -25,7 +26,8 @@ export class RegisterComponent implements OnInit {
     public apiClient: ApiUsersService,
     public apiNewClient: ApiClientService,
     public snackBar: MatSnackBar,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -96,6 +98,21 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  openDialogRequest(){
+    
+    const dialogRef = this.dialog.open( DialogAgreementsRegisterComponent,  {
+      disableClose: true,
+      width: '1000px',
+      height:'700px',
+      panelClass: 'no-padding-dialog',
+    });
+    dialogRef.afterClosed().subscribe( result => {
+      if(result){
+        this.addClientService();
+      }
+ 
+    });
+  }
 
   
 }
