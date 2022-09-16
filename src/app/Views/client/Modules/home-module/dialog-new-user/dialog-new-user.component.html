@@ -1,0 +1,40 @@
+<div class="title">
+    <div class="dialog-logo">
+      <i class='bx bx-edit' ></i>
+    </div>
+    <h1> Datos Nuevo Usuario</h1>
+  </div>
+  
+  <div mat-dialog-content class="content">
+    <form >
+      <mat-form-field>
+        <mat-label>Nombres: </mat-label>
+        <input matInput type="text" formControlName="name">
+        <mat-icon matSuffix><i class='bx bx-face' ></i></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Apellidos: </mat-label>
+        <input matInput type="text" formControlName="name">
+        <mat-icon matSuffix><i class='bx bx-face' ></i></mat-icon>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Telefono: </mat-label>
+        <input matInput type="text" formControlName="phone" [maxLength]="10" type="number">
+        <mat-icon matSuffix><i class="bx bx-phone"></i></mat-icon>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Direccion: </mat-label>
+        <input matInput type="text" formControlName="address">
+        <mat-icon matSuffix><i class="bx bx-map"></i></mat-icon>
+      </mat-form-field>
+    
+      <div class="actions">
+        <button mat-raised-button  color="warn" type="button" >Cancelar</button>
+        <button mat-raised-button color="primary" type="submit" >Guardar</button>
+      </div>
+  
+    </form> 
+  </div>

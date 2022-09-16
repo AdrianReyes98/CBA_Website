@@ -1,0 +1,60 @@
+$main-color: #ff4848;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.title{
+    background-color: $main-color;
+    height: fit-content;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.title h1{
+    text-align: center;
+    color: #fff;
+}
+
+.title .dialog-logo{
+    background-color: transparent;
+    color: #fff;
+    border-style:solid;
+    border-width: 3px;
+    border-color: #fff;
+    border-radius: 50%;
+    width: fit-content;
+    font-size: 40px;
+    margin-left: 43%;
+    margin-bottom: 15px;
+}
+
+.title .dialog-logo i{
+    padding: 3px;
+}
+
+mat-form-field.mat-form-field {
+    font-size: 16px;
+    padding-left: 45px;
+
+}
+.content{
+    background-color: #fff;
+    padding: 10px;
+}
+
+mat-option.mat-option{
+    padding-left:10px;
+}
+
+.actions{
+    background-color: #fff;
+    justify-content:center;
+    padding-block: 10px;
+}
+
+.actions button{
+    margin-left: 25px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
