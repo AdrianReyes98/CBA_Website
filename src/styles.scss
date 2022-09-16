@@ -16,7 +16,7 @@
 }
 
 .toolbar{
-  background-color: #252525f3;
+  background-color: #1e1e1ef3;
   position: fixed;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@
   button{
     border: none;
     border-radius: 5px 5px 0 0;
-    color: rgb(202, 202, 202);
+    color: rgb(109, 109, 109);
     background-color: transparent;
     padding: 20px;
     font-size: 18px;
@@ -59,8 +59,7 @@
   }
 
   button:hover{
-    color: #252525eb;
-    background-color: #fff;
+    color: #fff;
   }
 
 }
