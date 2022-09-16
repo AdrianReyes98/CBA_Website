@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { DialogAgreementsRegisterComponent } from 'src/app/Views/register/dialog-agreements-register/dialog-agreements-register.component';
+import { DialogNewUserComponent } from './dialog-new-user/dialog-new-user.component';
 import { DialogRequestComponent } from './dialog-request/dialog-request.component';
 
 @Component({
@@ -16,6 +18,7 @@ export class HomeModuleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.openDialognewUser();
   }
 
   openDialogRequest(){
@@ -25,5 +28,18 @@ export class HomeModuleComponent implements OnInit {
       panelClass: 'no-padding-dialog',
     });
 
+
   }
-}
+  
+  openDialognewUser(){
+    
+    const dialogRef = this.dialog.open( DialogNewUserComponent,  {
+     // disableClose: true,
+      width: '600px',
+      panelClass: 'no-padding-dialog',
+    });
+      }
+ 
+  }
+
+
