@@ -1,0 +1,173 @@
+<div class="content">
+
+    <div id="title">
+        <h1>Permisos de Ocupacion</h1>
+    </div>
+
+    <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step>
+
+        <form>
+
+            <ng-template matStepLabel>Informativo</ng-template>
+
+            <div class="infoForm">
+
+            <div id="subtitle">
+                <h1>PERMISOS DE OCUPACION POR PRIMERA VEZ</h1>
+            </div>
+
+            <div class ="content">
+                Requisitos Obligatorios: 
+                <ul>
+                <li> Certificado de Establecimiento (SRI) </li>
+                <li>Predio Urbano Cancelado del Año actual. </li>
+                <li> Foto de la fachada del establecimiento, en formato JPG,PNG.    </li>
+                <li> Para personas Naturales: cédula y certificado de votación.</li>
+                <li> En el caso que su establecimiento posea Calificación Artesanal, deberá adjuntarlo.</li>
+                <li> Para personas Jurídicas: cédula, certificado de votación del representante 
+                legal y el nombramiento que lo acredite como representante de la empresa.</li> 
+                </ul>
+            </div>
+
+            </div>
+
+            <div class="actions">
+            <button mat-button matStepperNext class="btnNext">Siguiente</button>
+            </div>
+
+        </form>
+
+        </mat-step>
+
+        <mat-step [stepControl]="firstFormGroup" label="Datos">
+
+        <form [formGroup]="firstFormGroup">
+
+            <div class="dataForm">
+
+            <div class="input">
+                <label>Ruc del Cliente:</label>
+                <input placeholder="18030XXXXX001" disabled>
+            </div>
+            
+            <div class="input">
+                <label class="is-required">Razón Social (Si aplica):</label>
+                <input 
+                placeholder="CORPORACIÓN CIA.LTDA"
+                formControlName = "socialReason">
+            </div>
+
+            <div class="input">
+                <label class="is-required">Nombre comercial (Si aplica):</label>
+                <input 
+                placeholder="SUPERVENTAS"
+                formControlName="name">
+            </div>
+
+            <div class="input">
+                <label class="is-required">Representante Legal, como consta en el RUC:</label>
+                <input placeholder="SALVATIERRA JONAS JUAN ALEXANDER">
+            </div>
+
+            <div class="input">
+                <label class="is-required">Actividad Económica, como consta en el RUC:</label>
+                <input 
+                placeholder="VENTA AL POR MENOR DE MATERIAL DE ZAPATERÍA"
+                formControlName="economicActivity"
+                required>
+            </div>
+
+            <div class="input">
+                <label>Teléfono Móvil:</label>
+                <input placeholder="09XXXXXXXX">
+            </div>
+
+            <div class="input">
+                <label>Correo Electrónico del propietario del local :</label>
+                <input placeholder="JUAN@HOTMAIL.COM">
+            </div>
+            
+            </div>
+            <div class="actions">
+            <button mat-button matStepperPrevious class="btnBack">Anterior</button>
+            <button mat-button matStepperNext class="btnNext">Siguiente</button>
+            </div>
+
+        </form>
+
+        </mat-step>
+
+        <mat-step  label="Ubicación">
+
+        <div class="ubicationForm">
+
+            <div class="mapForm">
+            
+
+            <div class="input">
+                <label>Referencia:</label>
+                <input placeholder="Referencia Direccion">
+            </div>
+            
+            
+            <div class="coordsContainer">
+
+                <div class="inputCoords">
+                <label>Latitud</label> <br>
+                <label>0 </label>
+                </div>
+
+                <div class="inputCoords">
+                <label>Longitud</label> <br>
+                <label>0 </label>
+                </div>
+                
+            </div>
+            </div>
+
+            <div class="mapContainer">
+            </div>
+
+        </div>
+
+        <div class="actions">
+            <button mat-button matStepperPrevious class="btnBack">Anterior</button>
+            <button mat-button matStepperNext class="btnNext">Siguiente</button>
+        </div>
+
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup" label="Documentos">
+
+        <div class="documentsForm">
+
+            <label id="titleDocs">Adjuntar Archivos:</label>
+
+            <div class="document">
+            <label>Copia de RUC: </label>
+            <input type="file">
+            </div>
+
+            <div class="document">
+            <label>Foto Fachada: </label>
+            <input type="file">
+            </div>
+
+            <div class="document">
+            <label>Predio Local : </label>
+            <input type="file">
+            </div>
+
+        </div>
+
+        <div class="actions">
+            <button mat-button matStepperPrevious class="btnBack">Anterior</button>
+            <button mat-button class="btnNext">Finalizar</button>
+        </div>
+
+        </mat-step>
+
+    </mat-stepper>
+
+</div>

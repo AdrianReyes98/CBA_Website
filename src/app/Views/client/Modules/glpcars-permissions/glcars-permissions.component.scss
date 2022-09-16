@@ -1,0 +1,207 @@
+$main-bg-color: #F0F0F0;
+
+//Disenio General
+#title{
+    text-align: center;
+    padding: 20px;
+}
+
+#subtitle{
+    text-align: center;
+    padding: 30px;
+    font-size: 9px;
+
+}
+
+.mat-stepper-horizontal {
+    margin-top: 8px;
+}
+
+.actions{
+    justify-content: right;
+    align-items: center; 
+    display: flex;
+    margin-top: 20px;
+
+    .btnNext{
+        background-color: rgb(59, 59, 203);
+        color: #fff;
+        margin-left: 15px;
+    }
+
+    .btnBack{
+        background-color: rgb(252, 109, 109);
+        color: #fff;
+    }
+}
+
+.is-required:after {
+    content: '*';
+    margin-left: 3px;
+    color: red;
+    font-weight: bold;
+}
+
+//Disenio formulario de Informacion
+.infoForm{
+    background: $main-bg-color;
+    margin: 0 250px 0 250px;
+    padding: 0 200px 0 200px;
+    height: 400px;
+}
+
+
+//Disenio formulario de Datos
+.dataForm{
+    background: $main-bg-color;
+    margin: 0 130px 0 130px;
+    padding: 30px 100px 0 100px;
+    height: 400px;
+
+    label{
+        width: 40%;
+        display: inline-block;
+        text-align: right;
+        margin-right: 40px;
+    }
+    .input{
+        padding: 0.5px;
+    
+        input{
+        width: 40%;
+        height: 25px;
+        border-radius: 5px;
+        border: 0;
+        padding: 5px;
+        margin: 5px 0 5px 0;
+        }
+    }
+}
+
+//Disenio Formulario Ubicacion
+.ubicationForm{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.mapContainer{
+    display: flex;
+    width: 50%;
+    margin-left: 30px;
+}
+
+.mapForm{
+    background: $main-bg-color;
+    height: fit-content + 100px;
+    width: 45%;
+    margin-right: 30px;
+    padding: 5% 0 5% 0;
+
+    label{
+        width: 10%;
+        display: inline-block;
+        margin: 0 40px 0 150px;
+    }
+
+    .input{
+        padding: 0.5px;
+    
+        input{
+        width: 40%;
+        height: 25px;
+        border-radius: 5px;
+        border: 0;
+        padding: 5px;
+        margin: 5px 0 5px 0;
+        }
+
+        select{
+        width: 42%;
+        height: 30px;
+        border-radius: 5px;
+        border: 0;
+        padding: 5px;
+        margin: 5px 0 5px 0;
+        }
+        }
+
+    .coordsContainer{
+        display: flex;
+        flex-direction: row;
+        padding-top: 5%;
+        margin-left: 18%;
+
+        .inputCoords{
+        width: 25%;
+        margin-left: 5%;
+        background-color: #fff;
+        justify-content: center;
+        height: 50px;
+        padding: 20px;
+        border-radius: 10px;
+
+        label{
+            font-size: 14px;
+            display: contents;
+        }
+
+        }
+    }
+}
+
+//Disenio Formulario de documentos
+.documentsForm{
+    height: 350PX;
+    margin: 0 150px 0 150px;
+    background-color: $main-bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    #titleDocs{
+        margin-bottom: 30px;
+        margin-left: 6%;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    label{
+        margin-right: 10px;
+    }
+
+    .document{
+        padding: 10px;
+        width: 80%;
+        margin-left: 5%;
+
+        label{
+        font-size: 15px;
+        }
+
+        input{
+        background-color: #fff;
+        padding: 5px;
+        width: 80%;
+        }
+    }
+}
+
+
+
+//Disenio Responsive
+@media screen and (max-width: 850px) {
+    .login-logo{
+        display: none;
+    }
+
+    .form{
+        justify-content: center;
+    }
+
+    .data{
+        border-radius: 20px;
+        padding-left: 40px;
+    }
+}
