@@ -27,8 +27,6 @@ export class HomeModuleComponent implements OnInit {
       height:'705px',
       panelClass: 'no-padding-dialog',
     });
-
-
   }
   
   openDialognewUser(){
@@ -39,7 +37,6 @@ export class HomeModuleComponent implements OnInit {
       panelClass: 'no-padding-dialog',
     });
       }
- 
   }
 
 
