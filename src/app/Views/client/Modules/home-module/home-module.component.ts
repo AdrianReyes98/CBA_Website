@@ -33,7 +33,7 @@ export class HomeModuleComponent implements OnInit {
     var user = (JSON.parse(localStorage.getItem('user')!));
     if(user.client.newUser){
       const dialogRef = this.dialog.open( DialogNewUserComponent,  {
-        // disableClose: true,
+        disableClose: true,
          width: '600px',
          panelClass: 'no-padding-dialog',
        });

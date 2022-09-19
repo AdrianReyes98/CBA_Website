@@ -18,7 +18,7 @@ const httpOption = {
 export class ApiClientService {
 
   urlRegister: string = "https://prevencioncbd.somee.com/Login/register";
-  urlClient: string = "https://prevencioncbd.somee.com/Clientes";
+  urlClient: string = "https://prevencioncbd.somee.com/Client";
 
   constructor(
     private _http: HttpClient
