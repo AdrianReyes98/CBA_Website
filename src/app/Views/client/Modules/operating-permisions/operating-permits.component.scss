@@ -67,13 +67,23 @@ $main-bg-color: #F0F0F0;
   .input{
     padding: 0.5px;
   
-    input{
+    @mixin texts($height) {
       width: 40%;
-      height: 25px;
+      height: $height;
       border-radius: 5px;
       border: 0;
       padding: 5px;
       margin: 5px 0 5px 0;
+    }
+    input{
+      @include texts(25px);
+    }
+     textarea{
+      @include texts(50px);
+      max-width: 40%;
+      min-width: 40%;
+      max-height: 75px;
+      min-height: 25px;
     }
   }
 }
@@ -115,6 +125,7 @@ $main-bg-color: #F0F0F0;
       border: 0;
       padding: 5px;
       margin: 5px 0 5px 0;
+      
     }
 
     select{
@@ -186,7 +197,9 @@ $main-bg-color: #F0F0F0;
       padding: 5px;
       width: 80%;
     }
+   
   }
+ 
 }
 
 

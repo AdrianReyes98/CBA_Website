@@ -86,6 +86,7 @@ export class RegisterComponent implements OnInit {
   hideData() {
     if(this.element){
       this.element = false;
+
       this.formClient = this.formBuilder.group({
         email: ['',[Validators.required,Validators.email]],
         password: ['',[Validators.required,Validators.minLength(8)]],
@@ -94,6 +95,13 @@ export class RegisterComponent implements OnInit {
       });
     }else{
       this.element = true;
+      this.formClient = this.formBuilder.group({
+        email: ['',[Validators.required,Validators.email]],
+        password: ['',[Validators.required,Validators.minLength(8)]],
+        identification: ['', [Validators.required, Validators.minLength(10)]],  
+        ruc: ['']
+      });
+      
       
     }
   }

@@ -30,13 +30,15 @@ export class HomeModuleComponent implements OnInit {
   }
   
   openDialognewUser(){
-    
-    const dialogRef = this.dialog.open( DialogNewUserComponent,  {
-     // disableClose: true,
-      width: '600px',
-      panelClass: 'no-padding-dialog',
-    });
-      }
+    var user = (JSON.parse(localStorage.getItem('user')!));
+    if(user.client.newUser){
+      const dialogRef = this.dialog.open( DialogNewUserComponent,  {
+        // disableClose: true,
+         width: '600px',
+         panelClass: 'no-padding-dialog',
+       });
+    }
   }
+}
 
 

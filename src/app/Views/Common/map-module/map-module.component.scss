@@ -27,16 +27,32 @@ $main-bg-color: #F0F0F0;
         margin: 0 40px 0 150px;
     }
 
+
+
+    
     .input{
         padding: 0.5px;
-
-        input{
+       
+        @mixin  texts($height) {
         width: 40%;
-        height: 25px;
+        height: $height;
         border-radius: 5px;
         border: 0;
         padding: 5px;
         margin: 5px 0 5px 0;
+        }
+
+        input {
+       @include texts(25px)
+        }
+
+        textarea{
+       @include texts(100px);
+        max-width: 40%;
+        min-width: 40%;
+        min-height: 25px;
+        max-height: 130px;
+        
         }
 
         select{
