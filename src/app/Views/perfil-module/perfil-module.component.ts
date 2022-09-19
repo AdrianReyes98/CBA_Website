@@ -29,6 +29,7 @@ export class PerfilModuleComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user')!);
+    console.log(this.user);
     this.email = this.user.email;
     this.role = this.user.role;
     this.username = this.user.username;

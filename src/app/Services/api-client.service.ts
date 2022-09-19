@@ -18,6 +18,7 @@ const httpOption = {
 export class ApiClientService {
 
   urlRegister: string = "https://prevencioncbd.somee.com/Login/register";
+  urlClient: string = "https://prevencioncbd.somee.com/Clientes";
 
   constructor(
     private _http: HttpClient
@@ -25,5 +26,9 @@ export class ApiClientService {
 
   newClient(client: Client): Observable<Response>{
     return this._http.post<Response>(this.urlRegister, client, httpOption);
+  }
+
+  updateDataClient(client: Client): Observable<Response>{
+    return this._http.put<Response>(this.urlClient,client,httpOption);
   }
 }
