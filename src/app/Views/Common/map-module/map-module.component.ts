@@ -1,4 +1,5 @@
-import { Component, OnInit,Inject,Input } from '@angular/core';
+import { Component, OnInit,Inject,Input, ViewChild } from '@angular/core';
+import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { latLng } from 'leaflet';
 
 @Component({
@@ -13,6 +14,7 @@ export class MapModuleComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | undefined;
 
   parroquias: string[]=["---Seleccionar Sector---","Atahualpa","Atocha","Augusto Martinez","Ambatillo",
   "Constantino Fernández","Cunchibamba","Celiano Monge",
@@ -65,6 +67,9 @@ export class MapModuleComponent implements OnInit {
     move(event: google.maps.MapMouseEvent) {
         if (event.latLng != null) this.display = event.latLng.toJSON();
     }
+    openInfoWindow(marker: MapMarker) {
+      if (this.infoWindow != undefined) this.infoWindow.open(marker);
+  }
 
   selectSector(){
   
@@ -118,7 +123,7 @@ export class MapModuleComponent implements OnInit {
         break;
       
       case 'Juan B.Vela':
-        this.changeU(-1.243028, -78.627223)
+        this.changeU(-1.302465, -78.697203)
         break;
 
       case 'La Península':

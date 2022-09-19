@@ -13,21 +13,6 @@
       <label>Referencia:</label>
       <input placeholder="Referencia Direccion">
     </div>
-    
-    
-    <div class="coordsContainer">
-
-      <div class="inputCoords">
-        <label>Latitud</label> <br>
-        <label>{{lati}} </label>
-      </div>
-
-      <div class="inputCoords">
-        <label>Longitud</label> <br>
-        <label>{{long}} </label>
-      </div>
-      
-    </div>
   </div>
 
   <div class="mapContainer">
@@ -37,9 +22,14 @@
                 [zoom]="zoom"
                 (mapClick)="addMarker($event)"
                 (mapMousemove)="move($event)" >
-                <map-marker *ngFor="let markerPosition of markerPositions"
+                <map-marker #marker="mapMarker" *ngFor="let markerPosition of markerPositions"
                 [position]="markerPosition"
-                [options]="markerOptions"> </map-marker>
+                [options]="markerOptions"
+                (mapMouseover)="openInfoWindow(marker)"> </map-marker>
+                <map-info-window>
+                  <div>Latitud: {{lati}}</div>
+                  <div>Longitud: {{long}}</div>
+                </map-info-window>
     </google-map>
   </div>
 
