@@ -55,17 +55,18 @@ input[type=text]::-webkit-outer-spin-button {
   display: flex;
   flex-direction: column;
   border-radius: 0 $border-rad $border-rad 0;
+  
 }
 
 .titulo{
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 35px;
   font-style: bold;
 }
 
 .subtitulo{
   font-size: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .input{
@@ -192,7 +193,7 @@ input[type=text]::-webkit-outer-spin-button {
 
 .footer{
 
-  margin-top: 30px;
+  margin-top: 15px;
   font-size: 12px;
 
   .btnLogin{
@@ -236,6 +237,12 @@ input[type=text]::-webkit-outer-spin-button {
     border-radius: 20px;
     padding-left: 60px;
   }
+}
+
+.recaptcha{
+  transform:scale(0.8);
+  transform-origin:1; 
+
 }
 
 

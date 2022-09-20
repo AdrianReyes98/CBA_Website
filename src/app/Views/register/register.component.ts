@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms'; 
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {Client} from 'src/app/Models/Client';
 import { ApiUsersService } from 'src/app/Services/api-users.service';
@@ -32,6 +32,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildFormAdd();
+
+    
   }
 
 
@@ -39,17 +41,28 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
 
+    
+  }
+
+  
+  
   buildFormAdd(){
+   
       this.formClient = this.formBuilder.group({
         email: ['',[Validators.required,Validators.email]],
         password: ['',[Validators.required,Validators.minLength(8)]],
         identification: ['', [Validators.required, Validators.minLength(10)]],  
+        recaptcha: ['',Validators.required],
         ruc: ['']
       });
+
+      
       
   }
-
+  
 
   addClientService(){
     
