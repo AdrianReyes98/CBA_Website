@@ -15,14 +15,18 @@ const httpOption = {
 })
 export class ApiPermissionService {
 
-  url: string = "https://prevencioncbd.somee.com/Permissions/Operation";
+  url: string = "https://prevencioncbd.somee.com/Permissions";
 
   constructor(
     private _http: HttpClient
   ) {}
 
   newOperatingPermission(permission: Permission): Observable<Response>{
-    return this._http.post<Response>(this.url,permission,httpOption);
+    return this._http.post<Response>(this.url+"/Operation",permission,httpOption);
   }
 
+  getPermissionById(id: number): Observable<Response>{
+    return this._http.get<Response>(this.url+'/'+id,httpOption);
+  }
+  
 }
