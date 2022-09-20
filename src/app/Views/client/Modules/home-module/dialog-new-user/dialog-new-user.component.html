@@ -3,15 +3,17 @@
       <i class='bx bx-edit' ></i>
     </div>
     <h1> Datos Nuevo Usuario</h1>
-  </div>
+</div>
   
   <div mat-dialog-content class="content">
 
-      <mat-form-field>
+    <form  [formGroup]="formUser" (submit)="updateClient()">
+
+    <mat-form-field>
         <mat-label>Nombres: </mat-label>
         <input matInput type="text" formControlName="name">
         <mat-icon matSuffix><i class='bx bx-face' ></i></mat-icon>
-      </mat-form-field>
+    </mat-form-field>
 
       <mat-form-field>
         <mat-label>Apellidos: </mat-label>
@@ -32,8 +34,8 @@
       </mat-form-field>
     
       <div class="actions">
-    
-        <button mat-raised-button color="primary" type="submit" >Guardar</button>
+        <mat-spinner *ngIf="isLoading" diameter="40" style="margin-left: 45%;"></mat-spinner>
+        <button *ngIf="!isLoading" mat-raised-button color="primary" type="submit" [disabled]="formUser.invalid">Guardar</button>
       </div>
-
+    </form>
   </div>
