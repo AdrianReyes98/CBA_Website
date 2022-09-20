@@ -104,7 +104,8 @@ export class RegisterComponent implements OnInit {
         email: ['',[Validators.required,Validators.email]],
         password: ['',[Validators.required,Validators.minLength(8)]],
         identification: [''],
-        ruc: ['',[Validators.maxLength(13),Validators.minLength(13),Validators.required]]
+        ruc: ['',[Validators.maxLength(13),Validators.minLength(13),Validators.required]],
+        recaptcha: ['',Validators.required]
       });
     }else{
       this.element = true;
@@ -112,6 +113,7 @@ export class RegisterComponent implements OnInit {
         email: ['',[Validators.required,Validators.email]],
         password: ['',[Validators.required,Validators.minLength(8)]],
         identification: ['', [Validators.required, Validators.minLength(10)]],  
+        recaptcha: ['',Validators.required],
         ruc: ['']
       });
       
