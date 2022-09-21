@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { ApiPermissionService } from 'src/app/Services/api-permission.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class PermisionsClientModuleComponent implements OnInit {
   public isLoading: boolean = true;
   public search: string = "";
   public dataSource: any;
-  public columns: string[]=['Id','Estado','Fecha','Actividad'];
+  public columns: string[]=['Id','Estado','Fecha','Actividad','Acciones'];
   private listPermissions: any;
   private user: any = JSON.parse(localStorage.getItem('user')!);
 
@@ -21,7 +22,8 @@ export class PermisionsClientModuleComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;
   constructor(
-    private apiPermission: ApiPermissionService
+    private apiPermission: ApiPermissionService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -62,5 +64,10 @@ export class PermisionsClientModuleComponent implements OnInit {
       },20000);
     });
   }
+
+  openFlowChart(){
+    this.router.navigateByUrl("/Cliente/FlowChart")
+  }
+
   
 }

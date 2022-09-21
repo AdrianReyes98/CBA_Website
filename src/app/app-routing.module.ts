@@ -22,6 +22,7 @@ import { PlansApprovalComponent } from './Views/client/Modules/plans-approval/pl
 import { OccupancyPermisionsComponent } from './Views/client/Modules/occupancy-permisions/occupancy-permisions.component';
 import { GLCarsPermissionsComponent } from './Views/client/Modules/glpcars-permissions/glcars-permissions.component';
 import { GLPDefinitivePermissionsComponent } from './Views/client/Modules/glpdefinitive-permissions/glpdefinitive-permissions.component';
+import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart.component';
 
 const routes: Routes = [
   {
@@ -124,6 +125,10 @@ const routes: Routes = [
       {
         path: 'GlpDefinitive',
         component: GLPDefinitivePermissionsComponent
+      },
+      {
+        path: 'FlowChart',
+        component: FlowChartComponent
       }
     ],
     canActivate: [LoginGuardGuard]
