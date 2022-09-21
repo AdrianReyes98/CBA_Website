@@ -20,7 +20,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { RecaptchaModule } from "ng-recaptcha";
 import { NgxCaptchaModule } from 'ngx-captcha';
 
 //Componentes Funcionalidad
@@ -116,7 +115,6 @@ import { DialogNewUserComponent } from './Views/client/Modules/home-module/dialo
     MatDividerModule,
     MatStepperModule,
     GoogleMapsModule,
-    RecaptchaModule,
     NgxCaptchaModule
     
   ],
