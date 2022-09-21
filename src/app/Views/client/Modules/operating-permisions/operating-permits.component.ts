@@ -24,7 +24,15 @@ export class OperatingPermitsComponent implements OnInit {
     private snackbar: MatSnackBar,
   ) { }
 
+  isLinear = false;
+  coords: string = "";
+
+  change(){
+    alert('HOLA');
+  }
+
   firstFormGroup = this.formBuilder.group({
+
     ruc:[this.user.client.ruc,[Validators.required]],
     completeName: [this.user.client.nombres + ' '+ this.user.client.apellidos,[Validators.required]],
     phone:[this.user.client.telefono,[Validators.required]],
@@ -34,12 +42,11 @@ export class OperatingPermitsComponent implements OnInit {
     socialReason: ['', [Validators.required, Validators.minLength(10)]],
 
   });
-  secondFormGroup = this.formBuilder.group({
-    secondCtrl:['']
+
+  ubicationFormGroup = this.formBuilder.group({
+    coords:[this.coords]
   });
 
-
-  isLinear = false;
 
   ngOnInit(): void {
     
@@ -65,7 +72,8 @@ export class OperatingPermitsComponent implements OnInit {
       if(result){
         this.registerPermission();
       }
-    })
+    });
+
   }
 
   //Registrar el Permiso
@@ -101,6 +109,8 @@ export class OperatingPermitsComponent implements OnInit {
 
     });
   }
+
+
 
 
 }

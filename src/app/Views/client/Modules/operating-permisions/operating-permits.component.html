@@ -98,9 +98,12 @@
 
     </mat-step>
 
-    <mat-step  label="Ubicación">
+    <mat-step label="Ubicación" [completed]="false">
 
-      <app-map-module></app-map-module>
+      <app-map-module
+      (markerChanged)="coords = $event"></app-map-module>
+
+      <input type="text" [(ngModel)]="coords" *ngIf="true" required="true" (ngModelChange)="change()">
 
       <div class="actions">
         <button mat-button matStepperPrevious class="btnBack">Anterior</button>
@@ -109,7 +112,7 @@
 
     </mat-step>
 
-    <mat-step [stepControl]="secondFormGroup" label="Documentos">
+    <mat-step label="Documentos">
 
       <div class="documentsForm">
 
