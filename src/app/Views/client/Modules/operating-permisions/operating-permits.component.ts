@@ -1,4 +1,4 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component,  Input,  OnInit, SimpleChanges } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import { MatDialog} from '@angular/material/dialog';
 import { Router} from '@angular/router';
@@ -24,11 +24,17 @@ export class OperatingPermitsComponent implements OnInit {
     private snackbar: MatSnackBar,
   ) { }
 
-  isLinear = false;
+  isLinear = true;
   coords: string = "";
+  ubicationCompleted: boolean = false;
 
-  change(){
-    alert('HOLA');
+
+  checkUbication(){
+
+    if(this.coords.length != 0){
+      this.ubicationCompleted = true;
+    }
+
   }
 
   firstFormGroup = this.formBuilder.group({
@@ -41,10 +47,6 @@ export class OperatingPermitsComponent implements OnInit {
     name: ['',[Validators.required, Validators.minLength(5)]],
     socialReason: ['', [Validators.required, Validators.minLength(10)]],
 
-  });
-
-  ubicationFormGroup = this.formBuilder.group({
-    coords:[this.coords]
   });
 
 
@@ -109,8 +111,5 @@ export class OperatingPermitsComponent implements OnInit {
 
     });
   }
-
-
-
 
 }
