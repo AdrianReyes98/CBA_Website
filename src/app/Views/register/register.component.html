@@ -46,6 +46,13 @@
           <i class='bx bx-lock-alt'></i>
         </div>
 
+        <div class="recaptcha" >
+        <ngx-recaptcha2  siteKey="6Lf0eBEiAAAAAA5qSF0cCWpsz-heZPii0VE8S9he" formControlName="recaptcha"> 
+
+        </ngx-recaptcha2>
+
+         </div>
+        
         <div class="footer">
           <button type ="button" class="btnLogin" [disabled]="formClient.invalid"  (click)="openDialogRequest()">Registrarse</button>
           <div>

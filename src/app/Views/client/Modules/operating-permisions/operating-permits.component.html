@@ -48,14 +48,14 @@
 
           <div class="input">
             <label>Ruc del Cliente:</label>
-            <input placeholder="18030XXXXX001" disabled>
+            <input placeholder="18030XXXXX001" formControlName="ruc"  readonly>
           </div>
           
           <div class="input">
             <label class="is-required">Razón Social (Si aplica):</label>
             <input 
             placeholder="CORPORACIÓN CIA.LTDA"
-            formControlName = "socialReason">
+            formControlName = "socialReason" >
           </div>
 
           <div class="input">
@@ -67,7 +67,7 @@
 
           <div class="input">
             <label class="is-required">Representante Legal, como consta en el RUC:</label>
-            <input placeholder="SALVATIERRA JONAS JUAN ALEXANDER">
+            <input placeholder="SALVATIERRA JONAS JUAN ALEXANDER" formControlName="completeName">
           </div>
 
           <div class="input">
@@ -80,12 +80,12 @@
 
           <div class="input">
             <label>Teléfono Móvil:</label>
-            <input placeholder="09XXXXXXXX">
+            <input placeholder="09XXXXXXXX" formControlName="phone" >
           </div>
 
           <div class="input">
             <label>Correo Electrónico del propietario del local :</label>
-            <input placeholder="JUAN@HOTMAIL.COM">
+            <input placeholder="JUAN@HOTMAIL.COM" formControlName="mail">
           </div>
         
         </div>

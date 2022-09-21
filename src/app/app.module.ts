@@ -20,6 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { RecaptchaModule } from "ng-recaptcha";
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 //Componentes Funcionalidad
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
@@ -55,6 +57,7 @@ import { OccupancyPermisionsComponent } from './Views/client/Modules/occupancy-p
 import { GLCarsPermissionsComponent } from './Views/client/Modules/glpcars-permissions/glcars-permissions.component';
 import { GLPDefinitivePermissionsComponent } from './Views/client/Modules/glpdefinitive-permissions/glpdefinitive-permissions.component';
 import { DialogNewUserComponent } from './Views/client/Modules/home-module/dialog-new-user/dialog-new-user.component';
+
 
 
 @NgModule({
@@ -112,7 +115,9 @@ import { DialogNewUserComponent } from './Views/client/Modules/home-module/dialo
     MatSnackBarModule,
     MatDividerModule,
     MatStepperModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    RecaptchaModule,
+    NgxCaptchaModule
     
   ],
   providers: [

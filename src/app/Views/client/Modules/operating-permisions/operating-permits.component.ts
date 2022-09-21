@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog} from '@angular/material/dialog';
 import { Router} from '@angular/router';
 import { Permission } from 'src/app/Models/Permission';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
@@ -14,16 +14,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./operating-permits.component.scss']
 })
 export class OperatingPermitsComponent implements OnInit {
+  user:any=JSON.parse(localStorage.getItem('user')!);
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private confirmDialog: MatDialog,
     private apiPermission:ApiPermissionService,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
   ) { }
 
   firstFormGroup = this.formBuilder.group({
+    ruc:[this.user.client.ruc,[Validators.required]],
+    completeName: [this.user.client.nombres + ' '+ this.user.client.apellidos,[Validators.required]],
+    phone:[this.user.client.telefono,[Validators.required]],
+    mail:[this.user.email,[Validators.required]],
     economicActivity: ['', [Validators.required,Validators.minLength(10)]],
     name: ['',[Validators.required, Validators.minLength(5)]],
     socialReason: ['', [Validators.required, Validators.minLength(10)]],
@@ -38,10 +43,16 @@ export class OperatingPermitsComponent implements OnInit {
 
   ngOnInit(): void {
     
+    
+    
   }
 
   returnHome(){
     this.router.navigateByUrl('/Cliente/Permisos');
+  }
+
+  LoadClient(){
+
   }
 
 
