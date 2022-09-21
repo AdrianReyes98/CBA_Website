@@ -1,35 +1,41 @@
 <div class="container">
     <div class="header">
         <h1>Perfil Usuario</h1>
+       
     </div>
 
     <div class="data">
+        
         <div class="info">
+          
             <div class="profile">
-                
             </div>
             <div class="info-data">
-                <label> {{name.toUpperCase()}} </label>
+                <label> {{username}} </label>
             </div>
             <div class="info-data">
                 <label> {{role}}</label>
             </div>
+            
         </div>
     
         <div class="profile-data">
             <h2>Datos</h2>
-            <mat-divider></mat-divider>
             <div class="table">
                 <div class="colum">
                     <div class="row">
                         <b><label>Cedula: </label></b>
                         <label>{{identification}}</label>
-                        <i class='bx bxs-edit-alt' 
-                        (click)="openInputDialog('Ingrese la nueva cedula','Cedula')"></i>
+                        
                     </div>
                     <div class="row">
-                        <b><label>Nombre: </label></b>
+                        <b><label>Nombres: </label></b>
                         <label>{{name}} </label>
+                        <i class='bx bxs-edit-alt' (click)="openInputDialog('Ingrese la nueva cedula','Cedula')"></i>
+                    </div>
+                    <div class="row">
+                        <b><label>Apellidos: </label></b>
+                        <label>{{lastname}}</label>
                         <i class='bx bxs-edit-alt'></i>
                     </div>
                     <div class="row">
@@ -37,22 +43,18 @@
                         <label>{{address}} </label>
                         <i class='bx bxs-edit-alt'></i>
                     </div>
-                    <div class="row">
-                        <b><label>Teléfono: </label></b>
-                        <label>{{phone}}</label>
-                        <i class='bx bxs-edit-alt'></i>
-                    </div>
+                   
                 </div>
                 
                 <div class="colum">
                     <div class="row">
-                        <b><label>Usuario: </label></b>
-                        <label>{{username}} </label>
+                        <b><label>Email: </label></b>
+                        <label>{{email}}</label>
                         <i class='bx bxs-edit-alt'></i>
                     </div>
                     <div class="row">
-                        <b><label>Email: </label></b>
-                        <label> {{email}}</label>
+                        <b><label>Teléfono: </label></b>
+                        <label>{{phone}}</label>
                         <i class='bx bxs-edit-alt'></i>
                     </div>
                     <div class="row">
@@ -62,6 +64,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
