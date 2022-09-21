@@ -12,14 +12,15 @@ import { InputDialogComponent } from '../Common/input-dialog/input-dialog.compon
 })
 export class PerfilModuleComponent implements OnInit {
 
-  public user: any;
-  public email: string = "";
-  public role: string = "";
-  public username: string = "";
-  public phone: string = "";
-  public name: string = "";
-  public identification: string = "";
-  public address: string = "";
+  public user: any = JSON.parse(localStorage.getItem('user')!);
+  public email: string = this.user.email;
+  public role: string = this.user.role;
+  public phone: string = this.user.client.telefono;
+  public username: string = this.user.client.nombres+ ' ' + this.user.client.apellidos;
+  public name: string=this.user.client.nombres;
+  public lastname: string=this.user.client.apellidos;
+  public identification: string = this.user.client.cedula;
+  public address:string= this.user.client.direccion;
   
   
   constructor(
@@ -28,15 +29,6 @@ export class PerfilModuleComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('user')!);
-    console.log(this.user);
-    this.email = this.user.email;
-    this.role = this.user.role;
-    this.username = this.user.username;
-    this.phone = this.user.phone;
-    this.name=this.user.name;
-    this.identification=this.user.identification;
-    this.address= this.user.address;
   }
 
   openInputDialog(messageHTML: String, changeHTML: String){
