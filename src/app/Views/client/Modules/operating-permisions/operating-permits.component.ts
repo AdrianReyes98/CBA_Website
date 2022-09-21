@@ -43,8 +43,6 @@ export class OperatingPermitsComponent implements OnInit {
 
   ngOnInit(): void {
     
-    
-    
   }
 
   returnHome(){
@@ -73,6 +71,7 @@ export class OperatingPermitsComponent implements OnInit {
   //Registrar el Permiso
   registerPermission(){
 
+    console.log(this.firstFormGroup.value);
     const permission: Permission = {
       "idSubCat": 1,
       "economicActivity": this.firstFormGroup.value.economicActivity!,
@@ -85,7 +84,7 @@ export class OperatingPermitsComponent implements OnInit {
       "socialReason": this.firstFormGroup.value.socialReason!,
       "photo": "string",
       "property": "string",
-      "idCli": 1
+      "idCli": this.user.client.id
     }
 
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
