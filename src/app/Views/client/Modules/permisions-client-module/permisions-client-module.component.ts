@@ -15,6 +15,7 @@ export class PermisionsClientModuleComponent implements OnInit {
   public dataSource: any;
   public columns: string[]=['Id','Estado','Fecha','Actividad'];
   private listPermissions: any;
+  private user: any = JSON.parse(localStorage.getItem('user')!);
 
 
   @ViewChild(MatPaginator, { static: true })
@@ -25,7 +26,7 @@ export class PermisionsClientModuleComponent implements OnInit {
 
   ngOnInit(): void {
     this.setPaginatorSpanish();
-    this.loadData(1);
+    this.loadData(this.user.client.id);
   }
 
   
@@ -54,6 +55,7 @@ export class PermisionsClientModuleComponent implements OnInit {
       if(response.status == 1){
         this.setDataSource(this.listPermissions);
       }
+      
       setTimeout(() => {
         console.log("ERROR");
         this.isLoading = false;
