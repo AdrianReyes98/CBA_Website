@@ -1,4 +1,4 @@
-import { Component, OnInit,Inject,Input, ViewChild } from '@angular/core';
+import { Component, OnInit,Inject,Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { latLng } from 'leaflet';
 
@@ -14,7 +14,10 @@ export class MapModuleComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Output() markerChanged = new EventEmitter<string>();
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | undefined;
+
 
   parroquias: string[]=["---Seleccionar Sector---","Atahualpa","Atocha","Augusto Martinez","Ambatillo",
   "Constantino Fernández","Cunchibamba","Celiano Monge",
@@ -44,31 +47,36 @@ export class MapModuleComponent implements OnInit {
   zoom = 12;
   markerOptions: google.maps.MarkerOptions={
     draggable: false
-    
   };
   
   markerPositions: google.maps.LatLngLiteral[] = [];
 
   addMarker(event: google.maps.MapMouseEvent) {
-      if (event.latLng != null) this.markerPositions.push(event.latLng.toJSON()); 
-      if (this.markerPositions.length != 1){
-        console.log(this.markerPositions.reverse)
-        this.markerPositions = this.markerPositions.reverse();
-        this.markerPositions.pop(); 
-      }
+    if (event.latLng != null) this.markerPositions.push(event.latLng.toJSON()); 
 
-      this.lati =  (event.latLng?.toJSON().lat);
-      this.long = (event.latLng?.toJSON().lng);
+    if (this.markerPositions.length != 1){
+      console.log(this.markerPositions.reverse)
+      this.markerPositions = this.markerPositions.reverse();
+      this.markerPositions.pop(); 
+    }
+
+    this.lati =  (event.latLng?.toJSON().lat);
+    this.long = (event.latLng?.toJSON().lng);
+
+    this.markerChanged.emit(this.lati+","+this.long);
+
   }
 
-    moveMap(event: google.maps.MapMouseEvent) {
-        if (event.latLng != null) this.center = (event.latLng.toJSON());
-    }
-    move(event: google.maps.MapMouseEvent) {
-        if (event.latLng != null) this.display = event.latLng.toJSON();
-    }
-    openInfoWindow(marker: MapMarker) {
-      if (this.infoWindow != undefined) this.infoWindow.open(marker);
+  moveMap(event: google.maps.MapMouseEvent) {
+      if (event.latLng != null) this.center = (event.latLng.toJSON());
+  }
+
+  move(event: google.maps.MapMouseEvent) {
+      if (event.latLng != null) this.display = event.latLng.toJSON();
+  }
+
+  openInfoWindow(marker: MapMarker) {
+    if (this.infoWindow != undefined) this.infoWindow.open(marker); 
   }
 
   selectSector(){
@@ -153,7 +161,7 @@ export class MapModuleComponent implements OnInit {
       case 'Pishilata':
         this.changeU(-1.2597278562127372, -78.59428713930645)
         break;
-        
+
       case 'Pasa':
         this.changeU(-1.268710, -78.732255)
         break; 

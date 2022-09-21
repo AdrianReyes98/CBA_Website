@@ -71,7 +71,6 @@ export class OperatingPermitsComponent implements OnInit {
   //Registrar el Permiso
   registerPermission(){
 
-    console.log(this.firstFormGroup.value);
     const permission: Permission = {
       "idSubCat": 1,
       "economicActivity": this.firstFormGroup.value.economicActivity!,
@@ -88,6 +87,7 @@ export class OperatingPermitsComponent implements OnInit {
     }
 
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
+
       if(response.status == 1){
         this.snackbar.open(response.result+': Permiso Registrado', '',{
           duration: 2000
@@ -98,6 +98,7 @@ export class OperatingPermitsComponent implements OnInit {
           duration: 2000
         });
       }
+
     });
   }
 
