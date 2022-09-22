@@ -98,16 +98,14 @@
 
     </mat-step>
 
-    <mat-step label="Ubicación" [completed]="false">
+    <mat-step label="Ubicación" [completed]="ubicationCompleted">
 
       <app-map-module
       (markerChanged)="coords = $event"></app-map-module>
 
-      <input type="text" [(ngModel)]="coords" *ngIf="true" required="true" (ngModelChange)="change()">
-
       <div class="actions">
         <button mat-button matStepperPrevious class="btnBack">Anterior</button>
-        <button mat-button matStepperNext class="btnNext">Siguiente</button>
+        <button mat-button matStepperNext class="btnNext" (click)="checkUbication()">Siguiente</button>
       </div>
 
     </mat-step>
@@ -118,20 +116,22 @@
 
         <label id="titleDocs">Adjuntar Archivos:</label>
 
-        <div class="document">
-          <label>Copia de RUC: </label>
-          <input type="file">
-        </div>
-
-        <div class="document">
-          <label>Foto Fachada: </label>
-          <input type="file">
-        </div>
-
-        <div class="document">
-          <label>Predio Local : </label>
-          <input type="file">
-        </div>
+        <form action="">
+          <div class="document">
+            <label>Copia de RUC: </label>
+            <input type="file">
+          </div>
+  
+          <div class="document">
+            <label>Foto Fachada: </label>
+            <input type="file">
+          </div>
+  
+          <div class="document">
+            <label>Predio Local : </label>
+            <input type="file">
+          </div>
+        </form>
 
       </div>
 
