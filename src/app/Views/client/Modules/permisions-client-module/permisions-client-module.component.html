@@ -38,7 +38,7 @@
         </ng-container>
 
         <ng-container matColumnDef="Flujo">
-            <th mat-header-cell *matHeaderCellDef> Revisar Flujo </th>
+            <th mat-header-cell *matHeaderCellDef> Seguimiento </th>
             <td mat-cell *matCellDef="let element" class="element">
                 <button (click)="openFlowChart()">
                     <i class='bx bx-bar-chart-alt' ></i>
@@ -49,8 +49,8 @@
         <ng-container matColumnDef="Renovacion">
             <th mat-header-cell *matHeaderCellDef> Renovacion </th>
             <td mat-cell *matCellDef="let element" class="element">
-                <button (click)="openFlowChart()">
-                    Renovar Permiso
+                <button (click)="openFlowChart()" [disabled]="element.estado != 'Caducado'">
+                    Renovar
                 </button>
             </td>
         </ng-container>

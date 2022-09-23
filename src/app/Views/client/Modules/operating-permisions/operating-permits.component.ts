@@ -31,6 +31,15 @@ export class OperatingPermitsComponent implements OnInit {
   ubicationCompleted: boolean = false;
 
 
+  checkDataClient(){
+    console.log(this.firstFormGroup.valid);
+    if(!this.firstFormGroup.valid){
+      this.snackbar.open("Existen datos faltantes en el formulario",'Aceptar',{
+        duration: 2000
+      })
+    }
+  }
+
   checkUbication(map: boolean){
     if(this.coords.length != 0){
       this.ubicationCompleted = true;
@@ -56,9 +65,9 @@ export class OperatingPermitsComponent implements OnInit {
   });
 
   documentsFormGroup = this.formBuilder.group({
-    rucDocument: [''],
-    localPicture: [''],
-    localDocument: ['']
+    rucDocument: ['',Validators.required],
+    localPicture: ['',Validators.required],
+    localDocument: ['',Validators.required]
   });
 
 
