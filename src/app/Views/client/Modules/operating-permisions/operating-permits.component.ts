@@ -49,6 +49,12 @@ export class OperatingPermitsComponent implements OnInit {
 
   });
 
+  documentsFormGroup = this.formBuilder.group({
+    rucDocument: [''],
+    localPicture: [''],
+    localDocument: ['']
+  });
+
 
   ngOnInit(): void {
     
@@ -81,20 +87,24 @@ export class OperatingPermitsComponent implements OnInit {
   //Registrar el Permiso
   registerPermission(){
 
+    const latlng = this.coords.split(',');
+    console.log(latlng);
+
     const permission: Permission = {
       "idSubCat": 1,
       "economicActivity": this.firstFormGroup.value.economicActivity!,
-      "rucCopy": "string",
+      "rucCopy": this.documentsFormGroup.value.rucDocument!,
       "name": this.firstFormGroup.value.name!,
       "address": "string",
-      "coordinateX": 0,
-      "coordinateY": 0,
+      "coordinateX": parseFloat(latlng[0]),
+      "coordinateY": parseFloat(latlng[1]),
       "state": "Ingresado",
       "socialReason": this.firstFormGroup.value.socialReason!,
-      "photo": "string",
-      "property": "string",
+      "photo": this.documentsFormGroup.value.localPicture!,
+      "property": this.documentsFormGroup.value.localDocument!,
       "idCli": this.user.client.id
     }
+    console.log(this.documentsFormGroup.value);
 
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
 

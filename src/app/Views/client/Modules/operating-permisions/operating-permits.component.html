@@ -50,7 +50,7 @@
             <label>Ruc del Cliente:</label>
             <input placeholder="18030XXXXX001" formControlName="ruc"  readonly>
           </div>
-          
+
           <div class="input">
             <label class="is-required">Razón Social (Si aplica):</label>
             <input 
@@ -110,27 +110,29 @@
 
     </mat-step>
 
-    <mat-step label="Documentos">
+    <mat-step [stepControl]="documentsFormGroup" label="Documentos">
 
       <div class="documentsForm">
 
-        <label id="titleDocs">Adjuntar Archivos:</label>
+        <form [formGroup]="documentsFormGroup">
 
-        <form action="">
+          <label id="titleDocs">Adjuntar Archivos:</label>
+
           <div class="document">
             <label>Copia de RUC: </label>
-            <input type="file">
+            <input type="file" formControlName="rucDocument">
           </div>
   
           <div class="document">
             <label>Foto Fachada: </label>
-            <input type="file">
+            <input type="file" formControlName="localPicture">
           </div>
   
           <div class="document">
             <label>Predio Local : </label>
-            <input type="file">
+            <input type="file" formControlName="localDocument">
           </div>
+
         </form>
 
       </div>
