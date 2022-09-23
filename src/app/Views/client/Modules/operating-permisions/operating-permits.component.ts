@@ -14,7 +14,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./operating-permits.component.scss']
 })
 export class OperatingPermitsComponent implements OnInit {
-  user:any=JSON.parse(localStorage.getItem('user')!);
+
+  private user:any=JSON.parse(localStorage.getItem('user')!);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,7 +25,8 @@ export class OperatingPermitsComponent implements OnInit {
     private snackbar: MatSnackBar,
   ) { }
 
-  isLinear = true;
+  protected isLinear = true;
+  isLoading = false;
   coords: string = "";
   ubicationCompleted: boolean = false;
 
@@ -65,7 +67,6 @@ export class OperatingPermitsComponent implements OnInit {
   }
 
   LoadClient(){
-
   }
 
 
@@ -75,6 +76,12 @@ export class OperatingPermitsComponent implements OnInit {
       width: '250px',
       data: {title: 'Finalizar', message: 'Esta seguro que desea finalizar este permiso ?'}
     });
+
+    dialogRef.beforeClosed().subscribe( result => {
+      if(result){
+        this.registerPermission();
+      }
+    })
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
@@ -86,16 +93,16 @@ export class OperatingPermitsComponent implements OnInit {
 
   //Registrar el Permiso
   registerPermission(){
+    this.isLoading = true;
 
     const latlng = this.coords.split(',');
-    console.log(latlng);
 
     const permission: Permission = {
       "idSubCat": 1,
       "economicActivity": this.firstFormGroup.value.economicActivity!,
       "rucCopy": this.documentsFormGroup.value.rucDocument!,
       "name": this.firstFormGroup.value.name!,
-      "address": "string",
+      "address": this.firstFormGroup.value.mail,
       "coordinateX": parseFloat(latlng[0]),
       "coordinateY": parseFloat(latlng[1]),
       "state": "Ingresado",
@@ -104,7 +111,8 @@ export class OperatingPermitsComponent implements OnInit {
       "property": this.documentsFormGroup.value.localDocument!,
       "idCli": this.user.client.id
     }
-    console.log(this.documentsFormGroup.value);
+
+    console.log(permission);
 
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
 
@@ -118,7 +126,7 @@ export class OperatingPermitsComponent implements OnInit {
           duration: 2000
         });
       }
-
+      this.isLoading = false;
     });
   }
 
