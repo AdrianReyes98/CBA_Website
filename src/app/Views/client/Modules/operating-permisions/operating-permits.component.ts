@@ -32,11 +32,9 @@ export class OperatingPermitsComponent implements OnInit {
 
 
   checkUbication(){
-
     if(this.coords.length != 0){
       this.ubicationCompleted = true;
     }
-
   }
 
   firstFormGroup = this.formBuilder.group({
@@ -59,7 +57,6 @@ export class OperatingPermitsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
   }
 
   returnHome(){
@@ -111,8 +108,6 @@ export class OperatingPermitsComponent implements OnInit {
       "property": this.documentsFormGroup.value.localDocument!,
       "idCli": this.user.client.id
     }
-
-    console.log(permission);
 
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
 
