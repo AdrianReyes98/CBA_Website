@@ -22,6 +22,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import {MatTreeModule} from '@angular/material/tree';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 //Componentes Funcionalidad
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
@@ -119,7 +120,8 @@ import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart
     MatStepperModule,
     GoogleMapsModule,
     NgxCaptchaModule,
-    MatTreeModule
+    MatTreeModule,
+    MatExpansionModule
     
   ],
   providers: [
