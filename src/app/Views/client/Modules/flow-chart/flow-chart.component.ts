@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-flow-chart',
@@ -7,10 +6,17 @@ import {MatExpansionModule} from '@angular/material/expansion';
   styleUrls: ['./flow-chart.component.scss']
 })
 export class FlowChartComponent implements OnInit {
+  
+ 
   panelOpenState = false;
   constructor() { }
 
   ngOnInit(): void {
+  
   }
 
+  step = 0;
+  setStep(index: number) {
+    this.step = index;
+  }
 }
