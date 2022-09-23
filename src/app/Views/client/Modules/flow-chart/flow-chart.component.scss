@@ -1,4 +1,38 @@
-.mat-form-field {
-    margin-left: 300px;
-    padding-left: 50px;
-  }
+#title{
+  text-align: center;
+  padding: 20px;
+}
+.subtitle{
+  padding: 15px;
+  font-size: 20px;
+}
+
+.content{
+  padding: 60px;
+  padding-left: 120px;
+  padding-right: 120px;
+    border-color: lightgray;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+}
+
+.text{
+  padding-left: 130px;
+  text-align: justify;
+  padding-right: 35px;
+}
+
+.buttonAct{
+  padding-left: 130px;
+  
+}
+
+.ini{
+  padding: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.mat-expansion-panel-header{
+  background-color: lightgrey;
+}

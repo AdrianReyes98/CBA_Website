@@ -1,39 +1,59 @@
-<mat-accordion>
-  <mat-expansion-panel hideToggle>
-  <p>This is the primary content of the panel.</p>
-  </mat-expansion-panel>
+<div >
+  <div id="title">
+    <h1>Seguimiento de su Trámite</h1>
+</div>
 
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                        (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-
-      <mat-panel-title>
-        Self aware panel
-      </mat-panel-title>
-
-      <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-
-    </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
-    </mat-expansion-panel>
-
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                        (closed)="panelOpenState = false">
-                        
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Self aware panel
-      </mat-panel-title>
-
-      <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-
-    </mat-expansion-panel-header>
-
-    <p>I'm visible because I am open</p>
-  </mat-expansion-panel>
-
-</mat-accordion>
+<mat-tab-group class="ini">
+  <mat-tab label="Trámite en Curso" > 
+    <div class="content">
+      <mat-accordion>
+          <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p><b>21/09/2022</b></p>
+              </mat-panel-title>
+              <mat-panel-description>
+                <p>Nuevo Trámite Generado</p>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p class="text">Se ha generado exitosamente su trámite para la obtención del Permiso de Funcionamiento por primera vez
+              del establecimiento BAZAR LUPITA cuya actividad comercial es: VENTA DE BIENES. El funcionario asignado procederá
+              a revisar la información y documentación adjunta en el transcurso de los siguientes días laborales.
+              El resultado del trámite y los pasos a seguir, se le notificaran por este medio.
+            </p>
+          </mat-expansion-panel >
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p ><b>21/09/2022</b></p>
+              </mat-panel-title>
+              <mat-panel-description >
+                <p> Trámite Rechazado </p>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p class="text"> ESTIMADO USUARIO ADJUNTAR TODOS LOS DOCUMENTOS QUE SE LE SOLICITA.</p>
+            <div class="buttonAct">
+            <button >Actualizar información</button>
+          </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p ><b>22/09/2022</b></p>
+              </mat-panel-title>
+              <mat-panel-description> 
+                <p> Trámite Corregido </p>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p class="text"> Se ha generado exitosamente la actualización
+               de las observaciones a su trámite de Renovación de Permiso de Funcionamiento con cambios.
+              El funcionario asignado procederá a revisar la información y documentación adjunta en el 
+            transcurso de los siguiente días laborales.</p>
+          </mat-expansion-panel>
+      </mat-accordion>
+      </div>
+  </mat-tab>
+  <mat-tab label="Finalización del trámite" disabled > Hola</mat-tab>
+</mat-tab-group>
