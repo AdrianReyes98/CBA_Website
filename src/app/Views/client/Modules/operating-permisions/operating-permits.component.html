@@ -105,11 +105,11 @@
     <mat-step label="Ubicación" [completed]="ubicationCompleted">
 
       <app-map-module
-      (markerChanged)="coords = $event" (click)="checkUbication()"></app-map-module>
+      (markerChanged)="coords = $event" (click)="checkUbication(true)"></app-map-module>
 
       <div class="actions">
         <button mat-button matStepperPrevious class="btnBack">Anterior</button>
-        <button mat-button matStepperNext class="btnNext" (click)="checkUbication()">Siguiente</button>
+        <button mat-button matStepperNext class="btnNext" (click)="checkUbication(false)">Siguiente</button>
       </div>
 
     </mat-step>

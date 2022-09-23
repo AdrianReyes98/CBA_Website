@@ -31,9 +31,15 @@ export class OperatingPermitsComponent implements OnInit {
   ubicationCompleted: boolean = false;
 
 
-  checkUbication(){
+  checkUbication(map: boolean){
     if(this.coords.length != 0){
       this.ubicationCompleted = true;
+    }else{
+      if(!map){
+        this.snackbar.open("Aun no se registro una ubicacion",'',{
+          duration: 2000
+        });
+      }
     }
   }
 
@@ -74,12 +80,6 @@ export class OperatingPermitsComponent implements OnInit {
       data: {title: 'Finalizar', message: 'Esta seguro que desea finalizar este permiso ?'}
     });
 
-    dialogRef.beforeClosed().subscribe( result => {
-      if(result){
-        this.registerPermission();
-      }
-    })
-
     dialogRef.afterClosed().subscribe( result => {
       if(result){
         this.registerPermission();
@@ -112,12 +112,12 @@ export class OperatingPermitsComponent implements OnInit {
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
 
       if(response.status == 1){
-        this.snackbar.open(response.result+': Permiso Registrado', '',{
+        this.snackbar.open('Permiso Registrado: '+response.result, '',{
           duration: 2000
         });
         this.returnHome();
       }else{
-        this.snackbar.open(response.result+': Permiso NO Registrado', '',{
+        this.snackbar.open('Permiso NO Registrado: '+response.result, 'Aceptar',{
           duration: 2000
         });
       }
