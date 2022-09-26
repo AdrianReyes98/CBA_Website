@@ -156,7 +156,8 @@ const routes: Routes = [
         path: 'Permission',
         component: PermissionsDigiComponent
       }
-    ]
+    ],
+    canActivate: [LoginGuardGuard]
   },
 
   {
