@@ -14,8 +14,8 @@ export class PermisionsClientModuleComponent implements OnInit {
   public isLoading: boolean = true;
   public search: string = "";
   public dataSource: any;
-  public columns: string[]=['Id','Estado','Fecha','Actividad','Flujo','Renovacion'];
-  private listPermissions: any;
+  public columns: string[]=['Id','Estado','Fecha','Actividad','Nombre','Flujo','Renovacion'];
+  private listPermissions: any[] = [];
   private user: any = JSON.parse(localStorage.getItem('user')!);
 
 
@@ -31,8 +31,6 @@ export class PermisionsClientModuleComponent implements OnInit {
     this.loadData(this.user.client.id);
   }
 
-  
-
   setPaginatorSpanish(){
     this.paginator._intl.itemsPerPageLabel="Items por página";
     this.paginator._intl.firstPageLabel = 'Primera página';
@@ -42,6 +40,17 @@ export class PermisionsClientModuleComponent implements OnInit {
   }
 
   startSearch(){
+    var searchList:any = [];
+
+    this.listPermissions.forEach(perm => {
+      if(perm.fecha.startsWith(this.search)){
+        searchList.push(perm);
+      }
+      if(perm.idLocNavigation.nombre.toUpperCase().startsWith(this.search.toUpperCase())){
+        searchList.push(perm);
+      }
+    });
+    this.setDataSource(searchList);
   }
 
   setDataSource(list: any[]){
