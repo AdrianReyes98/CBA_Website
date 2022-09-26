@@ -59,6 +59,7 @@ import { GLCarsPermissionsComponent } from './Views/client/Modules/glpcars-permi
 import { GLPDefinitivePermissionsComponent } from './Views/client/Modules/glpdefinitive-permissions/glpdefinitive-permissions.component';
 import { DialogNewUserComponent } from './Views/client/Modules/home-module/dialog-new-user/dialog-new-user.component';
 import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart.component';
+import { PermissionsDigiComponent } from './Views/digitador/Modules/permissions-digi/permissions-digi.component';
 
 
 
@@ -92,7 +93,8 @@ import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart
     GLCarsPermissionsComponent,
     GLPDefinitivePermissionsComponent,
     DialogNewUserComponent,
-    FlowChartComponent
+    FlowChartComponent,
+    PermissionsDigiComponent
 
   ],
   imports: [

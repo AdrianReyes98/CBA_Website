@@ -25,6 +25,7 @@ import { GLPDefinitivePermissionsComponent } from './Views/client/Modules/glpdef
 import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart.component';
 import { DigitadorComponent } from './Views/digitador/digitador.component';
 import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
+import { PermissionsDigiComponent } from './Views/digitador/Modules/permissions-digi/permissions-digi.component';
 
 const routes: Routes = [
   {
@@ -150,6 +151,10 @@ const routes: Routes = [
       {
         path: 'Home',
         component: HomeDigitadorModuleComponent
+      },
+      {
+        path: 'Permission',
+        component: PermissionsDigiComponent
       }
     ]
   },
