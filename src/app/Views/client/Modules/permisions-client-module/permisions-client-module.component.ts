@@ -14,7 +14,7 @@ export class PermisionsClientModuleComponent implements OnInit {
   public isLoading: boolean = true;
   public search: string = "";
   public dataSource: any;
-  public columns: string[]=['Id','Estado','Fecha','Actividad','Acciones'];
+  public columns: string[]=['Id','Estado','Fecha','Actividad','Flujo','Renovacion'];
   private listPermissions: any;
   private user: any = JSON.parse(localStorage.getItem('user')!);
 

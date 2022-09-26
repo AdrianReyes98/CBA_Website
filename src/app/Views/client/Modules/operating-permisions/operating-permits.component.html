@@ -94,7 +94,7 @@
         
         </div>
         <div class="actions">
-          <button mat-button matStepperPrevious class="btnBack">Anterior</button>
+          <button mat-button matStepperPrevious class="btnBack" (click)="checkDataClient()">Anterior</button>
           <button mat-button matStepperNext class="btnNext">Siguiente</button>
         </div>
 
@@ -105,11 +105,11 @@
     <mat-step label="Ubicación" [completed]="ubicationCompleted">
 
       <app-map-module
-      (markerChanged)="coords = $event"></app-map-module>
+      (markerChanged)="coords = $event" (click)="checkUbication(true)"></app-map-module>
 
       <div class="actions">
         <button mat-button matStepperPrevious class="btnBack">Anterior</button>
-        <button mat-button matStepperNext class="btnNext" (click)="checkUbication()">Siguiente</button>
+        <button mat-button matStepperNext class="btnNext" (click)="checkUbication(false)">Siguiente</button>
       </div>
 
     </mat-step>
@@ -143,7 +143,7 @@
 
       <div class="actions">
         <button mat-button matStepperPrevious class="btnBack">Anterior</button>
-        <button mat-button (click)="finishPermission()" class="btnNext">Finalizar</button>
+        <button mat-button (click)="finishPermission()" class="btnNext" [disabled]="isLoading">Finalizar</button>
       </div>
 
     </mat-step>

@@ -31,12 +31,25 @@ export class OperatingPermitsComponent implements OnInit {
   ubicationCompleted: boolean = false;
 
 
-  checkUbication(){
+  checkDataClient(){
+    console.log(this.firstFormGroup.valid);
+    if(!this.firstFormGroup.valid){
+      this.snackbar.open("Existen datos faltantes en el formulario",'Aceptar',{
+        duration: 2000
+      })
+    }
+  }
 
+  checkUbication(map: boolean){
     if(this.coords.length != 0){
       this.ubicationCompleted = true;
+    }else{
+      if(!map){
+        this.snackbar.open("Aun no se registro una ubicacion",'',{
+          duration: 2000
+        });
+      }
     }
-
   }
 
   firstFormGroup = this.formBuilder.group({
@@ -52,14 +65,13 @@ export class OperatingPermitsComponent implements OnInit {
   });
 
   documentsFormGroup = this.formBuilder.group({
-    rucDocument: [''],
-    localPicture: [''],
-    localDocument: ['']
+    rucDocument: ['',Validators.required],
+    localPicture: ['',Validators.required],
+    localDocument: ['',Validators.required]
   });
 
 
   ngOnInit(): void {
-    
   }
 
   returnHome(){
@@ -76,12 +88,6 @@ export class OperatingPermitsComponent implements OnInit {
       width: '250px',
       data: {title: 'Finalizar', message: 'Esta seguro que desea finalizar este permiso ?'}
     });
-
-    dialogRef.beforeClosed().subscribe( result => {
-      if(result){
-        this.registerPermission();
-      }
-    })
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
@@ -112,17 +118,15 @@ export class OperatingPermitsComponent implements OnInit {
       "idCli": this.user.client.id
     }
 
-    console.log(permission);
-
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
 
       if(response.status == 1){
-        this.snackbar.open(response.result+': Permiso Registrado', '',{
+        this.snackbar.open('Permiso Registrado: '+response.result, '',{
           duration: 2000
         });
         this.returnHome();
       }else{
-        this.snackbar.open(response.result+': Permiso NO Registrado', '',{
+        this.snackbar.open('Permiso NO Registrado: '+response.result, 'Aceptar',{
           duration: 2000
         });
       }
