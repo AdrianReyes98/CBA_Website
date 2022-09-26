@@ -16,7 +16,6 @@ const httpOption = {
 export class ApiPermissionService {
 
   url: string = "https://prevencioncbd.somee.com/Permissions";
-  urlLocal: string = "https://localhost:7221/Permissions";
 
   constructor(
     private _http: HttpClient
@@ -30,8 +29,4 @@ export class ApiPermissionService {
     return this._http.get<Response>(this.url+'/'+id,httpOption);
   } 
 
-  postDocument(doc: any): Observable<Response> {
-    return this._http.post<Response>(this.urlLocal+'/newDocument',httpOption);
-  }
-  
 }
