@@ -54,12 +54,18 @@
     padding: 20px;
     font-size: 18px;
     font-weight: bold;
-    transition-property: background-color,color;
+    transition-property: background-color,color,transform;
     transition-duration: 0.5s;
   }
 
   button:hover{
+    transform: scaleX(1.08);
     color: #fff;
+    text-decoration:dashed;
+  }
+
+  button::after{
+    display: block;
   }
 
 }
@@ -83,6 +89,10 @@
   button:hover{
     background-color: rgb(161, 161, 161);
   }
+}
+
+.user:hover{
+  transform: scale(1.04);
 }
 
 .user-information{

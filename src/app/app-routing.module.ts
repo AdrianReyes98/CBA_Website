@@ -23,6 +23,8 @@ import { OccupancyPermisionsComponent } from './Views/client/Modules/occupancy-p
 import { GLCarsPermissionsComponent } from './Views/client/Modules/glpcars-permissions/glcars-permissions.component';
 import { GLPDefinitivePermissionsComponent } from './Views/client/Modules/glpdefinitive-permissions/glpdefinitive-permissions.component';
 import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart.component';
+import { DigitadorComponent } from './Views/digitador/digitador.component';
+import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
 
 const routes: Routes = [
   {
@@ -132,6 +134,24 @@ const routes: Routes = [
       }
     ],
     canActivate: [LoginGuardGuard]
+  },
+
+  {
+    'path': 'Digitador',
+    component: DigitadorComponent,
+    data:{
+      role: 'Digitador'
+    },
+    children: [
+      {
+        path: '',
+        component: HomeDigitadorModuleComponent
+      },
+      {
+        path: 'Home',
+        component: HomeDigitadorModuleComponent
+      }
+    ]
   },
 
   {
