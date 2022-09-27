@@ -34,7 +34,7 @@ export class OperatingPermitsComponent implements OnInit {
   checkDataClient(){
     console.log(this.firstFormGroup.valid);
     if(!this.firstFormGroup.valid){
-      this.snackbar.open("Existen datos faltantes en el formulario",'Aceptar',{
+                      this.snackbar.open("Existen datos faltantes en el formulario",'Aceptar',{
         duration: 2000
       })
     }
