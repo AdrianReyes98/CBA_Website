@@ -10,13 +10,13 @@
 
           <div class="input">
             <label>Ruc del Cliente:</label>
-            <input placeholder="1805308895001" formControlName="ruc"  readonly>
+            <label>1805308895</label>
           </div>
 
-           <div class="input">
+          <div class="input">
             <label>Razón Social (Si aplica):</label>
-            <input placeholder="CORPORACIÓN CIA.LTDA" formControlName = "socialReason" >
-           </div>
+            <label>{{permission.idLocNavigation.razonSocial}}</label>
+          </div>
 
           <div class="input">
             <label>Nombre comercial (Si aplica):</label>
@@ -32,7 +32,7 @@
 
           <div class="input">
             <label class="is-required">Actividad Económica, como consta en el RUC:</label>
-            <textarea placeholder="VENTA AL POR MENOR DE MATERIAL DE ZAPATERÍA" formControlName="economicActivity" required></textarea>
+            <label>{{permission.actividadEconomica}}</label>
           </div>
 
           <div class="input">
@@ -48,6 +48,39 @@
         </div>
         
         <h3 class="h3">2. Datos de Ubicación:</h3>
+
+        <div class="dataForm">
+        <div class="input">
+          <label>Latitud:</label>
+          <input placeholder="1.54215452" formControlName="lati">
+        </div>
         
+        <div class="input">
+          <label>Longitud:</label>
+          <input placeholder="1.54215452" formControlName="longi">
+        </div>
+      </div>
+      <h3 class="h3">3. Documentos:</h3>
+
+    <div class="dataForm">
+
+      <div class="input">
+          <label>Copia del Ruc:</label>
+          <i class='bx bxs-file-pdf'></i> 
+          <label>ruc.pdf</label>
+        </div>
+      <div class="input">
+          <label>Copia del Predio:</label>
+          <i class='bx bxs-file-pdf'></i>
+          <label>predio.pdf</label>
+      </div>
+      <div class="input">
+        <label>Foto fachada:</label>
+        <i class='bx bxs-file-pdf'></i>
+        <label>foto.pdf</label>
+      </div>
+        
+
+    </div>
     </div>
 </div>
