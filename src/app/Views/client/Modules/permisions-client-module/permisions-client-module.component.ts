@@ -12,6 +12,7 @@ import { ApiPermissionService } from 'src/app/Services/api-permission.service';
 export class PermisionsClientModuleComponent implements OnInit {
 
   public isLoading: boolean = true;
+  public isEmpty: boolean = true;
   public search: string = "";
   public dataSource: any;
   public columns: string[]=['Id','Estado','Fecha','Actividad','Nombre','Flujo','Renovacion'];
@@ -65,6 +66,12 @@ export class PermisionsClientModuleComponent implements OnInit {
 
       if(response.status == 1){
         this.setDataSource(this.listPermissions);
+
+        if(this.listPermissions.length == 0){
+          console.log("Empty");
+          this.isEmpty = false;
+        }
+
       }
       
       setTimeout(() => {

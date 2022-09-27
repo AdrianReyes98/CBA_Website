@@ -161,7 +161,8 @@ const routes: Routes = [
         path:'Check',
         component: CheckPermissionsComponent
       }
-    ]
+    ],
+    canActivate: [LoginGuardGuard]
   },
 
   {

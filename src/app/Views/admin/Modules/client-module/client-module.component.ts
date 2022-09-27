@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiPermissionService } from 'src/app/Services/api-permission.service';
 
 @Component({
   selector: 'app-client-module',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientModuleComponent implements OnInit {
 
-  constructor() { }
+  public selectedFile!: File;
+
+  constructor(
+    public apiPermission: ApiPermissionService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  
 }
