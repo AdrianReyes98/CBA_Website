@@ -42,7 +42,7 @@
         <ng-container matColumnDef="Revision">
             <th mat-header-cell *matHeaderCellDef> Revisión </th>
             <td mat-cell *matCellDef="let element" class="element">
-                <button  (click)="openCheck()">
+                <button  (click)="openCheck(element)">
                     <i class='bx bx-box'></i>
                 </button>
             </td>

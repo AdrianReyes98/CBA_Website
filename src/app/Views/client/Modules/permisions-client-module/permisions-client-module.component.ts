@@ -62,6 +62,7 @@ export class PermisionsClientModuleComponent implements OnInit {
   loadData(id: number){
     this.apiPermission.getPermissionById(id).subscribe(response => {
       this.listPermissions = response.data;
+      
       this.isLoading = false;
 
       if(response.status == 1){

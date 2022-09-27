@@ -17,11 +17,11 @@
     margin-left: 40px;
 }
 .dataForm{
-padding-left: 100px;    
+padding-left: 120px;    
     label{
       width: 40%;
       display: inline-block;
-      text-align: right;
+      text-align: left;
       margin-right: 40px;
     }
     .input{
@@ -34,10 +34,17 @@ padding-left: 100px;
           padding: 5px;
           margin: 5px 0 5px 0;
         }
+        i{
+          font-size: 30px;
+          color: rgb(222, 34, 34);
+        }
+
         input{
           @include texts(25px);
+
         }
-         textarea{
+        
+        textarea{
           @include texts(25px);
           max-width: 40%;
           min-width: 15%;
@@ -45,4 +52,5 @@ padding-left: 100px;
           min-height: 25px;
         }
     }
+
 }

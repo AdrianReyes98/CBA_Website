@@ -72,10 +72,12 @@ export class PermissionsDigiComponent implements OnInit {
     });
   }
 
-  openCheck(){
+  openCheck(permission:any){
+    localStorage.setItem('permission',JSON.stringify(permission));
     this.router.navigateByUrl("/Digitador/Check")
   }
 
+ 
   
 
   
