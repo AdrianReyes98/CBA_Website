@@ -50,18 +50,18 @@ $main-bg-color: #F0F0F0;
 //Disenio formulario de Informacion
 .infoForm{
   background: $main-bg-color;
-  margin: 0 250px 0 250px;
-  padding: 0 200px 0 200px;
-  height: 400px;
+  margin: 0 10% 0 10%;
+  padding: 0 5% 5% 5%;
+  height: fit-content;
 }
 
 
 //Disenio formulario de Datos
 .dataForm{
   background: $main-bg-color;
-  margin: 0 130px 0 130px;
-  padding: 30px 100px 0 100px;
-  height: 400px;
+  margin: 0 5% 0 5%;
+  padding: 3% 5% 3% 5%;
+  height: fit-content;
 
   label{
     width: 40%;
@@ -83,7 +83,8 @@ $main-bg-color: #F0F0F0;
     input{
       @include texts(25px);
     }
-     textarea{
+
+    textarea{
       @include texts(50px);
       max-width: 40%;
       min-width: 40%;
@@ -170,8 +171,9 @@ $main-bg-color: #F0F0F0;
 
 //Disenio Formulario de documentos
 .documentsForm{
-  height: 350PX;
-  margin: 0 150px 0 150px;
+  height: fit-content;
+  margin: 0 5% 0 5%;
+  padding: 5% 0 5% 0;
   background-color: $main-bg-color;
   display: flex;
   flex-direction: column;
@@ -190,7 +192,7 @@ $main-bg-color: #F0F0F0;
 
   .document{
     padding: 10px;
-    width: 80%;
+    width: 95%;
     margin-left: 5%;
 
     label{
@@ -202,9 +204,9 @@ $main-bg-color: #F0F0F0;
       padding: 5px;
       width: 80%;
     }
-   
+  
   }
- 
+
 }
 
 

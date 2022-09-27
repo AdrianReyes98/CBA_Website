@@ -25,7 +25,7 @@ export class OperatingPermitsComponent implements OnInit {
     private snackbar: MatSnackBar,
   ) { }
 
-  protected isLinear = true;
+  protected isLinear = false;
   isLoading = false;
   coords: string = "";
   ubicationCompleted: boolean = false;
@@ -103,6 +103,8 @@ export class OperatingPermitsComponent implements OnInit {
 
     const latlng = this.coords.split(',');
 
+    console.log(this.documentsFormGroup.value.localDocument);
+    /*
     const permission: Permission = {
       "idSubCat": 1,
       "economicActivity": this.firstFormGroup.value.economicActivity!,
@@ -132,6 +134,9 @@ export class OperatingPermitsComponent implements OnInit {
       }
       this.isLoading = false;
     });
+    */
   }
+
+
 
 }

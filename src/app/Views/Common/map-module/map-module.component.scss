@@ -1,67 +1,61 @@
 $main-bg-color: #F0F0F0;
+@mixin  texts($height) {
+    width: 40%;
+    height: $height;
+    border-radius: 5px;
+    border: 0;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+}
 
 .ubicationForm{
+    background: $main-bg-color;
     margin-top: 10px;
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-
 .mapContainer{
     display: flex;
-    width: 50%;
-    margin-left: 30px;
+    width: 45%;
 }
 
 .mapForm{
     background: $main-bg-color;
-    height: fit-content + 100px;
+    height: fit-content;
     width: 45%;
-    margin-right: 30px;
+    margin-right: 2%;
     padding: 5% 0 5% 0;
 
     label{
         width: 10%;
         display: inline-block;
-        margin: 0 40px 0 150px;
+        margin: 0 3% 0 7%;
     }
 
-
-
-    
     .input{
         padding: 0.5px;
-       
-        @mixin  texts($height) {
-        width: 40%;
-        height: $height;
-        border-radius: 5px;
-        border: 0;
-        padding: 5px;
-        margin: 5px 0 5px 0;
-        }
 
         input {
-       @include texts(25px)
+            @include texts(25px)
         }
 
         textarea{
-       @include texts(100px);
-        max-width: 40%;
-        min-width: 40%;
-        min-height: 25px;
-        max-height: 130px;
-        
+            @include texts(100px);
+            max-width: 40%;
+            min-width: 40%;
+            min-height: 25px;
+            max-height: 130px;
         }
 
         select{
-        width: 42%;
-        height: 30px;
-        border-radius: 5px;
-        border: 0;
-        padding: 5px;
-        margin: 5px 0 5px 0;
+            width: 42%;
+            height: 30px;
+            border-radius: 5px;
+            border: 0;
+            padding: 5px;
+            margin: 5px 0 5px 0;
         }
     }
 
@@ -88,4 +82,24 @@ $main-bg-color: #F0F0F0;
         }
     }
 
+}
+
+@media screen and (max-width: 1000px){
+    .ubicationForm{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mapContainer{
+        display: flex;
+        justify-content: center;
+        background-color: $main-bg-color;
+        width: 100%;
+        padding-bottom: 5%;
+
+    }
+
+    .mapForm{
+        width: 100%;
+    }
 }
