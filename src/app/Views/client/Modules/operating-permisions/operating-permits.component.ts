@@ -25,14 +25,13 @@ export class OperatingPermitsComponent implements OnInit {
     private snackbar: MatSnackBar,
   ) { }
 
-  protected isLinear = true;
+  protected isLinear = false;
   isLoading = false;
   coords: string = "";
   ubicationCompleted: boolean = false;
 
 
   checkDataClient(){
-    console.log(this.firstFormGroup.valid);
     if(!this.firstFormGroup.valid){
                       this.snackbar.open("Existen datos faltantes en el formulario",'Aceptar',{
         duration: 2000
@@ -103,6 +102,7 @@ export class OperatingPermitsComponent implements OnInit {
 
     const latlng = this.coords.split(',');
 
+    console.log(latlng);
     console.log(this.documentsFormGroup.value.localDocument);
 
     
