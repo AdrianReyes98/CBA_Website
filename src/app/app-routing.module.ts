@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginGuardGuard } from './Security/login-guard.guard';
 import { LoginComponent } from './Views/login/login.component';
@@ -26,6 +26,7 @@ import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart
 import { DigitadorComponent } from './Views/digitador/digitador.component';
 import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
 import { PermissionsDigiComponent } from './Views/digitador/Modules/permissions-digi/permissions-digi.component';
+import { CheckPermissionsComponent } from './Views/digitador/Modules/check-permissions/check-permissions.component';
 
 const routes: Routes = [
   {
@@ -155,6 +156,10 @@ const routes: Routes = [
       {
         path: 'Permission',
         component: PermissionsDigiComponent
+      },
+      {
+        path:'Check',
+        component: CheckPermissionsComponent
       }
     ]
   },

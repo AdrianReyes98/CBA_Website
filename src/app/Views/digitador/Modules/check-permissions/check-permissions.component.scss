@@ -1,0 +1,48 @@
+.content{
+    background-color: white;
+    padding: 30px 0 50px 0;
+    height: fit-content;
+}
+.page{
+    width: 55%;
+    height: 1000px;
+    margin: 0 0 0 340px;
+    border-width: 3px;;
+    border-style: solid;
+}
+.title{
+    text-align: center;
+}
+.h3{
+    margin-left: 40px;
+}
+.dataForm{
+padding-left: 100px;    
+    label{
+      width: 40%;
+      display: inline-block;
+      text-align: right;
+      margin-right: 40px;
+    }
+    .input{
+        padding: 0.5px;
+        @mixin texts($height) {
+          width: 40%;
+          height: $height;
+          border-radius: 5px;
+          border: 0;
+          padding: 5px;
+          margin: 5px 0 5px 0;
+        }
+        input{
+          @include texts(25px);
+        }
+         textarea{
+          @include texts(25px);
+          max-width: 40%;
+          min-width: 15%;
+          max-height: 75px;
+          min-height: 25px;
+        }
+    }
+}
