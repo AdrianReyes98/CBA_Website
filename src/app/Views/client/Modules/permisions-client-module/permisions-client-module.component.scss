@@ -8,6 +8,16 @@ table{
 }
 
 
+.emptyList{
+    display: flex;
+    justify-content: center;
+
+    p{
+        margin: 10% 0 10% 0;
+        font-size: 22px;
+    }
+}
+
 #title{
     text-align: center;
     padding: 20px;
