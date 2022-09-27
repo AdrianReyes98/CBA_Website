@@ -104,6 +104,8 @@ export class OperatingPermitsComponent implements OnInit {
     const latlng = this.coords.split(',');
 
     console.log(this.documentsFormGroup.value.localDocument);
+
+    
     /*
     const permission: Permission = {
       "idSubCat": 1,

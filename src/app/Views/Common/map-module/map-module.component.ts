@@ -1,6 +1,5 @@
 import { Component, OnInit,Inject,Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
-import { latLng } from 'leaflet';
 
 @Component({
   selector: 'app-map-module',
