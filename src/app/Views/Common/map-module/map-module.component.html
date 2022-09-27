@@ -24,10 +24,10 @@
                 [zoom]="zoom"
                 (mapClick)="addMarker($event)"
                 (mapMousemove)="move($event)" >
-                <map-marker #marker="mapMarker" *ngFor="let markerPosition of markerPositions"
-                [position]="markerPosition"
-                [options]="markerOptions"
-                (mapMouseover)="openInfoWindow(marker)"> </map-marker>
+                  <map-marker #marker="mapMarker" *ngFor="let markerPosition of markerPositions"
+                  [position]="markerPosition"
+                  [options]="markerOptions"
+                  (mapMouseover)="openInfoWindow(marker)"></map-marker>
                 <map-info-window>
                   <div>Latitud: {{lati}}</div>
                   <div>Longitud: {{long}}</div>

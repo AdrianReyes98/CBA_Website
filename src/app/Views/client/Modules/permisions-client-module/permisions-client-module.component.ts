@@ -17,6 +17,7 @@ export class PermisionsClientModuleComponent implements OnInit {
   public dataSource: any;
   public columns: string[]=['Id','Estado','Fecha','Actividad','Nombre','Flujo','Renovacion'];
   private listPermissions: any[] = [];
+  private searchList: any[] = [];
   private user: any = JSON.parse(localStorage.getItem('user')!);
 
 
@@ -41,17 +42,16 @@ export class PermisionsClientModuleComponent implements OnInit {
   }
 
   startSearch(){
-    var searchList:any = [];
+    this.searchList = [];
 
     this.listPermissions.forEach(perm => {
-      if(perm.fecha.startsWith(this.search)){
-        searchList.push(perm);
-      }
+
       if(perm.idLocNavigation.nombre.toUpperCase().startsWith(this.search.toUpperCase())){
-        searchList.push(perm);
+        this.searchList.push(perm);
       }
+
     });
-    this.setDataSource(searchList);
+    this.setDataSource(this.searchList);
   }
 
   setDataSource(list: any[]){
