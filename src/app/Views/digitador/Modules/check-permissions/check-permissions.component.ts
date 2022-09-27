@@ -9,11 +9,9 @@ export class CheckPermissionsComponent implements OnInit {
   protected permission: any;
   
   constructor(
-   
   ) { }
 
   ngOnInit(): void {
-   
   this.loadData();
     
   }
@@ -21,9 +19,8 @@ export class CheckPermissionsComponent implements OnInit {
 
   loadData(){
     this.permission=JSON.parse(localStorage.getItem('permission')!);
-    localStorage.removeItem('permission');
+    //localStorage.removeItem('permission');
     console.log(this.permission)
-
   }
 }
 

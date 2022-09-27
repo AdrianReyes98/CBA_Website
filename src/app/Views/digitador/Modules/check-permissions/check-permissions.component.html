@@ -9,40 +9,38 @@
         <div class="dataForm">
 
           <div class="input">
-            <label>Ruc del Cliente:</label>
+            <label>Ruc del Cliente :</label>
             <label>1805308895</label>
           </div>
 
           <div class="input">
-            <label>Razón Social (Si aplica):</label>
+            <label>Razón Social :</label>
             <label>{{permission.idLocNavigation.razonSocial}}</label>
           </div>
 
           <div class="input">
-            <label>Nombre comercial (Si aplica):</label>
-            <input 
-            placeholder="SUPERVENTAS"
-            formControlName="name">
+            <label>Nombre comercial :</label>
+            <label>{{permission.idLocNavigation.nombre}}</label>
           </div>
 
           <div class="input">
-            <label class="is-required">Representante Legal, como consta en el RUC:</label>
-            <input placeholder="SALVATIERRA JONAS JUAN ALEXANDER" formControlName="completeName">
+            <label class="is-required">Representante Legal :</label>
+            <label> SALVATIERRA JONAS JUAN ALEXANDER  </label>
           </div>
 
           <div class="input">
-            <label class="is-required">Actividad Económica, como consta en el RUC:</label>
+            <label class="is-required">Actividad Económica :</label>
             <label>{{permission.actividadEconomica}}</label>
           </div>
 
           <div class="input">
-            <label>Teléfono Móvil:</label>
-            <input placeholder="09XXXXXXXX" formControlName="phone" >
+            <label>Teléfono Móvil :</label>
+            <label>0998765619</label>
           </div>
 
           <div class="input">
-            <label>Correo Electrónico del propietario del local :</label>
-            <input placeholder="JUAN@HOTMAIL.COM" formControlName="mail">
+            <label>Correo Electrónico :</label>
+            <label>JUAN@HOTMAIL.COM</label>
           </div>
 
         </div>
@@ -52,12 +50,12 @@
         <div class="dataForm">
         <div class="input">
           <label>Latitud:</label>
-          <input placeholder="1.54215452" formControlName="lati">
+          <label>{{permission.idLocNavigation.coordernadaX}}</label>
         </div>
         
         <div class="input">
           <label>Longitud:</label>
-          <input placeholder="1.54215452" formControlName="longi">
+          <label>{{permission.idLocNavigation.coordenadaY}}</label>
         </div>
       </div>
       <h3 class="h3">3. Documentos:</h3>
