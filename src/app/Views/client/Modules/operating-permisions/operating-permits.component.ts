@@ -106,7 +106,6 @@ export class OperatingPermitsComponent implements OnInit {
     console.log(this.documentsFormGroup.value.localDocument);
 
     
-    /*
     const permission: Permission = {
       "idSubCat": 1,
       "economicActivity": this.firstFormGroup.value.economicActivity!,
@@ -136,7 +135,6 @@ export class OperatingPermitsComponent implements OnInit {
       }
       this.isLoading = false;
     });
-    */
   }
 
 
