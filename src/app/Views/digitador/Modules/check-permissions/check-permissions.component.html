@@ -10,54 +10,59 @@
 
           <div class="input">
             <label>Ruc del Cliente :</label>
-            <label>1805308895</label>
+            <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.ruc}}</label>
           </div>
 
           <div class="input">
             <label>Razón Social :</label>
-            <label>{{permission.idLocNavigation.razonSocial}}</label>
+            <label class="labeldat">{{permission.idLocNavigation.razonSocial}}</label>
           </div>
 
           <div class="input">
             <label>Nombre comercial :</label>
-            <label>{{permission.idLocNavigation.nombre}}</label>
+            <label class="labeldat">{{permission.idLocNavigation.nombre}}</label>
           </div>
 
           <div class="input">
             <label class="is-required">Representante Legal :</label>
-            <label> SALVATIERRA JONAS JUAN ALEXANDER  </label>
+            <label class="labeldat"> {{permission.idLocNavigation.idCliNavigation.apellidos}}  {{permission.idLocNavigation.idCliNavigation.nombres}}</label>
           </div>
 
           <div class="input">
             <label class="is-required">Actividad Económica :</label>
-            <label>{{permission.actividadEconomica}}</label>
+            <label class="labeldat">{{permission.actividadEconomica}}</label>
           </div>
 
           <div class="input">
             <label>Teléfono Móvil :</label>
-            <label>0998765619</label>
+            <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.telefono}}</label>
           </div>
 
           <div class="input">
             <label>Correo Electrónico :</label>
-            <label>JUAN@HOTMAIL.COM</label>
+            <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.email}}</label>
           </div>
 
         </div>
         
         <h3 class="h3">2. Datos de Ubicación:</h3>
 
-        <div class="dataForm">
-        <div class="input">
-          <label>Latitud:</label>
-          <label>{{permission.idLocNavigation.coordernadaX}}</label>
+        <div class="mapContainer">
+          <google-map height="300px"
+                      width="650px"
+                      [center]="center"
+                      [zoom]="zoom">
+                        <map-marker #marker="mapMarker" *ngFor="let markerPosition of markerPositions"
+                        [position]="markerPosition"
+                        [options]="markerOptions"
+                        (mapMouseover)="openInfoWindow(marker)"></map-marker>
+                      <map-info-window>
+                        <div>Latitud: {{permission.idLocNavigation.coordernadaX}}</div>
+                        <div>Longitud: {{permission.idLocNavigation.coordenadaY}}</div>
+                      </map-info-window>
+          </google-map>
         </div>
-        
-        <div class="input">
-          <label>Longitud:</label>
-          <label>{{permission.idLocNavigation.coordenadaY}}</label>
-        </div>
-      </div>
+
       <h3 class="h3">3. Documentos:</h3>
 
     <div class="dataForm">
@@ -78,7 +83,10 @@
         <label>foto.pdf</label>
       </div>
         
-
+    </div>
+    <div class="actions">
+      <button mat-button  class="btnBack">Rechazar</button>
+      <button mat-button class="btnNext" (click)="acceptPermission()">Aceptar</button>
     </div>
     </div>
 </div>

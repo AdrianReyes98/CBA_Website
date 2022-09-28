@@ -5,8 +5,8 @@
 }
 .page{
     width: 55%;
-    height: 1000px;
-    margin: 0 0 0 340px;
+    height: fit-content;
+    margin: 0 0 50px 340px;
     border-width: 3px;;
     border-style: solid;
 }
@@ -20,15 +20,38 @@
 .dataForm{
 padding-left: 100px;    
     label{
-      width: 40%;
-      display: inline-block;
-      text-align: left;
-      margin-top: 4%;
-      margin-right: 40px;
+    width: 40%;
+    display: inline-block;
+    text-align: left;
+    margin-top: 4%;
+    margin-right: 40px;
     }
         i{
-          font-size: 30px;
-          color: rgb(222, 34, 34);
+        font-size: 30px;
+        color: rgb(222, 34, 34);
         }
     }
+.mapContainer{
+    margin-left: 11%;
+}
+.labeldat{
+    color: gray;
+}
+.actions{
+    justify-content: right;
+    align-items: center; 
+    display: flex;
+    margin-top: 20px;
+    margin: 20px 20px 20px 0;
+
+    .btnNext{
+    background-color: rgb(59, 59, 203);
+    color: #fff;
+    margin-left: 15px;
+    }
+    .btnBack{
+    background-color: rgb(252, 109, 109);
+    color: #fff;
+    }
+} 
 
