@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class InputDialogComponent{
 
   public message: String = "";
-  public change: String = "";
+  public title: String = "";
 
   constructor(
     public dialogRef: MatDialogRef<InputDialogComponent>,
@@ -20,7 +20,7 @@ export class InputDialogComponent{
 
   ngOnInit(): void {
     this.message = this.data.message;
-    this.change = this.data.change;
+    this.title = this.data.change;
   }
 
   onNoClick(): void {
