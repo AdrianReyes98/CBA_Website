@@ -25,7 +25,7 @@ export class OperatingPermitsComponent implements OnInit {
     private snackbar: MatSnackBar,
   ) { }
 
-  protected isLinear = false;
+  protected isLinear = true;
   isLoading = false;
   coords: string = "";
   ubicationCompleted: boolean = false;
