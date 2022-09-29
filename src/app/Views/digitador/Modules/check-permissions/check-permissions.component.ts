@@ -72,12 +72,14 @@ zoom = 15;
     });
 
     dialogRef.afterClosed().subscribe( result => {
-      if(result){
-        this.finishPermission("Rechazado","Su solicitud a sido rechazada")
-        
+      console.log(result)
+
+      if(result != undefined){
+        this.finishPermission("Rechazado",result)
         localStorage.removeItem('permission');
         this.router.navigateByUrl('/Digitador/Permission');
-      }
+      }             
+
     });
   }
 
