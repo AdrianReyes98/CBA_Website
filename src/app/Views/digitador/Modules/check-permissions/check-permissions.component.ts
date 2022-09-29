@@ -73,6 +73,7 @@ zoom = 15;
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
+        this.finishPermission("Rechazado","Su solicitud a sido rechazada")
         
         localStorage.removeItem('permission');
         this.router.navigateByUrl('/Digitador/Permission');
@@ -82,9 +83,9 @@ zoom = 15;
 
   finishPermission(action:string, description: string){
     const history: History = {
-      "accion": "Aceptado",
-      "descripcion": "Aceptado",
-      "idPerm": 89,
+      accion: action,
+      descripcion:description,
+      idPerm: this.permission.id
     }
 
     console.log(history)
