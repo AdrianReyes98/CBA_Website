@@ -1,5 +1,5 @@
 export interface History{
     accion: string;
-    descripccion: string;
+    descripcion: string;
     idPerm: number;
 }

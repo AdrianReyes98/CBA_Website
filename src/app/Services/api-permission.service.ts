@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { History } from '../Models/History';
 import { Permission } from '../Models/Permission';
 import { Response } from '../Models/Response';
 
@@ -33,7 +34,7 @@ export class ApiPermissionService {
     return this._http.get<Response>(this.url +'/all',httpOption);
   }
 
-  checkedPermission():Observable<Response>{
+  checkedPermission(history: History):Observable<Response>{
     return this._http.post<Response>(this.url+"/checkedPermission",httpOption);
   }
   

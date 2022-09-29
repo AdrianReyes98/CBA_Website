@@ -89,6 +89,14 @@ zoom = 15;
     })
   }
 
+  finishPermission(){
+    const history: History = {
+      "accion": 'sdfsdf',
+      "descripcion": "sdfsdf",
+      "idPerm": 2
+    }
+  }
+
   loadData(){
     this.permission=JSON.parse(localStorage.getItem('permission')!);
     this.markerPositions.push({lat: this.permission.idLocNavigation.coordernadaX, lng: this.permission.idLocNavigation.coordenadaY});
