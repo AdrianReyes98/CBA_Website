@@ -28,10 +28,14 @@ export class ApiPermissionService {
   getPermissionById(id: number): Observable<Response>{
     return this._http.get<Response>(this.url+'/'+id,httpOption);
   } 
+
   getAllPermission():Observable<Response>{
     return this._http.get<Response>(this.url +'/all',httpOption);
   }
 
+  updateHistorial():Observable<Response>{
+    return this._http.post<Response>(this.url+"/checkedPermission",httpOption);
+  }
   
   
   

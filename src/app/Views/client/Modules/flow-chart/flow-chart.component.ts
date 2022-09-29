@@ -7,17 +7,20 @@ import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 })
 export class FlowChartComponent implements OnInit {
   
-  public listHistory: any[] = [{Accion: 'Ingreso',Descripcion: 'Ingresooo',Fecha: '2022-09-21'},
-                              {Accion: 'Finalizado',Descripcion: 'Finalizado', Fecha: '2022-09-21'},
-                              {Accion: 'Finalizado',Descripcion: 'Finalizado', Fecha: '2022-09-21'},
-                              {Accion: 'Finalizado',Descripcion: 'Finalizado', Fecha: '2022-09-21'}];
+  protected permission: any;
+  public listHistory: any[] = [];
 
   
   
   constructor() { }
 
   ngOnInit(): void {
-  
+    this.loadData();
   }
 
+  loadData(){
+    this.permission = JSON.parse(localStorage.getItem('permission')!); 
+    this.listHistory = this.permission.historials;
+    console.log(this.listHistory);
+  }
 }

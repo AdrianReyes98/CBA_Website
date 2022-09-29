@@ -82,9 +82,11 @@ export class PermisionsClientModuleComponent implements OnInit {
     });
   }
 
-  openFlowChart(){
+  openFlowChart(permission: any){
+    localStorage.setItem('permission',JSON.stringify(permission));
     this.router.navigateByUrl("/Cliente/FlowChart")
   }
+
 
   
 }
