@@ -37,11 +37,6 @@ table{
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
     left: 10%;
-
-    button{
-        border-style: none;
-        
-    }
 }
 
 input{
@@ -66,4 +61,16 @@ input{
     border-style: none;
     font-size: 20px;
     background-color: $main-color;
+}
+
+.mat-cell{
+    i{
+        color: #462d04d2;
+        font-size: 23px;
+    }
+
+    i:hover{
+        color: #644005;
+        transform: scale(1.2);
+    }
 }

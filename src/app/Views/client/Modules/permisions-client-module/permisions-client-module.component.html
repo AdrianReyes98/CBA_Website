@@ -49,17 +49,15 @@
         
 
         <ng-container matColumnDef="Flujo">
-            <th mat-header-cell *matHeaderCellDef> Seguimiento </th>
-            <td mat-cell *matCellDef="let element" class="element">
-                <button (click)="openFlowChart(element)">
-                    <i class='bx bx-bar-chart-alt' ></i>
-                </button>
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Seguimiento </th>
+            <td mat-cell *matCellDef="let element" class="element" style="text-align: center;">
+                <i class='bx bx-history' (click)="openFlowChart(element)"></i>
             </td>
         </ng-container>
 
         <ng-container matColumnDef="Renovacion">
-            <th mat-header-cell *matHeaderCellDef> Renovacion </th>
-            <td mat-cell *matCellDef="let element" class="element">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Renovacion </th>
+            <td mat-cell *matCellDef="let element" class="element" style="text-align: center;">
                 <button [disabled]="element.estado != 'Caducado'">
                     Renovar
                 </button>
