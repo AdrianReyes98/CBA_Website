@@ -1,57 +1,39 @@
-.content{
-    background-color: white;
-    padding: 30px 0 50px 0;
-    height: fit-content;
-}
-.page{
-    width: 55%;
-    height: fit-content;
-    margin: 0 0 50px 340px;
-    border-width: 3px;;
-    border-style: solid;
-}
 .title{
     text-align: center;
 }
 .h3{
-    margin-left: 40px;
-    margin-top: 4%;;
+    margin-left: 3%;
 }
 .dataForm{
-padding-left: 100px;    
-    label{
-    width: 40%;
-    display: inline-block;
-    text-align: left;
-    margin-top: 4%;
-    margin-right: 40px;
-    }
-        i{
-        font-size: 30px;
-        color: rgb(222, 34, 34);
+    padding-left: 7%;  
+
+        label{
+        width: 35%;
+        display: inline-block;
+        text-align: left;
+        margin-top: 3%;
+        margin-right: 3px;
         }
-    }
-.mapContainer{
-    margin-left: 11%;
+            i{
+            font-size: 30px;
+            color: rgb(222, 34, 34);
+            }
 }
 .labeldat{
     color: gray;
 }
-.actions{
-    justify-content: right;
-    align-items: center; 
+
+.page{
     display: flex;
-    margin-top: 20px;
-    margin: 20px 20px 20px 0;
-
-    .btnNext{
-    background-color: rgb(59, 59, 203);
-    color: #fff;
-    margin-left: 15px;
+    flex-direction: row;
+}
+.dataDoc{
+    padding-left: 7%;
+    label{
+        width: 15%;
+        display:inline-block;
+        text-align: left;
+        margin-top: 1%;
     }
-    .btnBack{
-    background-color: rgb(252, 109, 109);
-    color: #fff;
-    }
-} 
 
+}

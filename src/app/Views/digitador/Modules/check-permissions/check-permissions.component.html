@@ -1,92 +1,95 @@
-<div class="content"> 
-    <div class="page">
-        <div class="title">
-            <h1>Solicitud Permiso de Funcionamiento</h1>
-            <h2>Cuerpo de Bomberos de Ambato </h2>
-        </div><br>
-        
-        <h3 class="h3">1. Datos Informativos:</h3>
-        <div class="dataForm">
+<div class="title">
+  <h1>Solicitud Permiso de Funcionamiento</h1>
+</div><br>
 
-          <div class="input">
-            <label>Ruc del Cliente :</label>
-            <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.ruc}}</label>
-          </div>
+<h3 class="h3">1. Datos Informativos:</h3>
 
-          <div class="input">
-            <label>Razón Social :</label>
-            <label class="labeldat">{{permission.idLocNavigation.razonSocial}}</label>
-          </div>
-
-          <div class="input">
-            <label>Nombre comercial :</label>
-            <label class="labeldat">{{permission.idLocNavigation.nombre}}</label>
-          </div>
-
-          <div class="input">
-            <label class="is-required">Representante Legal :</label>
-            <label class="labeldat"> {{permission.idLocNavigation.idCliNavigation.apellidos}}  {{permission.idLocNavigation.idCliNavigation.nombres}}</label>
-          </div>
-
-          <div class="input">
-            <label class="is-required">Actividad Económica :</label>
-            <label class="labeldat">{{permission.actividadEconomica}}</label>
-          </div>
-
-          <div class="input">
-            <label>Teléfono Móvil :</label>
-            <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.telefono}}</label>
-          </div>
-
-          <div class="input">
-            <label>Correo Electrónico :</label>
-            <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.email}}</label>
-          </div>
-
-        </div>
-        
-        <h3 class="h3">2. Datos de Ubicación:</h3>
-
-        <div class="mapContainer">
-          <google-map height="300px"
-                      width="650px"
-                      [center]="center"
-                      [zoom]="zoom">
-                        <map-marker #marker="mapMarker" *ngFor="let markerPosition of markerPositions"
-                        [position]="markerPosition"
-                        [options]="markerOptions"
-                        (mapMouseover)="openInfoWindow(marker)"></map-marker>
-                      <map-info-window>
-                        <div>Latitud: {{permission.idLocNavigation.coordernadaX}}</div>
-                        <div>Longitud: {{permission.idLocNavigation.coordenadaY}}</div>
-                      </map-info-window>
-          </google-map>
-        </div>
-
-      <h3 class="h3">3. Documentos:</h3>
-
+<div class="content">
+  <div class="page">
     <div class="dataForm">
 
       <div class="input">
-          <label>Copia del Ruc:</label>
-          <i class='bx bxs-file-pdf'></i> 
-          <label>ruc.pdf</label>
-        </div>
-      <div class="input">
-          <label>Copia del Predio:</label>
-          <i class='bx bxs-file-pdf'></i>
-          <label>predio.pdf</label>
+        <label>Ruc del Cliente :</label>
+        <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.ruc}}</label>
       </div>
+    
       <div class="input">
-        <label>Foto fachada:</label>
-        <i class='bx bxs-file-pdf'></i>
-        <label>foto.pdf</label>
+        <label>Razón Social :</label>
+        <label class="labeldat">{{permission.idLocNavigation.razonSocial}}</label>
       </div>
-        
+    
+      <div class="input">
+        <label>Nombre comercial :</label>
+        <label class="labeldat">{{permission.idLocNavigation.nombre}}</label>
+      </div>
+    
+      <div class="input">
+        <label class="is-required">Representante Legal :</label>
+        <label class="labeldat"> {{permission.idLocNavigation.idCliNavigation.apellidos}}  {{permission.idLocNavigation.idCliNavigation.nombres}}</label>
+      </div>
+    
+      <div class="input">
+        <label class="is-required">Actividad Económica :</label>
+        <label class="labeldat">{{permission.actividadEconomica}}</label>
+      </div>
+    
+      <div class="input">
+        <label>Teléfono Móvil :</label>
+        <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.telefono}}</label>
+      </div>
+    
+      <div class="input">
+        <label>Correo Electrónico :</label>
+        <label class="labeldat">{{permission.idLocNavigation.idCliNavigation.email}}</label>
+      </div>
+    
+    </div>
+    
+    <div class="mapContainer">
+      
+      <google-map height="300px"
+                  width="650px"
+                  [center]="center"
+                  [zoom]="zoom">
+                    <map-marker #marker="mapMarker" *ngFor="let markerPosition of markerPositions"
+                    [position]="markerPosition"
+                    [options]="markerOptions"
+                    (mapMouseover)="openInfoWindow(marker)"></map-marker>
+                  <map-info-window>
+                    <div>Latitud: {{permission.idLocNavigation.coordernadaX}}</div>
+                    <div>Longitud: {{permission.idLocNavigation.coordenadaY}}</div>
+                  </map-info-window>
+      </google-map>
+
+      
     </div>
     <div class="actions">
       <button mat-button  class="btnBack" (click)="rejectPermission()">Rechazar</button>
       <button mat-button class="btnNext" (click)="acceptPermission()">Aceptar</button>
     </div>
+  </div>
+
+  <h3 class="h3">2. Documentos:</h3>
+  
+  <div class="dataDoc">
+
+    <div class="input">
+        <label>Copia del Ruc:</label>
+        <i class='bx bxs-file-pdf'></i> 
+        <label>ruc.pdf</label>
+      </div>
+    <div class="input">
+        <label>Copia del Predio:</label>
+        <i class='bx bxs-file-pdf'></i>
+        <label>predio.pdf</label>
     </div>
+    <div class="input">
+      <label>Foto fachada:</label>
+      <i class='bx bxs-file-pdf'></i>
+      <label>foto.pdf</label>
+    </div>
+      
+  </div>
 </div>
+
+
