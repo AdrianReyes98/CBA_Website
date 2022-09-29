@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ApiPermissionService } from 'src/app/Services/api-permission.service';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
 import { InputDialogComponent } from 'src/app/Views/Common/input-dialog/input-dialog.component';
 import { History } from 'src/app/Models/History';
@@ -18,7 +19,8 @@ export class CheckPermissionsComponent implements OnInit {
   constructor(
     public confirmDialog: MatDialog,
     public inputDialog: MatDialog,
-    private router: Router
+    private router: Router,
+    public apiPermission: ApiPermissionService
   ) { }
 
   ngOnInit(): void {
@@ -53,7 +55,7 @@ zoom = 15;
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
-        
+
         localStorage.removeItem('permission');
         this.router.navigateByUrl('/Digitador/Permission');
       }
@@ -75,6 +77,17 @@ zoom = 15;
     });
   }
 
+  finishPermission(action:string, description: string){
+    const history: History = {
+      accion: action,
+      descripccion:description,
+      idPerm: this.permission.id
+    }
+
+    this.apiPermission.checkedPermission().subscribe(result =>{
+      
+    })
+  }
 
   finishPermission(){
     const history: History = {
