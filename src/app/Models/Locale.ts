@@ -1,5 +1,4 @@
 export interface Locale{
-    //Datos Local
     name: string;
     address: string;
     coordinateX: number;

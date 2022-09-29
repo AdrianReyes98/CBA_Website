@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
 import { InputDialogComponent } from 'src/app/Views/Common/input-dialog/input-dialog.component';
+import { History } from 'src/app/Models/History';
 
 @Component({
   selector: 'app-check-permissions',
@@ -71,6 +72,14 @@ zoom = 15;
     });
   }
 
+
+  finishPermission(){
+    const history: History = {
+      "accion": 'sdfsdf',
+      "descripcion": "sdfsdf",
+      "idPerm": 2
+    }
+  }
 
   loadData(){
     this.permission=JSON.parse(localStorage.getItem('permission')!);
