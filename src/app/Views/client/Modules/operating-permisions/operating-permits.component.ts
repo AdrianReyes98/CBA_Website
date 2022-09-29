@@ -107,6 +107,7 @@ export class OperatingPermitsComponent implements OnInit {
 
     
     const permission: Permission = {
+
       "idSubCat": 1,
       "economicActivity": this.firstFormGroup.value.economicActivity!,
       "rucCopy": this.documentsFormGroup.value.rucDocument!,
@@ -119,6 +120,7 @@ export class OperatingPermitsComponent implements OnInit {
       "photo": this.documentsFormGroup.value.localPicture!,
       "property": this.documentsFormGroup.value.localDocument!,
       "idCli": this.user.client.id
+      
     }
 
     this.apiPermission.newOperatingPermission(permission).subscribe(response => {
