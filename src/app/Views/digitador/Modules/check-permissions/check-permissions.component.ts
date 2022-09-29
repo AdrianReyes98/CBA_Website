@@ -53,6 +53,8 @@ zoom = 15;
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
+        
+        localStorage.removeItem('permission');
         this.router.navigateByUrl('/Digitador/Permission');
       }
     });
@@ -67,6 +69,7 @@ zoom = 15;
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
+        localStorage.removeItem('permission');
         this.router.navigateByUrl('/Digitador/Permission');
       }
     });
@@ -84,7 +87,6 @@ zoom = 15;
   loadData(){
     this.permission=JSON.parse(localStorage.getItem('permission')!);
     this.markerPositions.push({lat: this.permission.idLocNavigation.coordernadaX, lng: this.permission.idLocNavigation.coordenadaY});
-    //localStorage.removeItem('permission');
     this.center = {
       lat:  this.permission.idLocNavigation.coordernadaX,
       lng: this.permission.idLocNavigation.coordenadaY
