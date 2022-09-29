@@ -6,6 +6,7 @@ import { ApiPermissionService } from 'src/app/Services/api-permission.service';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
 import { InputDialogComponent } from 'src/app/Views/Common/input-dialog/input-dialog.component';
 import { History } from 'src/app/Models/History';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-check-permissions',
@@ -20,7 +21,8 @@ export class CheckPermissionsComponent implements OnInit {
     public confirmDialog: MatDialog,
     public inputDialog: MatDialog,
     private router: Router,
-    public apiPermission: ApiPermissionService
+    public apiPermission: ApiPermissionService,
+    public snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -55,7 +57,7 @@ zoom = 15;
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
-
+        this.finishPermission('Aceptado','Su solicitud a sido revisada y aceptada, espere una inspección en los proximos días')
         localStorage.removeItem('permission');
         this.router.navigateByUrl('/Digitador/Permission');
       }
@@ -71,6 +73,7 @@ zoom = 15;
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
+        
         localStorage.removeItem('permission');
         this.router.navigateByUrl('/Digitador/Permission');
       }
@@ -79,23 +82,21 @@ zoom = 15;
 
   finishPermission(action:string, description: string){
     const history: History = {
-      accion: action,
-      descripccion:description,
-      idPerm: this.permission.id
+      "accion": "Aceptado",
+      "descripcion": "Aceptado",
+      "idPerm": 89,
     }
 
-    this.apiPermission.checkedPermission().subscribe(result =>{
-      
+    console.log(history)
+    this.apiPermission.checkedPermission(history).subscribe(result =>{
+      if (result.status == 1){
+        this.snackbar.open( 'La solicitud se actualizo correctamente','Aceptar',{duration:2000 })
+      }else{
+        this.snackbar.open( 'Hubo un error al actualizar la solicitud','Aceptar',{duration:2000 })
+      }
     })
   }
 
-  finishPermission(){
-    const history: History = {
-      "accion": 'sdfsdf',
-      "descripcion": "sdfsdf",
-      "idPerm": 2
-    }
-  }
 
   loadData(){
     this.permission=JSON.parse(localStorage.getItem('permission')!);
