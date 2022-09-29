@@ -33,10 +33,8 @@ export class ApiPermissionService {
     return this._http.get<Response>(this.url +'/all',httpOption);
   }
 
-  updateHistorial():Observable<Response>{
+  checkedPermission():Observable<Response>{
     return this._http.post<Response>(this.url+"/checkedPermission",httpOption);
   }
-  
-  
   
 }
