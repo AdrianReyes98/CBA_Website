@@ -35,7 +35,7 @@ export class ApiPermissionService {
   }
 
   checkedPermission(history: History):Observable<Response>{
-    return this._http.post<Response>(this.url+"/checkedPermission",httpOption);
+    return this._http.post<Response>(this.url+"/checkedPermission",history,httpOption);
   }
   
 }
