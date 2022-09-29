@@ -20,7 +20,7 @@ export class InputDialogComponent{
 
   ngOnInit(): void {
     this.message = this.data.message;
-    this.title = this.data.change;
+    this.title = this.data.title;
   }
 
   onNoClick(): void {

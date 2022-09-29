@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ConfirmDialogComponent } from 'src/app/Views/Common/confirm-dialog/confirm-dialog.component';
+import { InputDialogComponent } from 'src/app/Views/Common/input-dialog/input-dialog.component';
 
 @Component({
   selector: 'app-check-permissions',
@@ -13,7 +15,9 @@ export class CheckPermissionsComponent implements OnInit {
   
   
   constructor(
-    public confirmDialog: MatDialog
+    public confirmDialog: MatDialog,
+    public inputDialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -40,20 +44,33 @@ zoom = 15;
     if (this.infoWindow != undefined) this.infoWindow.open(marker); 
   }
 
-  
-
   acceptPermission(){
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
       width: '410px',
-      data: {title: 'ACEPTAR PERMISO', message: 'Esta seguro que desea aceptar este permiso ?'}
+      data: {title: 'PERMISO ACEPTADO', message: 'Esta seguro que desea aceptar este permiso ?'}
     });
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
-
+        this.router.navigateByUrl('/Digitador/Permission');
       }
     });
   }
+
+
+  rejectPermission(){
+    const dialogRef = this.inputDialog.open(InputDialogComponent, {
+      width: '410px',
+      data: {title: 'PERMISO RECHAZADO', message: 'Escriba el motivo del rechazo'}
+    });
+
+    dialogRef.afterClosed().subscribe( result => {
+      if(result){
+        this.router.navigateByUrl('/Digitador/Permission');
+      }
+    });
+  }
+
 
   loadData(){
     this.permission=JSON.parse(localStorage.getItem('permission')!);
