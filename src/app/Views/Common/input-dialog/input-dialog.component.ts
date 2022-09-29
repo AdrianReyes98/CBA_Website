@@ -10,7 +10,8 @@ export class InputDialogComponent{
 
   public message: String = "";
   public title: String = "";
-
+  protected insertedData: string = "";
+  
   constructor(
     public dialogRef: MatDialogRef<InputDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
