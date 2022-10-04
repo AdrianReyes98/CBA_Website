@@ -61,6 +61,8 @@ import { DialogNewUserComponent } from './Views/client/Modules/home-module/dialo
 import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart.component';
 import { PermissionsDigiComponent } from './Views/digitador/Modules/permissions-digi/permissions-digi.component';
 import { CheckPermissionsComponent } from './Views/digitador/Modules/check-permissions/check-permissions.component';
+import { InspectorComponent } from './Views/inspector/inspector.component';
+import { InspectionsComponent } from './Views/supervisor/Modules/inspections/inspections.component';
 
 
 
@@ -96,7 +98,9 @@ import { CheckPermissionsComponent } from './Views/digitador/Modules/check-permi
     DialogNewUserComponent,
     FlowChartComponent,
     PermissionsDigiComponent,
-    CheckPermissionsComponent
+    CheckPermissionsComponent,
+    InspectorComponent,
+    InspectionsComponent
 
   ],
   imports: [
