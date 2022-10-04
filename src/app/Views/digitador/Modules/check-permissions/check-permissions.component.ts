@@ -36,9 +36,9 @@ export class CheckPermissionsComponent implements OnInit {
   center: google.maps.LatLngLiteral = {
     lat: -1.25,
     lng:  -78.60745217922444
-};
+  };
 
-zoom = 15;
+  zoom = 15;
   markerOptions: google.maps.MarkerOptions={
     draggable: false
   };

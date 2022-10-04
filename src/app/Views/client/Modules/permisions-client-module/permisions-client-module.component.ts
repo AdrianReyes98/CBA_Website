@@ -32,6 +32,9 @@ export class PermisionsClientModuleComponent implements OnInit {
   ngOnInit(): void {
     this.setPaginatorSpanish();
     this.loadData(this.user.client.id);
+    const elementState: any = document.querySelector('#state');
+    console.log(elementState);
+    elementState.style.backgroundcolor = 'red';
   }
 
   setPaginatorSpanish(){
