@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InspectionsComponent implements OnInit {
 
+
+  public isLoading: boolean = false;
+  protected search: string = "";
+  protected dataSource: any;
+  public columns: string[] = ['Id','Cedula','Role', 'Email','Acciones'];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  startSearch(){
+  }
+
+  openDialogAddUser(){
   }
 
 }

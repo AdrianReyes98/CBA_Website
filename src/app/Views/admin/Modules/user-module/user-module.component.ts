@@ -19,7 +19,7 @@ export class UserModuleComponent implements OnInit {
   public searchList: any[] = [];
   public listUsers: any[] = [];  
   public columns: string[] = ['Id','Cedula','Role', 'Email','Acciones'];
-  dataSource: any;
+  protected dataSource: any;
 
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;

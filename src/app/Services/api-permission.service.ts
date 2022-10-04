@@ -31,11 +31,15 @@ export class ApiPermissionService {
   } 
 
   getAllPermission():Observable<Response>{
-    return this._http.get<Response>(this.url +'/all',httpOption);
+    return this._http.get<Response>(this.url +'/all/InsertedPermission',httpOption);
   }
 
   checkedPermission(history: History):Observable<Response>{
     return this._http.post<Response>(this.url+"/checkedPermission",history,httpOption);
+  }
+
+  aceptedPermission():Observable<Response>{
+    return this._http.get<Response>(this.url+"/all/InspectedPermission")
   }
   
 }

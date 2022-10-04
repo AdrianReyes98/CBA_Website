@@ -1,0 +1,133 @@
+$main-color: #ff4848;
+
+table{
+    width: 100%;
+    border-color: transparent;
+    color: #fff;
+}
+
+#title{
+    text-align: center;
+    padding: 20px;
+}
+
+.loader-container{
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+#form-container{
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2%;
+    margin-bottom: 30px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    left: 10%;
+}
+
+input{
+    background-color: rgb(240, 240, 240);
+    width: 85%;
+    font-size: 20px;
+    outline: none;
+    border: none;
+}
+
+.btn{
+    border-radius: 50%;
+    border-style: none;
+    height: 40px;
+    width: 15%;
+    background-color: $main-color;
+    color:#fff
+}
+
+.btn i{
+    border-radius: 50%;
+    border-style: none;
+    font-size: 20px;
+    background-color: $main-color;
+}
+
+.newClientbtn{
+    width: 75%;
+    text-align: right;
+    justify-content: right;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.newClientbtn i{
+    border-radius: 50%;
+    border-style: none;
+    font-size: 70px;
+    background-color: $main-color;
+    color:#fff;
+}
+
+.newClientbtn i:hover{
+    background-color: $main-color;
+    color: #fff;
+}
+
+.newClientbtn i:active{
+    background-color: #76817f;
+    color: #000;
+}
+
+#edit-detail{
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+#delete-detail{
+    color: rgb(191, 50, 50);
+    border-radius: 50%;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+#edit-detail:hover{
+    color: rgb(106, 106, 196);
+}
+
+#delete-detail:hover{
+    color: rgb(202, 96, 96);
+}
+
+.element{
+    font-size: 14px;
+}
+
+@media screen and (max-width: 950px) {
+    .element{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .element{
+        font-size: 10px;
+    }
+}
+
+.mat-header-cell{
+    color: #000;
+    font-weight: bolder;
+    font-size: 15px;
+    background-color:#FFF2F2;
+    
+}

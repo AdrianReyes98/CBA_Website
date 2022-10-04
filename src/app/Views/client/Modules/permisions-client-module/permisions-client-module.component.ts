@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -18,11 +18,12 @@ export class PermisionsClientModuleComponent implements OnInit {
   public columns: string[]=['Id','Estado','Fecha','Actividad','Nombre','Flujo','Renovacion'];
   private listPermissions: any[] = [];
   private searchList: any[] = [];
+
   private user: any = JSON.parse(localStorage.getItem('user')!);
 
 
-  @ViewChild(MatPaginator, { static: true })
-  paginator!: MatPaginator;
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
+
   constructor(
     private apiPermission: ApiPermissionService,
     private router: Router

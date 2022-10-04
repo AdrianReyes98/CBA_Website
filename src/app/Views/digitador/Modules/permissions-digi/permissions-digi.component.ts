@@ -76,8 +76,6 @@ export class PermissionsDigiComponent implements OnInit {
     localStorage.setItem('permission',JSON.stringify(permission));
     this.router.navigateByUrl("/Digitador/Check")
   }
-
- 
   
 
   
