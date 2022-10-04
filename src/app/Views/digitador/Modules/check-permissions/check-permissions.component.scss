@@ -1,39 +1,56 @@
 .title{
     text-align: center;
 }
-.h3{
+h3{
     margin-left: 3%;
 }
-.dataForm{
-    padding-left: 7%;  
 
-        label{
-        width: 35%;
-        display: inline-block;
-        text-align: left;
-        margin-top: 3%;
-        margin-right: 3px;
-        }
-            i{
-            font-size: 30px;
-            color: rgb(222, 34, 34);
-            }
-}
-.labeldat{
-    color: gray;
-}
-
-.page{
+.content{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    .row{
+        display: flex;
+        flex-direction: row;
+
+        .data-content{
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+
+            .grid{
+                margin-left: 7%;
+                background-color: rgba(241, 241, 241, 0.71);
+                padding: 5%;
+                display: grid;
+                border-radius: 5px;
+                border: 3px solid rgb(202, 202, 202);
+            }
+
+            .box{
+                display: flex;
+                justify-content: left;
+
+                :first-child{
+                    width: 30%;
+                    font-weight: 600;
+                }
+
+                :not(:first-child){
+                    width: 70%;
+                }
+
+            }
+
+        }
+
+    }
 }
-.dataDoc{
-    padding-left: 7%;
-    label{
-        width: 15%;
-        display:inline-block;
-        text-align: left;
-        margin-top: 1%;
+
+@media screen and (max-width: 1000px) {
+
+    .row{
+        flex-direction: column;
     }
 
 }

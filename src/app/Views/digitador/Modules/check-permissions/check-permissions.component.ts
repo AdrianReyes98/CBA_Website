@@ -52,7 +52,7 @@ zoom = 15;
   acceptPermission(){
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
       width: '410px',
-      data: {title: 'PERMISO ACEPTADO', message: 'Esta seguro que desea aceptar este permiso ?'}
+      data: {title: 'ACEPTAR PERMISO', message: 'Esta seguro que desea aceptar este permiso ?'}
     });
 
     dialogRef.afterClosed().subscribe( result => {
@@ -68,7 +68,7 @@ zoom = 15;
   rejectPermission(){
     const dialogRef = this.inputDialog.open(InputDialogComponent, {
       width: '410px',
-      data: {title: 'PERMISO RECHAZADO', message: 'Escriba el motivo del rechazo'}
+      data: {title: 'RECHAZAR PERMISO', message: 'Escriba el motivo del rechazo'}
     });
 
     dialogRef.afterClosed().subscribe( result => {
