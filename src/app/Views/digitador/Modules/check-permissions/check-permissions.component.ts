@@ -36,7 +36,7 @@ this.loadData();
   center: google.maps.LatLngLiteral = {
     lat: -1.25,
     lng:  -78.60745217922444
-};
+  };
 
 zoom = 18;
   markerOptions: google.maps.MarkerOptions={
