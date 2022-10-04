@@ -62,6 +62,7 @@ import { FlowChartComponent } from './Views/client/Modules/flow-chart/flow-chart
 import { PermissionsDigiComponent } from './Views/digitador/Modules/permissions-digi/permissions-digi.component';
 import { CheckPermissionsComponent } from './Views/digitador/Modules/check-permissions/check-permissions.component';
 import { InspectorComponent } from './Views/inspector/inspector.component';
+import { InspectionsComponent } from './Views/supervisor/Modules/inspections/inspections.component';
 
 
 
@@ -98,7 +99,8 @@ import { InspectorComponent } from './Views/inspector/inspector.component';
     FlowChartComponent,
     PermissionsDigiComponent,
     CheckPermissionsComponent,
-    InspectorComponent
+    InspectorComponent,
+    InspectionsComponent
 
   ],
   imports: [

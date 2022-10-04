@@ -27,6 +27,7 @@ import { DigitadorComponent } from './Views/digitador/digitador.component';
 import { HomeDigitadorModuleComponent } from './Views/digitador/Modules/home-digitador-module/home-digitador-module.component';
 import { PermissionsDigiComponent } from './Views/digitador/Modules/permissions-digi/permissions-digi.component';
 import { CheckPermissionsComponent } from './Views/digitador/Modules/check-permissions/check-permissions.component';
+import { InspectionsComponent } from './Views/supervisor/Modules/inspections/inspections.component';
 
 const routes: Routes = [
   {
@@ -179,6 +180,10 @@ const routes: Routes = [
       {
         path: 'Home',
         component: HomeSupervisorModuleComponent
+      },
+      {
+        path: 'Inspections',
+        component: InspectionsComponent
       },
       {
         path: 'Perfiles', 
