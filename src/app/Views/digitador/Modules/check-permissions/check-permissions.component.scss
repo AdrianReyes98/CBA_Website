@@ -8,7 +8,7 @@ h3{
 .content{
     display: flex;
     flex-direction: column;
-
+    background-color: #fff;
     .row{
         display: flex;
         flex-direction: row;
@@ -26,26 +26,66 @@ h3{
                 border-radius: 5px;
                 border: 3px solid rgb(202, 202, 202);
             }
-
             .box{
                 display: flex;
                 justify-content: left;
 
                 :first-child{
-                    width: 30%;
+                    width: 100%;
                     font-weight: 600;
                 }
 
                 :not(:first-child){
-                    width: 70%;
+                    width: 100%;
                 }
-
             }
-
         }
-
     }
 }
+.actions{
+    justify-content: right;
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+    margin: 100px 20px 0 0;
+
+    .btnNext{
+    background-color: rgb(59, 59, 203);
+    color: #fff;
+    margin-left: 15px;
+    }
+    .btnBack{
+    background-color: rgb(252, 109, 109);
+    color: #fff;
+    }
+} 
+
+
+.docs{
+    margin-left: 7%;
+    label{
+        width: 10%;
+        display: inline-block;
+        text-align: left;
+        margin-right: 18%;
+    }
+    :first-child{
+        font-weight: 600;
+    }
+
+    i{
+        font-size: 30px;
+        color: rgb(222, 34, 34);
+    }
+}
+.contentFinal{
+    display:flex;
+    padding-bottom: 2%;
+    .contentDocs{
+        width: 90%;
+    }
+}
+
 
 @media screen and (max-width: 1000px) {
 

@@ -3,7 +3,7 @@
 </div>
 
 <div class="content">
-  <h3>1.Datos de informativos</h3>
+  <h3>1. Datos de informativos</h3>
 
   <div class="row">
 
@@ -21,7 +21,7 @@
         </div>
 
         <div class="box">
-          <label>Representante Legal</label>
+          <label>Representante Legal:</label>
           <label>
             {{permission.idLocNavigation.idCliNavigation.nombres 
             + " " +
@@ -52,7 +52,7 @@
       <google-map height="25em"
                   width="48vw"
                   [center]="center"
-                  [zoom]="zoom">
+                  [zoom]="zoom" >
 
         <map-marker #marker="mapMarker" *ngFor="let markerPosition of markerPositions"
                   [position]="markerPosition"
@@ -61,8 +61,8 @@
         </map-marker>
 
         <map-info-window>
-          <div>Latitud: {{lati}}</div>
-          <div>Longitud: {{long}}</div>
+          <div>Latitud: {{permission.idLocNavigation.coordernadaX}}</div>
+          <div>Longitud: {{permission.idLocNavigation.coordenadaY}}</div>
         </map-info-window>
 
       </google-map>
@@ -70,16 +70,33 @@
 
   </div>
 
-  <div class="row">
-    <h3>2.Documentos</h3>
-    <div class="doc-content">
-      
+  <div class="contentFinal">
+    <div class="contentDocs">
+    <h3>2. Documentos</h3> 
+    <div class="docs">
+      <label>Copia del Ruc:</label>
+      <i class='bx bxs-file-pdf'></i> 
+      <label>ruc.pdf</label> 
     </div>
+    <div class="docs">
+      <label>Copia del Predio:</label>
+      <i class='bx bxs-file-pdf'></i>
+      <label>predio.pdf</label>
+    </div>
+    <div class="docs">
+      <label>Foto fachada:</label>
+      <i class='bx bxs-file-pdf'></i>
+      <label>foto.pdf</label>
+    </div>
+  </div>
     <div class="actions">
       <button mat-button class="btnBack">Aceptar</button>
       <button mat-button class="btnNext">Rechazar</button>
     </div>
-  </div>
 </div>
+  
+  
+  
+
 
 
