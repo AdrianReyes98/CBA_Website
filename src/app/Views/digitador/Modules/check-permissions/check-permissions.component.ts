@@ -38,7 +38,7 @@ export class CheckPermissionsComponent implements OnInit {
     lng:  -78.60745217922444
   };
 
-  zoom = 15;
+zoom = 18;
   markerOptions: google.maps.MarkerOptions={
     draggable: false
   };
