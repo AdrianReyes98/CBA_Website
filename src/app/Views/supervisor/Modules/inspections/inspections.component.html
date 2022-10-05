@@ -1,26 +1,33 @@
+
 <div class="container">
-    <div class="listInspections">
-        <h1> Inspecciones</h1>
-        <div
+    <div class="listPermissions">
+        <div class="title">
+            <h1>Permisos</h1>
+        </div>
+            <div
             cdkDropList
             #todoList="cdkDropList"
             [cdkDropListData]="todo"
+
             [cdkDropListConnectedTo]="[doneList]"
             class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-        </div>
+              <div class="example-box" *ngFor="let item of todo" cdkDrag >{{item}}</div>
+            </div>
     </div>
 
     <div class="content">
         <div class="formInspection">
-            <h3>Asignar Inspectores</h3>
-            
-
+            <div class="title">
+                <h1>Asignar Inspectores</h1>
+            </div>
         </div>
         <div class="assigmentInspections">
-            <h3>Inspecciones Asignadas</h3>
-            <div
+
+                <div class="title">
+                <h1>Inspecciones Asignadas</h1>
+                </div>
+                <div
                 cdkDropList
                 #doneList="cdkDropList"
                 [cdkDropListData]="done"
@@ -28,7 +35,7 @@
                 class="example-list"
                 (cdkDropListDropped)="drop($event)">
                 <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-            </div>
+                </div>
         </div>
     </div>
 
