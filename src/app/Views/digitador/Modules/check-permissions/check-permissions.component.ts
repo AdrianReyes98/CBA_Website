@@ -26,7 +26,7 @@ export class CheckPermissionsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  this.loadData();
+this.loadData();
     
   }
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow | undefined;
@@ -53,15 +53,20 @@ zoom = 18;
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
       width: '410px',
       data: {title: 'ACEPTAR PERMISO', message: 'Esta seguro que desea aceptar este permiso ?'}
+
     });
+
 
     dialogRef.afterClosed().subscribe( result => {
       if(result){
         this.finishPermission('Aceptado','Su solicitud a sido revisada y aceptada, espere una inspección en los proximos días')
         localStorage.removeItem('permission');
         this.router.navigateByUrl('/Digitador/Permission');
+        
       }
+      
     });
+    
   }
 
 
@@ -70,6 +75,7 @@ zoom = 18;
       width: '410px',
       data: {title: 'RECHAZAR PERMISO', message: 'Escriba el motivo del rechazo'}
     });
+    
 
     dialogRef.afterClosed().subscribe( result => {
       console.log(result)
