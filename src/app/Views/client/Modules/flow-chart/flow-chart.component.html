@@ -20,7 +20,13 @@
 
             </mat-expansion-panel-header>
 
-            <p class="text">{{history.descripccion}}</p>  
+            <div class="description">
+              <p class="text">{{history.descripccion}}</p>  
+
+              <button mat-button *ngIf="history.accion == 'Rechazado'" color="accent">
+                Actualizar Datos
+              </button>
+            </div>
 
           </mat-expansion-panel >
 
