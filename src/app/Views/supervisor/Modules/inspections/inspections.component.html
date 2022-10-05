@@ -1,14 +1,36 @@
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <mat-nav-list>
-            <a>Hola</a>
-        </mat-nav-list>
-    </mat-drawer>
-
-    <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-        </button>
+<div class="container">
+    <div class="listInspections">
+        <h1> Inspecciones</h1>
+        <div
+            cdkDropList
+            #todoList="cdkDropList"
+            [cdkDropListData]="todo"
+            [cdkDropListConnectedTo]="[doneList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+        </div>
     </div>
 
-</mat-drawer-container>
+    <div class="content">
+        <div class="formInspection">
+            <h3>Asignar Inspectores</h3>
+            
+
+        </div>
+        <div class="assigmentInspections">
+            <h3>Inspecciones Asignadas</h3>
+            <div
+                cdkDropList
+                #doneList="cdkDropList"
+                [cdkDropListData]="done"
+                [cdkDropListConnectedTo]="[todoList]"
+                class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
