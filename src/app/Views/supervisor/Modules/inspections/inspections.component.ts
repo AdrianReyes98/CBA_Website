@@ -12,8 +12,7 @@ export class InspectionsComponent implements OnInit {
   protected search: string = "";
   protected dataSource: any;
   public columns: string[] = ['Id','Cedula','Role', 'Email','Acciones'];
-  showFiller = false;
-
+  
   constructor() { }
 
   ngOnInit(): void {
