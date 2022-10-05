@@ -25,6 +25,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 
 //Componentes Funcionalidad
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
@@ -133,7 +134,8 @@ import { InspectionsComponent } from './Views/supervisor/Modules/inspections/ins
     MatTreeModule,
     MatExpansionModule,
     DragDropModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
     
   ],
   providers: [
