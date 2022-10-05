@@ -22,6 +22,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import {MatTreeModule} from '@angular/material/tree';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 
@@ -131,6 +132,7 @@ import { InspectionsComponent } from './Views/supervisor/Modules/inspections/ins
     NgxCaptchaModule,
     MatTreeModule,
     MatExpansionModule,
+    DragDropModule,
     MatListModule
     
   ],
