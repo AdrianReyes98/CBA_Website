@@ -195,6 +195,13 @@ const routes: Routes = [
   {
     'path': 'noaccess',
     component: AccessDeniedComponent
+  },
+  {
+    'path': 'Inspector',
+    component: InspectionsComponent,
+    data:{
+      role: 'Inspector'
+    },
   }
 ];
 
