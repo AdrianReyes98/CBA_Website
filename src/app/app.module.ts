@@ -23,6 +23,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
 
 //Componentes Funcionalidad
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
@@ -129,7 +130,8 @@ import { InspectionsComponent } from './Views/supervisor/Modules/inspections/ins
     GoogleMapsModule,
     NgxCaptchaModule,
     MatTreeModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatListModule
     
   ],
   providers: [
