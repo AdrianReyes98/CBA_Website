@@ -32,9 +32,6 @@ export class PermisionsClientModuleComponent implements OnInit {
   ngOnInit(): void {
     this.setPaginatorSpanish();
     this.loadData(this.user.client.id);
-    const elementState: any = document.querySelector('#state');
-    console.log(elementState);
-    elementState.style.backgroundcolor = 'red';
   }
 
   setPaginatorSpanish(){
@@ -61,6 +58,19 @@ export class PermisionsClientModuleComponent implements OnInit {
   setDataSource(list: any[]){
     this.dataSource = new MatTableDataSource<any>(list);
     this.dataSource.paginator = this.paginator;
+  }
+
+  changeColor(element: any){
+    switch(element.estado){
+      case "Aceptado":
+        return '#0BD57E'
+      case "Rechazado":
+        return '#E40000';
+      case "Ingresado":
+        return '#006BC9';
+      default:
+        return '#6F6F6F'
+    }
   }
 
   loadData(id: number){
@@ -90,7 +100,6 @@ export class PermisionsClientModuleComponent implements OnInit {
     localStorage.setItem('permission',JSON.stringify(permission));
     this.router.navigateByUrl("/Cliente/FlowChart")
   }
-
 
   
 }

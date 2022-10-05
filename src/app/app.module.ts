@@ -51,7 +51,7 @@ import { HomeSupervisorModuleComponent } from './Views/supervisor/Modules/home-s
 import { PermisionsClientModuleComponent } from './Views/client/Modules/permisions-client-module/permisions-client-module.component';
 import { DialogRequestComponent } from './Views/client/Modules/home-module/dialog-request/dialog-request.component';
 import { OperatingPermitsComponent } from './Views/client/Modules/operating-permisions/operating-permits.component';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MapModuleComponent } from './Views/Common/map-module/map-module.component';
 import { DialogAgreementsRegisterComponent } from './Views/register/dialog-agreements-register/dialog-agreements-register.component';
 import { PlansApprovalComponent } from './Views/client/Modules/plans-approval/plans-approval.component';
