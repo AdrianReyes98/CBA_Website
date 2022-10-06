@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { Router } from '@angular/router';
+import { ApiLoginService } from 'src/app/Services/api-login.service';
 
 @Component({
   selector: 'app-inspector',
@@ -25,9 +27,22 @@ export class InspectorComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  user: any;
+  public username: string = "";
+  rol: any
+  public role: string = "";
+
+  constructor(
+    private apiUserLogin: ApiLoginService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  logOut(): void{
+    this.apiUserLogin.logOut();
+    this.router.navigate(['/login'])
   }
 
 }
