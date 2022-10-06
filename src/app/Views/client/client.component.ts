@@ -12,6 +12,7 @@ export class ClientComponent implements OnInit {
   public username: string = "";
   rol: any
   public role: string = "";
+  
   constructor(
     private apiUserLogin: ApiLoginService,
     private router: Router

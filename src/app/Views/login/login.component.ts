@@ -39,9 +39,12 @@ export class LoginComponent implements OnInit {
     }
 
     this.apiLogin.login(this.username, this.password).subscribe(response => {
+      console.log(response);
       if(response.status === 1){
+        console.log('Entro');
         this.router.navigate(['/'+response.data.role])
       }else{
+        console.log('Entro con error');
         this.snackBar.open("ERROR: "+response.result, 'Aceptar',{
           duration: 3000
         });
