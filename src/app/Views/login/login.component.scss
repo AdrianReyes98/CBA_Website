@@ -137,7 +137,8 @@ $border-rad: 20px;
   font-size: 18px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 650px) {
+  
   .login-logo{
     display: none;
   }
@@ -147,8 +148,13 @@ $border-rad: 20px;
   }
 
   .data{
+    width: 85%;
     border-radius: $border-rad;
     padding-left: 40px;
+  }
+
+  .input{
+    width: 80%;
   }
   
 }
