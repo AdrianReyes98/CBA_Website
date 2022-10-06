@@ -19,15 +19,24 @@
         <div class="formInspection">
             <div class="title">
                 <h1>Asignar Inspectores</h1>
-
-                <div class="input">
-                    <label>Inspector:</label>
-                    <select name="address" >
-                    <option>Juan Alvarez</option>
-                    </select>
-                    
-                </div>
+                
             </div>
+            <div class="cont">
+                <div class="input">
+                        <label>Inspector:</label>
+                        <select > <option >Juan perez</option>
+                        </select>
+                </div>
+                <div class="dateTime">
+                    <label >Fecha:</label>
+                    <input matInput placeholder="MM/DD/YYYY" [matDatepicker]="dp3" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                    <mat-datepicker #dp3 disabled="false"></mat-datepicker>               
+                </div>
+        </div>
+                
+
+
         </div>
         <div class="assigmentInspections">
 
