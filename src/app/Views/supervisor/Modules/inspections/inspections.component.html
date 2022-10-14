@@ -1,59 +1,29 @@
+<div id="title">
+    <h1>Agenda de Inspecciones</h1>
+</div>
 
-<div class="container">
-    <div class="listPermissions">
-        <div class="title">
-            <h1>Permisos</h1>
-        </div>
-            <div
-            cdkDropList
-            #todoList="cdkDropList"
-            [cdkDropListData]="todo"
-            [cdkDropListConnectedTo]="[doneList]"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of todo" cdkDrag >{{item}}</div>
-            </div>
-    </div>
+<div class="wrapper-calendar">
+	<div class="header-calendar">
+		<div>
+			<button (click)="changeMonth(-1)" class="btn-prev">
+				<
+			</button>
+		</div>
+		<h1>{{this.dateSelect.format('MMMM')+' '+this.dateSelect.format('yyyy')}}</h1>
+		<div>
+			<button (click)="changeMonth(1)" class="btn-next">
+				>
+			</button>
+		</div>
+	</div>
+	<ol>
+		<li *ngFor="let day of weekDays" class="day-name">{{day | slice:0:3}}</li>
 
-    <div class="content">
-        <div class="formInspection">
-            <div class="title">
-                <h1>Asignar Inspectores</h1>
-                
-            </div>
-            <div class="cont">
-                <div class="input">
-                        <label>Inspector:</label>
-                        <select > <option >Juan perez</option>
-                        </select>
-                </div>
-                <div class="dateTime">
-                    <label >Fecha:</label>
-                    <input matInput placeholder="MM/DD/YYYY" [matDatepicker]="dp3" disabled>
-                    <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
-                    <mat-datepicker #dp3 disabled="false"></mat-datepicker>               
-                </div>
-        </div>
-                
-
-
-        </div>
-        <div class="assigmentInspections">
-
-                <div class="title">
-                <h1>Inspecciones Asignadas</h1>
-                </div>
-                <div
-                cdkDropList
-                #doneList="cdkDropList"
-                [cdkDropListData]="done"
-                [cdkDropListConnectedTo]="[todoList]"
-                class="example-list"
-                (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-                </div>
-        </div>
-    </div>
-
-
+		<li (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+		*ngFor="let day of monthSelect;let first = first" [ngStyle]="{'color': colorDay(day)}">
+			
+			<span [ngStyle]="{'background-color': backgroundDay(day)}">{{day?.value}}</span>
+			
+		</li>
+	</ol>
 </div>
