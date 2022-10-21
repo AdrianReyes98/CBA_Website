@@ -104,7 +104,7 @@ import { InspectionsComponent } from './Views/supervisor/Modules/inspections/ins
     PermissionsDigiComponent,
     CheckPermissionsComponent,
     InspectorComponent,
-    InspectionsComponent
+    InspectionsComponent,
 
   ],
   imports: [
